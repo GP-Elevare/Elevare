@@ -5,5 +5,5 @@
   - cd client
   - npm run dev
 - in the second one type:
-  -cd server
-  -node index.js
+  - cd server
+  - node index.js
