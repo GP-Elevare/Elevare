@@ -1,0 +1,150 @@
+:root {
+  --primary: #646cff;
+  --primary-hover: #535bf2;
+  --danger: #ff4d4d;
+  --bg: #1a1a1a;
+  --card-bg: #242424;
+  --text: #ffffff;
+  --text-dim: #aaaaaa;
+  --border: #444444;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 550px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.back-btn {
+  background: transparent;
+  color: var(--text-dim);
+  width: auto;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.back-btn:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.stop-btn {
+  background-color: var(--danger);
+}
+
+.input-group {
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+input[type="file"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #333;
+  color: white;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.preview-window {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background: #000;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.success-msg {
+  padding: 1rem;
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.process-section {
+  border-top: 1px solid var(--border);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}

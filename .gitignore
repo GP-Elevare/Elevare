@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Local Environment Variables
+.env
+.env.local
+
+# Build/Dist folders
+dist/
+build/
+
+# Server-specific generated files
+server/uploads/*
+server/outputs/*
+!server/uploads/.gitkeep
+!server/outputs/.gitkeep
