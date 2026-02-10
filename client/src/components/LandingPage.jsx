@@ -7,6 +7,7 @@ const LandingPage = ({ setView }) => (
     <div className="button-group">
       <button onClick={() => setView('upload')}>📁 Upload Video</button>
       <button onClick={() => setView('record')}>🎥 Record Live</button>
+      <button onClick={() => setView('ppt')} className="ppt-btn">📊 Process PowerPoint</button>
     </div>
   </div>
 );

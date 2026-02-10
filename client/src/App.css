@@ -148,3 +148,25 @@ input[type="number"] {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
 }
+
+.button-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ppt-btn {
+  background-color: #d24726; /* PowerPoint Orange */
+}
+
+.result-box {
+  margin-top: 20px;
+  text-align: left;
+  background: #333;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #ddd;
+}
