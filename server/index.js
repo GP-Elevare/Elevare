@@ -24,13 +24,14 @@ const upload = multer({ dest: "uploads/" });
 // --- VIDEO ROUTE ---
 app.post("/process-video", upload.single("video"), (req, res) => {
   if (!req.file) return res.status(400).send("No video file.");
+
   const inputPath = req.file.path;
   const fps = req.body.fps || 30;
   const outputName = `processed-${Date.now()}.mp4`;
   const outputPath = path.join(__dirname, "outputs", outputName);
 
   ffmpeg(inputPath)
-    .videoCodec("h264_nvenc") // Using your RTX 3060
+    .videoCodec("libx264")
     .outputOptions([`-filter:v fps=fps=${fps}`])
     .on("end", () => {
       fs.unlinkSync(inputPath);
@@ -42,6 +43,7 @@ app.post("/process-video", upload.single("video"), (req, res) => {
     })
     .save(outputPath);
 });
+
 
 // --- POWERPOINT ROUTE (Simple Upload) ---
 app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
