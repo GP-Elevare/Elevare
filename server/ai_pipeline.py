@@ -1,0 +1,92 @@
+# ai_pipeline.py
+import sys
+import json
+from pathlib import Path
+from models.speech.speech_module import SpeechEmotionRecognizer
+from models.facial.facial_module import FacialEmotionRecognizer
+import os, cv2, glob, librosa
+from pydub import AudioSegment
+
+speech_model = SpeechEmotionRecognizer()
+facial_model = FacialEmotionRecognizer()
+
+def extract_audio(video_path, audio_path):
+    """Extract audio from video using pydub."""
+    audio = AudioSegment.from_file(video_path)
+    audio.export(audio_path, format="wav")
+
+def process_video(video_path, fps=5):
+    os.makedirs("outputs/frames", exist_ok=True)
+    
+    # ===== AUDIO EXTRACTION =====
+    audio_path = "outputs/audio.wav"
+    extract_audio(video_path, audio_path)
+    
+    # ===== FRAME EXTRACTION =====
+    frames_dir = "outputs/frames"
+    cap = cv2.VideoCapture(video_path)
+    video_fps = cap.get(cv2.CAP_PROP_FPS)  # Get actual video FPS
+    frame_count = 0
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        cv2.imwrite(f"{frames_dir}/frame_{frame_count:05d}.jpg", frame)
+        frame_count += 1
+    cap.release()
+    
+    # fps parameter = frames per window
+    # Calculate seconds per window from frames
+    window_seconds = fps / video_fps  # frames ÷ (frames/sec) = seconds
+    
+    # ===== WINDOWING audio and frames =====
+    y, sr = librosa.load(audio_path, sr=None)
+    samples_per_window = int(window_seconds * sr)  # seconds * sample rate = samples per window
+    audio_windows = [
+        y[i:i + samples_per_window]
+        for i in range(0, len(y), samples_per_window)
+        if len(y[i:i + samples_per_window]) == samples_per_window
+    ]
+    
+    # Use fps directly as frames per window
+    frame_files = sorted(glob.glob(f"{frames_dir}/*.jpg"))
+    image_windows = [
+        frame_files[i:i + fps]
+        for i in range(0, len(frame_files), fps)
+        if len(frame_files[i:i + fps]) == fps
+    ]
+    
+    # ===== PREDICTIONS =====
+    speech_preds = speech_model.predict(audio_windows, sr)
+    facial_preds = facial_model.predict(image_windows)
+    
+    return {"speech": speech_preds, "facial": facial_preds}
+    
+if __name__ == "__main__":
+    video_path = sys.argv[1]  # get video path from Node
+    output_file = sys.argv[2]  # base path to save JSON results
+    fps = int(sys.argv[3]) if len(sys.argv) > 3 else 5  # fps = frames per window, default 5
+    
+    results = process_video(video_path, fps)
+    
+    # Create separate files for speech and facial emotions
+    base_path = output_file.replace('.json', '')
+    
+    speech_output = f"{base_path}-speech-emotions.json"
+    facial_output = f"{base_path}-facial-emotions.json"
+    
+    # Save speech results
+    with open(speech_output, "w") as f:
+        json.dump({"speech_emotions": results["speech"]}, f, indent=2)
+    
+    # Save facial results (when uncommented)
+    with open(facial_output, "w") as f:
+        json.dump({"facial_emotions": results["facial"]}, f, indent=2)
+    
+    # Save combined results to main file
+    with open(output_file, "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"Results saved to {output_file}")
+    print(f"Speech emotions saved to {speech_output}")
+    print(f"Facial emotions saved to {facial_output}")

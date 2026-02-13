@@ -1,0 +1,14 @@
+numpy
+opencv-python
+moviepy
+librosa
+soundfile
+scipy
+tensorflow
+torch
+torchaudio
+torchvision
+joblib
+tqdm
+pillow
+pydub
