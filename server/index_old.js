@@ -69,7 +69,6 @@ app.post("/process-video-ai", upload.single("video"), async (req, res) => {
 
   const inputPath = req.file.path;
   const fps = req.body.fps || 5; // fps = frames per window (default 5)
-  const intervalSec = req.body.intervalSec || 1; // feedback metrics interval in seconds (default 1)
   const timestamp = Date.now();
   const outputJson = path.join(
     __dirname,
@@ -84,7 +83,6 @@ app.post("/process-video-ai", upload.single("video"), async (req, res) => {
     inputPath,
     outputJson,
     fps.toString(),
-    intervalSec.toString(),
   ]);
 
   pyProcess.stdout.on("data", (data) => {

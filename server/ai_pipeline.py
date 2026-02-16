@@ -1,11 +1,12 @@
-# ai_pipeline.py
 import sys
 import json
 from pathlib import Path
 from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
-import os, cv2, glob, librosa
+from models.feedback.main_converted import run_full_pipeline
+import os, cv2, glob, librosa, io
 from pydub import AudioSegment
+from io import BytesIO
 
 speech_model = SpeechEmotionRecognizer()
 facial_model = FacialEmotionRecognizer()
@@ -14,6 +15,29 @@ def extract_audio(video_path, audio_path):
     """Extract audio from video using pydub."""
     audio = AudioSegment.from_file(video_path)
     audio.export(audio_path, format="wav")
+
+def feedback_module(video_path, fps=5):
+    
+    if not os.path.exists(video_path):
+        raise FileNotFoundError(f"Video not found: {video_path}")
+
+    mp3_output_path = "outputs/audio.mp3"
+    audio = AudioSegment.from_file(video_path)
+    audio.export(mp3_output_path, format="mp3")
+
+    METRICS_JSON_PATH = "models/feedback/metrics.json"
+    OUTPUT_PATH = "pipeline_output.json"
+
+    result = run_full_pipeline(
+        audio_path=mp3_output_path,
+        metrics_json_path=METRICS_JSON_PATH
+    )
+
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=4)
+
+    print("\nPipeline finished successfully!")
+    print("Output saved to:", OUTPUT_PATH)
 
 def process_video(video_path, fps=5):
     os.makedirs("outputs/frames", exist_ok=True)
@@ -59,7 +83,7 @@ def process_video(video_path, fps=5):
     # ===== PREDICTIONS =====
     speech_preds = speech_model.predict(audio_windows, sr)
     facial_preds = facial_model.predict(image_windows)
-    
+    feedback_module(video_path)
     return {"speech": speech_preds, "facial": facial_preds}
     
 if __name__ == "__main__":
@@ -74,7 +98,7 @@ if __name__ == "__main__":
     
     speech_output = f"{base_path}-speech-emotions.json"
     facial_output = f"{base_path}-facial-emotions.json"
-    
+
     # Save speech results
     with open(speech_output, "w") as f:
         json.dump({"speech_emotions": results["speech"]}, f, indent=2)
@@ -82,6 +106,7 @@ if __name__ == "__main__":
     # Save facial results (when uncommented)
     with open(facial_output, "w") as f:
         json.dump({"facial_emotions": results["facial"]}, f, indent=2)
+
     
     # Save combined results to main file
     with open(output_file, "w") as f:

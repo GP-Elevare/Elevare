@@ -1,0 +1,41 @@
+{
+  "words_per_minute": {
+    "too_slow": 100,
+    "low_bound": 110,
+    "ideal_lower": 130,
+    "ideal_upper": 165,
+    "too_fast": 180
+  },
+  "filler_word_rate": {
+    "high": 0.30,
+    "moderate": 0.15,
+    "low": 0.05
+  },
+  "pause_duration_seconds": {
+    "functional_min": 0.3,
+    "functional_max": 0.75,
+    "dysfunctional_min": 0.75,
+    "dysfunctional_max": 2.0
+  },
+  "structure_evaluation": {
+    "intro_similarity_hard_threshold": 0.25,
+    "topic_drift_threshold": 0.40
+  },
+  "audio_quality": {
+    "snr_db": {
+      "good": 20,
+      "acceptable": 10,
+      "poor": 0
+    },
+    "loudness_db": {
+      "too_quiet": 60,
+      "normal_lower": 65,
+      "normal_upper": 75,
+      "too_loud": 80
+    },
+    "pitch_variance_hz": {
+      "low_variance": 0,
+      "high_variance": 15
+    }
+  }
+}

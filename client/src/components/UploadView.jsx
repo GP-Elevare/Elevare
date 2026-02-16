@@ -12,7 +12,8 @@ const UploadView = ({ onBack }) => {
     const formData = new FormData();
     formData.append('video', file);
     formData.append('fps', fps);
-
+    formData.append("intervalSec", 1);
+    
     try {
       const response = await fetch('http://localhost:5000/process-video-ai', {
         method: 'POST',

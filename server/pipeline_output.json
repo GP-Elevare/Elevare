@@ -1,0 +1,149 @@
+{
+    "stage1_raw_data": {
+        "advanced_pause_analysis": {
+            "feature": "advanced_pause_analysis",
+            "pause_gaps_total": 1,
+            "pause_gaps_over_0_75s": 1,
+            "functional_pauses": [],
+            "dysfunctional_pauses": [
+                {
+                    "gap_start": 6.76,
+                    "gap_end": 7.7799999999999985,
+                    "duration": 1.0199999999999987,
+                    "word_before": "speaking",
+                    "word_after": "elevation",
+                    "stutter_recovery": false
+                }
+            ],
+            "summary": {
+                "count_functional": 0,
+                "count_dysfunctional": 1,
+                "count_stutter_recovery": 0
+            }
+        },
+        "structure_evaluation": {
+            "feature": "structure_evaluation_improved",
+            "num_sentences": 1,
+            "num_filtered_sentences": 0,
+            "flow": {},
+            "drift": {},
+            "summary": {}
+        },
+        "words_per_minute": {
+            "wpm": 156.46,
+            "total_words": 23,
+            "duration_seconds": 8.82,
+            "duration_minutes": 0.15
+        },
+        "filler_word_analysis": {
+            "feature": "filler_word_analysis",
+            "summary": {
+                "total_filler_words": 0,
+                "total_sentences": 1,
+                "mean_filler_words_per_sentence": 0.0,
+                "max_filler_words_in_sentence": 0,
+                "sentences_with_filler_words": 0
+            }
+        }
+    },
+    "stage2_analysis": {
+        "top_3_issues": [
+            {
+                "issue": "Dysfunctional Pause",
+                "severity": "High",
+                "category": "Fluency"
+            },
+            {
+                "issue": "Speech Rate Near Upper Ideal Limit",
+                "severity": "Moderate",
+                "category": "Pacing"
+            },
+            {
+                "issue": "Limited Structural Content for Analysis",
+                "severity": "Low",
+                "category": "Content/Structure"
+            }
+        ],
+        "observations": [
+            {
+                "metric": "words_per_minute",
+                "value": 156.46,
+                "threshold": "Ideal range: 130-165 WPM",
+                "status": "Ideal",
+                "label": "Observation"
+            },
+            {
+                "metric": "filler_word_rate",
+                "value": 0.0,
+                "threshold": "Low: <0.05",
+                "status": "Optimal",
+                "label": "Observation"
+            },
+            {
+                "metric": "dysfunctional_pauses",
+                "value": "1 (1.02s duration)",
+                "threshold": "Dysfunctional: >0.75s",
+                "status": "Detected",
+                "label": "Observation"
+            },
+            {
+                "metric": "presentation_structure_completeness",
+                "value": "1 sentence",
+                "threshold": "Comprehensive structural analysis requires multiple sentences.",
+                "status": "Insufficient data for full evaluation",
+                "label": "Observation"
+            }
+        ],
+        "impacts": [
+            {
+                "issue": "Dysfunctional Pause",
+                "impact_description": "Interrupts fluency and may distract the audience, potentially hindering comprehension.",
+                "label": "Impact"
+            },
+            {
+                "issue": "Speech Rate Near Upper Ideal Limit",
+                "impact_description": "Maintained at the higher end, it may increase listener cognitive load or fatigue over longer presentations.",
+                "label": "Impact"
+            },
+            {
+                "issue": "Limited Structural Content for Analysis",
+                "impact_description": "Prevents comprehensive evaluation of content flow, topic drift, and overall message organization.",
+                "label": "Impact"
+            }
+        ],
+        "suggestions": [
+            "Practice smoother transitions between thoughts",
+            "Consciously vary speaking pace during delivery",
+            "Develop more extensive content for structural analysis"
+        ],
+        "reasoning": "Issues were ranked by direct deviation from optimal thresholds. The dysfunctional pause is a clear fluency issue with a significant duration relative to the total utterance. Speech rate, while within the ideal range, is at the higher boundary, warranting a moderate severity. Limited structural content is identified due to the presentation's brevity (1 sentence), preventing meaningful structural evaluation.",
+        "confidence_scores": {
+            "overall_confidence": 0.9,
+            "metric_confidence": {
+                "words_per_minute": 0.95,
+                "filler_word_rate": 0.95,
+                "advanced_pause_analysis": 0.95,
+                "structure_evaluation_completeness": 0.75
+            }
+        }
+    },
+    "stage3_feedback": {
+        "praise": "Okay, let's dive into your practice session! First off, I want to highlight some truly fantastic aspects of your speaking. You have an exceptional command over filler words \u2013 absolutely none detected! That's a clear sign of thoughtful delivery and a strong ability to articulate your thoughts without relying on 'um' or 'ah,' which is brilliant. Your speaking rate is also well within the ideal range, showing you're generally hitting a good pace for your audience. These are wonderful foundations to build upon, and you should feel really proud of these strengths!",
+        "constructive_feedback": [
+            {
+                "issue": "Dysfunctional Pause",
+                "ois_delivery": "Observation: I noticed one pause during your delivery that lasted a bit longer than typical conversational breaks, specifically 1.02 seconds.\nImpact: While it might seem minor, a pause of this duration can sometimes interrupt the natural flow of your speech, creating a slight disconnect for the audience. It can make them wonder if you've lost your train of thought, even if you haven't, potentially pulling their focus away from your message.\nSuggestion: Let's work on creating smoother transitions between your thoughts. One concrete exercise is to practice linking your ideas more deliberately. Before you finish a sentence, already have the beginning of the next thought in mind. You could also try recording yourself reading a paragraph aloud, focusing on maintaining a continuous, but not rushed, flow of words, even across sentences."
+            },
+            {
+                "issue": "Speech Rate Near Upper Ideal Limit",
+                "ois_delivery": "Observation: Your speaking rate of 156.46 words per minute is indeed within the ideal range, which is great! However, it's sitting at the higher end of that optimal spectrum (the range being 130-165 WPM).\nImpact: Maintaining this higher pace, especially over a longer presentation, can unintentionally increase the cognitive load on your listeners. It might make it a bit harder for them to fully process complex information or keep up with every point, leading to potential fatigue or them feeling rushed.\nSuggestion: A wonderful way to enhance engagement is to consciously vary your speaking pace during delivery. For instance, when you're delivering key takeaways or more complex ideas, try slowing down just slightly to give your audience more time to absorb them. Conversely, for lighter or transitional points, you can pick up the pace a little. Practicing reading different types of content (a detailed report vs. a story) can help you develop this natural flexibility."
+            },
+            {
+                "issue": "Limited Structural Content for Analysis",
+                "ois_delivery": "Observation: For this practice, the content was quite brief, just one sentence, which limited our ability to look at the overall structure of your message.\nImpact: While perfectly fine for a short practice, in a real presentation, having insufficient content prevents us from comprehensively evaluating how well your ideas flow, if there are any topic drifts, or how effectively your overall message is organized. This is crucial for guiding your audience through your points logically.\nSuggestion: For our next practice, let's aim to develop more extensive content. Even if it's just a few paragraphs or an outline covering an introduction, a couple of main points, and a conclusion, this will give us much more to analyze regarding your content flow and message organization. Think about a topic you're passionate about and just brainstorm a few key ideas to expand on."
+            }
+        ],
+        "encouragement": "You've shown incredible eagerness to improve, and that's the most important quality in a speaker. These are all very common areas for growth, and with your dedication, I have no doubt you'll master them. Remember, every session is a step forward, and I'm here to support you every step of the way. Keep up the fantastic work!",
+        "full_formatted_text": "Okay, let's dive into your practice session! First off, I want to highlight some truly fantastic aspects of your speaking. You have an exceptional command over filler words \u2013 absolutely none detected! That's a clear sign of thoughtful delivery and a strong ability to articulate your thoughts without relying on 'um' or 'ah,' which is brilliant. Your speaking rate is also well within the ideal range, showing you're generally hitting a good pace for your audience. These are wonderful foundations to build upon, and you should feel really proud of these strengths!\n\nNow, let's look at a few areas where we can fine-tune your delivery to make it even more impactful. We'll focus on the top three insights from this session:\n\nIssue: Dysfunctional Pause\nObservation: I noticed one pause during your delivery that lasted a bit longer than typical conversational breaks, specifically 1.02 seconds.\nImpact: While it might seem minor, a pause of this duration can sometimes interrupt the natural flow of your speech, creating a slight disconnect for the audience. It can make them wonder if you've lost your train of thought, even if you haven't, potentially pulling their focus away from your message.\nSuggestion: Let's work on creating smoother transitions between your thoughts. One concrete exercise is to practice linking your ideas more deliberately. Before you finish a sentence, already have the beginning of the next thought in mind. You could also try recording yourself reading a paragraph aloud, focusing on maintaining a continuous, but not rushed, flow of words, even across sentences.\n\nIssue: Speech Rate Near Upper Ideal Limit\nObservation: Your speaking rate of 156.46 words per minute is indeed within the ideal range, which is great! However, it's sitting at the higher end of that optimal spectrum (the range being 130-165 WPM).\nImpact: Maintaining this higher pace, especially over a longer presentation, can unintentionally increase the cognitive load on your listeners. It might make it a bit harder for them to fully process complex information or keep up with every point, leading to potential fatigue or them feeling rushed.\nSuggestion: A wonderful way to enhance engagement is to consciously vary your speaking pace during delivery. For instance, when you're delivering key takeaways or more complex ideas, try slowing down just slightly to give your audience more time to absorb them. Conversely, for lighter or transitional points, you can pick up the pace a little. Practicing reading different types of content (a detailed report vs. a story) can help you develop this natural flexibility.\n\nIssue: Limited Structural Content for Analysis\nObservation: For this practice, the content was quite brief, just one sentence, which limited our ability to look at the overall structure of your message.\nImpact: While perfectly fine for a short practice, in a real presentation, having insufficient content prevents us from comprehensively evaluating how well your ideas flow, if there are any topic drifts, or how effectively your overall message is organized. This is crucial for guiding your audience through your points logically.\nSuggestion: For our next practice, let's aim to develop more extensive content. Even if it's just a few paragraphs or an outline covering an introduction, a couple of main points, and a conclusion, this will give us much more to analyze regarding your content flow and message organization. Think about a topic you're passionate about and just brainstorm a few key ideas to expand on.\n\nYou've shown incredible eagerness to improve, and that's the most important quality in a speaker. These are all very common areas for growth, and with your dedication, I have no doubt you'll master them. Remember, every session is a step forward, and I'm here to support you every step of the way. Keep up the fantastic work!"
+    }
+}
