@@ -3,6 +3,7 @@ import LandingPage from './components/LandingPage';
 import UploadView from './components/UploadView';
 import RecordView from './components/RecordView';
 import PowerPointView from './components/PowerPointView';
+import DataViewer from './components/DataViewer';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       {view === 'upload' && <UploadView onBack={() => setView('landing')} />}
       {view === 'record' && <RecordView onBack={() => setView('landing')} />}
       {view === 'ppt' && <PowerPointView onBack={() => setView('landing')} />}
+      {view === 'viewer' && <DataViewer onBack={() => setView('landing')} />}
     </div>
   );
 }

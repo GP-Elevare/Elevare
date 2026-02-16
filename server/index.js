@@ -149,3 +149,22 @@ app.post("/process-video-ai", upload.single("video"), async (req, res) => {
     }
   });
 });
+
+// --- SIMPLE JSON RETRIEVAL ROUTES ---
+app.get("/feedback", (req, res) => {
+  const filePath = path.join(__dirname, "pipeline_output.json");
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    res.status(404).json({ error: "feedback file not found" });
+  }
+});
+
+app.get("/questions", (req, res) => {
+  const filePath = path.join(__dirname, "questions.json");
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    res.status(404).json({ error: "questions file not found" });
+  }
+});

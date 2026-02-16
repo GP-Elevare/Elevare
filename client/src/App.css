@@ -170,3 +170,40 @@ input[type="number"] {
   font-size: 0.9rem;
   color: #ddd;
 }
+
+.json-display {
+  text-align: left;
+  background: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow: auto;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.question-list {
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-left: 1.2rem;
+}
+
+.question-list li {
+  margin-bottom: 0.5rem;
+}
+
+.formatted-text {
+  text-align: left;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow: auto;
+  font-size: 0.85rem;
+  color: #ddd;
+  white-space: pre-wrap;
+}
+
+.viewer-btn {
+  background-color: #00aaff;
+}
