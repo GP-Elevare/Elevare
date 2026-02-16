@@ -44,24 +44,69 @@ app.post("/process-video", upload.single("video"), (req, res) => {
     .save(outputPath);
 });
 
-// --- POWERPOINT ROUTE (Simple Upload) ---
+const { spawn } = require("child_process");
+
+// --- POWERPOINT ROUTE (Upload + Call Python) ---
 app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
   if (!req.file) return res.status(400).send("No PPTX file.");
 
   console.log(`Received PowerPoint: ${req.file.originalname}`);
 
-  // For now, we just acknowledge the upload
-  res.json({
-    message: "PowerPoint uploaded successfully!",
-    fileName: req.file.originalname,
+  // Full file path to uploaded PPTX
+  const pptxPath = path.resolve(req.file.path);
+
+  // Call python script
+  const pythonProcess = spawn("python", ["q_pipeline.py", pptxPath]);
+
+  let outputData = "";
+  let errorData = "";
+
+  pythonProcess.stdout.on("data", (data) => {
+    outputData += data.toString();
+  });
+
+  pythonProcess.stderr.on("data", (data) => {
+    errorData += data.toString();
+  });
+
+  pythonProcess.on("close", (code) => {
+    if (code !== 0) {
+      console.error("Python error:", errorData);
+      return res.status(500).json({
+        message: "Python script failed",
+        error: errorData,
+      });
+    }
+
+    console.log("Python script executed successfully!");
+    console.log("Output:", outputData);
+
+    // If python returns JSON, parse it
+    try {
+      const parsedOutput = JSON.parse(outputData);
+
+      console.log("JSON parsed successfully!");
+
+      return res.json({
+        message: "PowerPoint processed successfully!",
+        fileName: req.file.originalname,
+        result: parsedOutput,
+      });
+    } catch (err) {
+      console.log("Python output is not JSON, returning raw text.");
+
+      return res.json({
+        message: "PowerPoint processed successfully!",
+        fileName: req.file.originalname,
+        result: outputData,
+      });
+    }
   });
 });
 
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`),
 );
-
-const { spawn } = require("child_process");
 
 // --- AI VIDEO ROUTE WITH FPS (FRAMES PER WINDOW) SUPPORT ---
 app.post("/process-video-ai", upload.single("video"), async (req, res) => {

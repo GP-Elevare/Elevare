@@ -4,6 +4,8 @@ from pathlib import Path
 from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
 from models.feedback.main_converted import run_full_pipeline
+from models.qg.T5 import generate_questions
+from models.qg.Text_Extractor import extract_text_from_pptx
 import os, cv2, glob, librosa, io
 from pydub import AudioSegment
 from io import BytesIO
@@ -36,7 +38,7 @@ def feedback_module(video_path, fps=5):
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=4)
 
-    print("\nPipeline finished successfully!")
+    print("Pipeline finished successfully!")
     print("Output saved to:", OUTPUT_PATH)
 
 def process_video(video_path, fps=5):
