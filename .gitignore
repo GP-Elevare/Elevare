@@ -6,6 +6,7 @@ node_modules/
 # Local Environment Variables
 .env
 .env.local
+.venv
 
 # Build/Dist folders
 dist/
