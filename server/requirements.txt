@@ -12,3 +12,4 @@ joblib
 tqdm
 pillow
 pydub
+mediapipe
