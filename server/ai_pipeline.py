@@ -4,17 +4,17 @@ from pathlib import Path
 import shutil
 from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
-from models.feedback.main_converted import run_full_pipeline
+# from models.feedback.main_converted import run_full_pipeline
 from models.body.body_module import MediaPipeExtractor, BodyEmotionRecognizer, output_json_dir
-from models.qg.T5 import generate_questions
-from models.qg.Text_Extractor import extract_text_from_pptx
+# from models.qg.T5 import generate_questions
+# from models.qg.Text_Extractor import extract_text_from_pptx
 import os, cv2, glob, librosa, io
 from pydub import AudioSegment
 from io import BytesIO
 
 speech_model = SpeechEmotionRecognizer()
 facial_model = FacialEmotionRecognizer()
-body_model = BodyEmotionRecognizer()
+#body_model = BodyEmotionRecognizer()
 extractor = MediaPipeExtractor()
 
 def extract_audio(video_path, audio_path):
@@ -92,10 +92,11 @@ def process_video(video_path, window_size = 5):
     # ===== PREDICTIONS =====
     speech_preds = speech_model.predict(audio_windows, sr)
     facial_preds = facial_model.predict(image_windows)
-    body_preds = body_model.predict(image_windows)
-    feedback_module(video_path)
+    #body_preds = body_model.predict(image_windows)
+    #feedback_module(video_path)
 
-    return {"speech": speech_preds, "facial": facial_preds, "body": body_preds}
+    #return {"speech": speech_preds, "facial": facial_preds, "body": body_preds}
+    return {"speech": speech_preds, "facial": facial_preds}
     
 if __name__ == "__main__":
     video_path = sys.argv[1]  # get video path from Node
@@ -109,7 +110,7 @@ if __name__ == "__main__":
     
     speech_output = f"{base_path}-speech-emotions.json"
     facial_output = f"{base_path}-facial-emotions.json"
-    body_output = f"{base_path}-body-emotions.json"
+    #body_output = f"{base_path}-body-emotions.json"
     
     # Save speech results
     with open(speech_output, "w") as f:
@@ -119,9 +120,9 @@ if __name__ == "__main__":
     with open(facial_output, "w") as f:
         json.dump({"facial_emotions": results["facial"]}, f, indent=2)
     
-    # Save body results 
-    with open(body_output, "w") as f:
-        json.dump({"body_emotions": results.get("body", [])}, f, indent=2)
+    # # Save body results 
+    # with open(body_output, "w") as f:
+    #     json.dump({"body_emotions": results.get("body", [])}, f, indent=2)
     
     # Save combined results to main file
     with open(output_file, "w") as f:
@@ -130,4 +131,4 @@ if __name__ == "__main__":
     print(f"Results saved to {output_file}")
     print(f"Speech emotions saved to {speech_output}")
     print(f"Facial emotions saved to {facial_output}")
-    print(f"Body emotions saved to {body_output}")
+    #print(f"Body emotions saved to {body_output}")
