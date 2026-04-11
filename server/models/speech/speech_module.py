@@ -175,7 +175,7 @@ from tensorflow.keras.models import load_model
 
 
 TARGET_SR = 22050
-MIN_AUDIO_LENGTH = 2048
+MIN_AUDIO_LENGTH = 4096
 
 
 class SpeechEmotionRecognizer:
@@ -245,6 +245,11 @@ class SpeechEmotionRecognizer:
         features = []
 
         mfccs         = librosa.feature.mfcc(y=y, sr=TARGET_SR, n_mfcc=20, n_fft=n_fft_melspec)
+        
+        if mfccs.shape[1] < 9:
+            pad_amount = 9 - mfccs.shape[1]
+            mfccs = np.pad(mfccs, pad_width=((0, 0), (0, pad_amount)), mode='constant')
+        
         mfccs_delta   = librosa.feature.delta(mfccs)
         mfccs_delta2  = librosa.feature.delta(mfccs, order=2)
         features.extend(np.mean(mfccs,        axis=1))
