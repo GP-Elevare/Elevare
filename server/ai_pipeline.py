@@ -6,6 +6,7 @@ from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
 from models.feedback.main_converted import run_full_pipeline
 from models.body.body_module import MediaPipeExtractor, BodyEmotionRecognizer, output_json_dir
+from models.qa.qa_module import QAScorer
 from models.qg.T5 import generate_questions
 from models.qg.Text_Extractor import extract_text_from_pptx
 import os, cv2, glob, librosa, io
@@ -16,6 +17,7 @@ speech_model = SpeechEmotionRecognizer()
 facial_model = FacialEmotionRecognizer()
 body_model = BodyEmotionRecognizer()
 extractor = MediaPipeExtractor()
+qa_model = QAScorer()
 
 def extract_audio(video_path, audio_path):
     """Extract audio from video using pydub."""
@@ -45,7 +47,7 @@ def feedback_module(video_path, fps=5):
     print("Pipeline finished successfully!")
     print("Output saved to:", OUTPUT_PATH)
 
-def process_video(video_path, window_size = 5):
+def process_video(video_path, qa_json_path, window_size=5):
     os.makedirs("outputs/frames", exist_ok = True)
     
     # Openpose Keypoint Extraction 
@@ -95,14 +97,25 @@ def process_video(video_path, window_size = 5):
     body_preds = body_model.predict(image_windows)
     feedback_module(video_path)
 
-    return {"speech": speech_preds, "facial": facial_preds, "body": body_preds}
-    
+    speech_preds = speech_model.predict(audio_windows, sr)
+    facial_preds = facial_model.predict(image_windows)
+
+    # ADD THIS BLOCK
+    with open("qa_pairs_mock.json", "r", encoding="utf-8") as f:
+        qa_pairs = json.load(f)
+    print(f"[Pipeline] Loaded {len(qa_pairs)} QA pairs from mock file")
+    qa_preds = qa_model.predict(qa_pairs)
+
+    return {"speech": speech_preds, "facial": facial_preds, "qa": qa_preds}
+
 if __name__ == "__main__":
     video_path = sys.argv[1]  # get video path from Node
     output_file = sys.argv[2]  # base path to save JSON results
     window_size = int(sys.argv[3]) if len(sys.argv) > 3 else 97  # fps = frames per window, default 5
     
-    results = process_video(video_path, window_size)
+    qa_json_path = sys.argv[4] if len(sys.argv) > 4 else None
+
+    results = process_video(video_path, qa_json_path, window_size)
     
     # Create separate files for speech, facial and body emotions
     base_path = output_file.replace('.json', '')
@@ -126,6 +139,12 @@ if __name__ == "__main__":
     # Save combined results to main file
     with open(output_file, "w") as f:
         json.dump(results, f, indent=2)
+
+    if qa_json_path:
+        qa_output = f"{base_path}-qa-results.json"
+        with open(qa_output, "w") as f:
+            json.dump({"qa_results": results.get("qa", [])}, f, indent=2)
+        print(f"QA results saved to {qa_output}")
     
     print(f"Results saved to {output_file}")
     print(f"Speech emotions saved to {speech_output}")

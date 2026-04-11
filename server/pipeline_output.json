@@ -2,157 +2,339 @@
     "stage1_raw_data": {
         "advanced_pause_analysis": {
             "feature": "advanced_pause_analysis",
-            "pause_gaps_total": 1,
-            "pause_gaps_over_0_75s": 1,
-            "functional_pauses": [],
-            "dysfunctional_pauses": [
+            "pause_gaps_total": 9,
+            "pause_gaps_over_0_75s": 9,
+            "functional_pauses": [
                 {
-                    "gap_start": 6.76,
-                    "gap_end": 7.7799999999999985,
-                    "duration": 1.0199999999999987,
-                    "word_before": "speaking",
-                    "word_after": "elevation",
+                    "gap_start": 5.06,
+                    "gap_end": 6.06,
+                    "duration": 1.0,
+                    "word_before": "ago,",
+                    "word_after": "I",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 7.82,
+                    "gap_end": 9.18,
+                    "duration": 1.3599999999999994,
+                    "word_before": "life.",
+                    "word_after": "I",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 11.62,
+                    "gap_end": 13.38,
+                    "duration": 1.7600000000000016,
+                    "word_before": "drugs.",
+                    "word_after": "Every",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 18.84,
+                    "gap_end": 19.88,
+                    "duration": 1.0399999999999991,
+                    "word_before": "using,",
+                    "word_after": "barely",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 23.3,
+                    "gap_end": 24.16,
+                    "duration": 0.8599999999999994,
+                    "word_before": "night.",
+                    "word_after": "I",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 26.32,
+                    "gap_end": 28.36,
+                    "duration": 2.039999999999999,
+                    "word_before": "that.",
+                    "word_after": "I",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 40.28,
+                    "gap_end": 41.26,
+                    "duration": 0.9799999999999969,
+                    "word_before": "things.",
+                    "word_after": "I",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 49.24,
+                    "gap_end": 50.06,
+                    "duration": 0.8200000000000003,
+                    "word_before": "free.",
+                    "word_after": "They",
+                    "stutter_recovery": false
+                },
+                {
+                    "gap_start": 52.64,
+                    "gap_end": 54.44,
+                    "duration": 1.7999999999999972,
+                    "word_before": "afternoon.",
+                    "word_after": "This",
                     "stutter_recovery": false
                 }
             ],
+            "dysfunctional_pauses": [],
             "summary": {
-                "count_functional": 0,
-                "count_dysfunctional": 1,
+                "count_functional": 9,
+                "count_dysfunctional": 0,
                 "count_stutter_recovery": 0
             }
         },
         "structure_evaluation": {
             "feature": "structure_evaluation_improved",
-            "num_sentences": 1,
-            "num_filtered_sentences": 0,
-            "flow": {},
-            "drift": {},
-            "summary": {}
+            "num_sentences": 8,
+            "num_filtered_sentences": 8,
+            "flow": {
+                "adjacent_similarity_raw": [
+                    0.4490388035774231,
+                    0.47521793842315674,
+                    0.2806771993637085,
+                    0.29668357968330383,
+                    0.04449775069952011,
+                    0.32253801822662354,
+                    0.09412941336631775
+                ],
+                "adjacent_similarity_smooth": [
+                    0.4621283710002899,
+                    0.40164464712142944,
+                    0.35085957249005634,
+                    0.2072861765821775,
+                    0.22123978286981583,
+                    0.15372172743082047,
+                    0.20833371579647064
+                ],
+                "depth_scores": [
+                    0.0,
+                    0.004849324623743656,
+                    0.0,
+                    0.07876350109775856,
+                    0.0,
+                    0.06106502190232277,
+                    0.0
+                ],
+                "segment_boundaries": [
+                    {
+                        "boundary_index": 3,
+                        "original_sentence_indices": [
+                            3,
+                            4
+                        ],
+                        "cosine_similarity": 0.2072861765821775,
+                        "depth_score": 0.07876350109775856,
+                        "detection_method": "depth"
+                    },
+                    {
+                        "boundary_index": 5,
+                        "original_sentence_indices": [
+                            5,
+                            6
+                        ],
+                        "cosine_similarity": 0.15372172743082047,
+                        "depth_score": 0.06106502190232277,
+                        "detection_method": "depth"
+                    }
+                ],
+                "flow_breaks": [
+                    {
+                        "between": [
+                            3,
+                            4
+                        ],
+                        "cosine_similarity": 0.2072861765821775,
+                        "depth_score": 0.07876350109775856
+                    },
+                    {
+                        "between": [
+                            5,
+                            6
+                        ],
+                        "cosine_similarity": 0.15372172743082047,
+                        "depth_score": 0.06106502190232277
+                    }
+                ],
+                "dynamic_threshold_depth": 0.04590479440745297,
+                "hard_threshold": 0.25
+            },
+            "drift": {
+                "similarity_to_intro": [
+                    0.7261979579925537,
+                    0.5813800096511841,
+                    0.7152018547058105,
+                    0.7300379276275635,
+                    0.3662119209766388,
+                    0.27804529666900635,
+                    0.2197265923023224,
+                    0.30597954988479614
+                ],
+                "drift_sentences": [
+                    {
+                        "sentence_index": 4,
+                        "filtered_index": 4,
+                        "cosine_similarity_to_intro": 0.3662119209766388
+                    },
+                    {
+                        "sentence_index": 5,
+                        "filtered_index": 5,
+                        "cosine_similarity_to_intro": 0.27804529666900635
+                    },
+                    {
+                        "sentence_index": 6,
+                        "filtered_index": 6,
+                        "cosine_similarity_to_intro": 0.2197265923023224
+                    },
+                    {
+                        "sentence_index": 7,
+                        "filtered_index": 7,
+                        "cosine_similarity_to_intro": 0.30597954988479614
+                    }
+                ],
+                "drift_threshold": 0.4
+            },
+            "summary": {
+                "num_original_sentences": 8,
+                "num_filtered_sentences": 8,
+                "filtering_ratio": 1.0,
+                "mean_flow_similarity_raw": 0.2804,
+                "mean_flow_similarity_smooth": 0.2865,
+                "std_flow_similarity": 0.1086,
+                "segment_boundary_count": 2,
+                "mean_depth_score": 0.0207,
+                "dynamic_threshold_depth": 0.0459,
+                "mean_drift_similarity": 0.4903,
+                "min_drift_similarity": 0.2197,
+                "fraction_sentences_off_topic": 0.5,
+                "drift_sentence_count": 4
+            }
         },
         "words_per_minute": {
-            "wpm": 156.46,
-            "total_words": 23,
-            "duration_seconds": 8.82,
-            "duration_minutes": 0.15
+            "wpm": 145.91,
+            "total_words": 132,
+            "duration_seconds": 54.28,
+            "duration_minutes": 0.9
         },
         "filler_word_analysis": {
             "feature": "filler_word_analysis",
             "summary": {
-                "total_filler_words": 0,
-                "total_sentences": 1,
-                "mean_filler_words_per_sentence": 0.0,
-                "max_filler_words_in_sentence": 0,
-                "sentences_with_filler_words": 0
+                "total_filler_words": 1,
+                "total_sentences": 8,
+                "mean_filler_words_per_sentence": 0.12,
+                "max_filler_words_in_sentence": 1,
+                "sentences_with_filler_words": 1
             }
         }
     },
     "stage2_analysis": {
         "top_3_issues": [
             {
-                "issue": "Extended Pause",
+                "issue": "Topic Drift",
                 "severity": "High",
-                "category": "Fluency"
+                "category": "Content/Structure"
             },
             {
-                "issue": "Limited Pausal Variety",
-                "severity": "Medium",
-                "category": "Fluency"
+                "issue": "Frequent Long Pauses",
+                "severity": "High",
+                "category": "Delivery/Pacing"
             },
             {
-                "issue": "Upper-range Pacing",
-                "severity": "Low",
-                "category": "Pacing"
+                "issue": "Fragmented Structure",
+                "severity": "Moderate-High",
+                "category": "Structure"
             }
         ],
         "observations": [
             {
-                "metric": "Words Per Minute",
-                "value": "156.46 WPM",
-                "threshold": "Ideal: 130-165 WPM",
-                "status": "Within ideal range (upper end)",
+                "metric": "words_per_minute",
+                "value": "145.91",
+                "threshold": "130-165 WPM",
+                "status": "Ideal",
                 "label": "Observation"
             },
             {
-                "metric": "Dysfunctional Pause Duration",
-                "value": "1.02 seconds",
-                "threshold": "Dysfunctional: >0.75 seconds",
-                "status": "Exceeds dysfunctional threshold",
+                "metric": "long_pause_count",
+                "value": "9 pauses over 0.75s",
+                "threshold": ">0.75s is dysfunctional",
+                "status": "Frequent",
                 "label": "Observation"
             },
             {
-                "metric": "Functional Pauses Count",
-                "value": "0",
-                "threshold": "Expected: >0",
-                "status": "Absent",
+                "metric": "filler_word_rate",
+                "value": "0.76%",
+                "threshold": "<5% is low",
+                "status": "Very Low",
                 "label": "Observation"
             },
             {
-                "metric": "Filler Word Rate",
-                "value": "0.0%",
-                "threshold": "Low: <5%",
-                "status": "Excellent (No filler words detected)",
+                "metric": "fraction_sentences_off_topic",
+                "value": "50%",
+                "threshold": ">40% indicates high drift",
+                "status": "High",
                 "label": "Observation"
             },
             {
-                "metric": "Speech Duration/Sentence Count",
-                "value": "8.82 seconds (1 sentence)",
-                "threshold": "N/A",
-                "status": "Insufficient data for meaningful structural evaluation",
+                "metric": "segment_boundary_count",
+                "value": "2 for 8 sentences",
+                "threshold": ">1 for short text indicates fragmentation",
+                "status": "Frequent",
                 "label": "Observation"
             }
         ],
         "impacts": [
             {
-                "issue": "Extended Pause",
-                "impact_description": "May disrupt fluency and audience engagement, potentially implying hesitation.",
+                "issue": "Topic Drift",
+                "impact_description": "Audience comprehension diminished due to inconsistent messaging.",
                 "label": "Impact"
             },
             {
-                "issue": "Limited Pausal Variety",
-                "impact_description": "Reduces opportunities for emphasis, audience processing time, and natural delivery flow.",
+                "issue": "Frequent Long Pauses",
+                "impact_description": "Disrupts delivery flow, potentially indicating uncertainty or lack of fluidity.",
                 "label": "Impact"
             },
             {
-                "issue": "Upper-range Pacing",
-                "impact_description": "Could challenge audience comprehension, particularly for complex topics or diverse listeners.",
+                "issue": "Fragmented Structure",
+                "impact_description": "Challenges audience in following the logical progression of ideas.",
                 "label": "Impact"
             }
         ],
         "suggestions": [
-            "Practice deliberate pausing",
-            "Vary pause length strategically",
-            "Maintain consistent speaking flow",
-            "Monitor pacing for optimal clarity"
+            "Strengthen topic alignment throughout.",
+            "Practice controlling pause durations for natural flow.",
+            "Develop clearer transitions between key points.",
+            "Outline key ideas to maintain structural coherence."
         ],
-        "reasoning": "Issues were ranked by objective deviation from established ideal thresholds. A specific dysfunctional pause significantly exceeded its threshold, identifying it as the primary concern. The complete absence of functional pauses and pacing at the higher end of the ideal range were identified as secondary issues, noting the extremely short speech duration as a limitation for comprehensive analysis.",
+        "reasoning": "Issues were ranked by their potential to negatively impact audience comprehension and engagement. Topic drift and frequent long pauses directly hinder understanding and perceived fluency. Fragmented structure, indicated by multiple segment boundaries in short text, also impedes logical follow-through. Other metrics were within acceptable ranges.",
         "confidence_scores": {
-            "overall_confidence": 0.9,
+            "overall_confidence": 0.95,
             "metric_confidence": {
-                "words_per_minute": 1.0,
-                "dysfunctional_pause_duration": 1.0,
-                "functional_pauses_count": 0.9,
-                "filler_word_rate": 1.0,
-                "structure_evaluation": 0.7
+                "words_per_minute": 0.95,
+                "long_pause_count": 0.95,
+                "filler_word_rate": 0.95,
+                "fraction_sentences_off_topic": 0.95,
+                "segment_boundary_count": 0.95
             }
         }
     },
     "stage3_feedback": {
-        "praise": "First off, I want to genuinely applaud you! One of the absolute best things I noticed is your incredible clarity and the complete absence of filler words. That's a huge accomplishment and shows a real command of your message. Many speakers struggle with 'ums' and 'uhs,' but you've completely bypassed that challenge, which is truly fantastic!",
+        "praise": "First off, I want to genuinely applaud you for your fantastic speaking pace \u2013 at 145.91 words per minute, you hit that sweet spot beautifully, making your speech easy to follow and engaging. And truly impressive, your use of filler words was exceptionally low, at just 0.76%! That tells me you have excellent verbal fluency and a clear grasp of your content, which is a huge asset you've already mastered.",
         "constructive_feedback": [
             {
-                "issue": "Extended Pause",
-                "ois_delivery": "Okay, let's dive into some areas where we can make your delivery even more impactful. The first thing I observed was one specific pause that was quite long, clocking in at about 1.02 seconds. This duration actually exceeded what we consider a 'dysfunctional' threshold for a typical pause. Psychologically, an extended pause like this can sometimes make your audience wonder if you've lost your train of thought, or if you're feeling a moment of hesitation, even if that's not your intention. It can briefly pull them out of their engagement with your message. So, for a concrete suggestion, let's work on *practicing deliberate pausing*. When you feel the urge to pause, try to make it a purposeful, shorter breath rather than a long silence. You could even practice counting silently to yourself 'one-and-two' for a slightly longer, but intentional, pause if you need to gather your thoughts."
+                "issue": "Topic Drift",
+                "ois_delivery": "Observation: I noticed that approximately 50% of your sentences veered away from your main topic. This is quite a high proportion, suggesting a challenge in staying laser-focused on your core message throughout.\nImpact: When this happens, it can make it really hard for your audience to follow your central point. They might feel a bit lost or unsure about what key takeaway you want them to leave with, diminishing their overall comprehension.\nSuggestion: To strengthen this, before your next talk, try outlining your key ideas very clearly. For each paragraph or segment, write down the single main point you want to convey, and then consciously check your sentences against that point as you speak or draft."
             },
             {
-                "issue": "Limited Pausal Variety",
-                "ois_delivery": "Building on that, another observation was the absence of what we call 'functional pauses'\u2014those intentional, shorter pauses that really help add emphasis and rhythm to your speech. Without introducing varied pauses, your delivery can sometimes feel like a continuous stream of information. The psychological impact of this is that it can make it harder for your audience to process key points, and it reduces opportunities for you to naturally emphasize important parts of your message. To improve this, let's try to *consciously introduce short, strategic pauses*. Think about where you want your audience to absorb a key idea, or where you'd normally take a natural breath in conversation. A great exercise is to mark your script at these points and practice bringing them to life."
+                "issue": "Frequent Long Pauses",
+                "ois_delivery": "Observation: We observed 9 pauses in your speech that were longer than 0.75 seconds. While pauses can be powerful tools, having several that extend beyond a natural conversational beat can disrupt your flow.\nImpact: These longer pauses, though perhaps unconscious, can make the audience perceive a slight hesitation or uncertainty. It might break their engagement and make them wonder if you're searching for your next thought, rather than guiding them smoothly.\nSuggestion: A great way to work on this is to practice your speech aloud, perhaps even recording yourself. Pay attention to where these longer pauses occur and consider replacing some of them with a brief, intentional breath or a micro-pause that feels more controlled and purposeful."
             },
             {
-                "issue": "Upper-range Pacing",
-                "ois_delivery": "Finally, I noted that your overall speaking rate was at the higher end of the ideal range, coming in at about 156 words per minute. While you're still within a good range, being at the upper limit can, at times, challenge your audience's comprehension, especially if your topic is complex or if they need a moment to fully process what you're saying. The psychological impact here is that a rapid pace might make some listeners feel a bit overwhelmed or leave them feeling like they missed something important. For a practical step, let's focus on *monitoring your pacing for optimal clarity*. During practice, imagine your words being absorbed by different people in the audience. If you feel yourself speeding up, take a gentle, internal cue to slow down slightly, especially after a key point or before introducing new information. This isn't about speaking slowly, but about finding that perfect rhythm for maximum impact."
+                "issue": "Fragmented Structure",
+                "ois_delivery": "Observation: Your analysis showed 2 distinct segment boundaries within just 8 sentences, which suggests that your ideas were presented in somewhat disjointed parts rather than flowing seamlessly from one to the next.\nImpact: When the structure feels fragmented, your audience has to work harder to connect the dots between your ideas. It can make the overall message feel less cohesive and more challenging to grasp the logical progression you intend.\nSuggestion: Let's focus on building stronger bridges between your points. Try preparing some clear transition phrases in advance \u2013 things like 'Building on that...', 'Now, let's consider...', or 'This leads us to...' \u2013 to guide your audience smoothly from one idea to the next."
             }
         ],
-        "encouragement": "You've got a fantastic foundation to build upon, and these are very common areas for speakers to refine. The fact that you're eager to improve tells me you're already on the path to becoming a truly impactful speaker. Keep practicing these small, focused changes, and I'm really looking forward to seeing your wonderful progress!",
-        "full_formatted_text": "Hey there! I know you're eager to improve, and I'm here to help you shine. Let's talk about your recent speech. \n\nFirst off, I want to genuinely applaud you! One of the absolute best things I noticed is your incredible clarity and the complete absence of filler words. That's a huge accomplishment and shows a real command of your message. Many speakers struggle with 'ums' and 'uhs,' but you've completely bypassed that challenge, which is truly fantastic!\n\nOkay, let's dive into some areas where we can make your delivery even more impactful.\n\n**Extended Pause**\nI observed one specific pause that was quite long, clocking in at about 1.02 seconds. This duration actually exceeded what we consider a 'dysfunctional' threshold for a typical pause. Psychologically, an extended pause like this can sometimes make your audience wonder if you've lost your train of thought, or if you're feeling a moment of hesitation, even if that's not your intention. It can briefly pull them out of their engagement with your message. So, for a concrete suggestion, let's work on *practicing deliberate pausing*. When you feel the urge to pause, try to make it a purposeful, shorter breath rather than a long silence. You could even practice counting silently to yourself 'one-and-two' for a slightly longer, but intentional, pause if you need to gather your thoughts.\n\n**Limited Pausal Variety**\nBuilding on that, another observation was the absence of what we call 'functional pauses'\u2014those intentional, shorter pauses that really help add emphasis and rhythm to your speech. Without introducing varied pauses, your delivery can sometimes feel like a continuous stream of information. The psychological impact of this is that it can make it harder for your audience to process key points, and it reduces opportunities for you to naturally emphasize important parts of your message. To improve this, let's try to *consciously introduce short, strategic pauses*. Think about where you want your audience to absorb a key idea, or where you'd normally take a natural breath in conversation. A great exercise is to mark your script at these points and practice bringing them to life.\n\n**Upper-range Pacing**\nFinally, I noted that your overall speaking rate was at the higher end of the ideal range, coming in at about 156 words per minute. While you're still within a good range, being at the upper limit can, at times, challenge your audience's comprehension, especially if your topic is complex or if they need a moment to fully process what you're saying. The psychological impact here is that a rapid pace might make some listeners feel a bit overwhelmed or leave them feeling like they missed something important. For a practical step, let's focus on *monitoring your pacing for optimal clarity*. During practice, imagine your words being absorbed by different people in the audience. If you feel yourself speeding up, take a gentle, internal cue to slow down slightly, especially after a key point or before introducing new information. This isn't about speaking slowly, but about finding that perfect rhythm for maximum impact.\n\nYou've got a fantastic foundation to build upon, and these are very common areas for speakers to refine. The fact that you're eager to improve tells me you're already on the path to becoming a truly impactful speaker. Keep practicing these small, focused changes, and I'm really looking forward to seeing your wonderful progress!"
+        "encouragement": "You have such a solid foundation to build upon, with your clear speaking rate and minimal filler words. These areas we've discussed are entirely coachable, and I know with your eagerness to improve, you'll make fantastic strides. Keep practicing, keep experimenting, and remember that every step is part of your journey to becoming an even more compelling and confident speaker. I'm here to support you every step of the way!",
+        "full_formatted_text": "First off, I want to genuinely applaud you for your fantastic speaking pace \u2013 at 145.91 words per minute, you hit that sweet spot beautifully, making your speech easy to follow and engaging. And truly impressive, your use of filler words was exceptionally low, at just 0.76%! That tells me you have excellent verbal fluency and a clear grasp of your content, which is a huge asset you've already mastered.\n\nNow, let's dive into a few areas where we can really supercharge your impact and help you feel even more confident and in control. Remember, these are all perfectly normal growth opportunities, and with a little focus, you'll see amazing progress.\n\nHere are the top three areas we can focus on:\n\nIssue: Topic Drift\nObservation: I noticed that approximately 50% of your sentences veered away from your main topic. This is quite a high proportion, suggesting a challenge in staying laser-focused on your core message throughout.\nImpact: When this happens, it can make it really hard for your audience to follow your central point. They might feel a bit lost or unsure about what key takeaway you want them to leave with, diminishing their overall comprehension.\nSuggestion: To strengthen this, before your next talk, try outlining your key ideas very clearly. For each paragraph or segment, write down the single main point you want to convey, and then consciously check your sentences against that point as you speak or draft.\n\nIssue: Frequent Long Pauses\nObservation: We observed 9 pauses in your speech that were longer than 0.75 seconds. While pauses can be powerful tools, having several that extend beyond a natural conversational beat can disrupt your flow.\nImpact: These longer pauses, though perhaps unconscious, can make the audience perceive a slight hesitation or uncertainty. It might break their engagement and make them wonder if you're searching for your next thought, rather than guiding them smoothly.\nSuggestion: A great way to work on this is to practice your speech aloud, perhaps even recording yourself. Pay attention to where these longer pauses occur and consider replacing some of them with a brief, intentional breath or a micro-pause that feels more controlled and purposeful.\n\nIssue: Fragmented Structure\nObservation: Your analysis showed 2 distinct segment boundaries within just 8 sentences, which suggests that your ideas were presented in somewhat disjointed parts rather than flowing seamlessly from one to the next.\nImpact: When the structure feels fragmented, your audience has to work harder to connect the dots between your ideas. It can make the overall message feel less cohesive and more challenging to grasp the logical progression you intend.\nSuggestion: Let's focus on building stronger bridges between your points. Try preparing some clear transition phrases in advance \u2013 things like 'Building on that...', 'Now, let's consider...', or 'This leads us to...' \u2013 to guide your audience smoothly from one idea to the next.\n\nYou have such a solid foundation to build upon, with your clear speaking rate and minimal filler words. These areas we've discussed are entirely coachable, and I know with your eagerness to improve, you'll make fantastic strides. Keep practicing, keep experimenting, and remember that every step is part of your journey to becoming an even more compelling and confident speaker. I'm here to support you every step of the way!"
     }
 }
