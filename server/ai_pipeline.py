@@ -92,7 +92,7 @@ def process_video(video_path, window_size = 5):
     # ===== PREDICTIONS =====
     speech_preds = speech_model.predict(audio_windows, sr)
     facial_preds = facial_model.predict(image_windows)
-    body_preds = body_model.predict(image_windows)
+    body_preds = body_model.predict(frame_files, video_fps)
     feedback_module(video_path)
 
     return {"speech": speech_preds, "facial": facial_preds, "body": body_preds}
