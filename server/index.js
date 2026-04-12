@@ -56,9 +56,9 @@ app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
   const pptxPath = path.resolve(req.file.path);
 
 
-  // Find the path with: conda activate sgcqg && where python
-const SGCQG_PYTHON = "C:\\Users\\Nouran2026\\miniconda3\\envs\\sgcqg\\python.exe"
-  // Then in your spawn/exec call, replace 'python' with SGCQG_PYTHON:
+//   // Find the path with: conda activate sgcqg && where python
+// const SGCQG_PYTHON = "C:\\Users\\Nouran2026\\miniconda3\\envs\\sgcqg\\python.exe"
+// Then in your spawn/exec call, replace 'python' with SGCQG_PYTHON:
 const pythonProcess = spawn("python", ['qg_pipeline.py', pptxPath])
 
 console.log("Python process started, PID:", pythonProcess.pid);
