@@ -1,92 +1,32 @@
 [
   {
-    "question": "What is the exact name of the little white kitten that lived in the barn?",
-    "reference_answer": "Cotton.",
+    "question": "What exactly is defined as a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed, which is Machine Learning?",
+    "reference_answer": "Machine Learning What is Machine Learning?",
     "student_answer": ""
   },
   {
-    "question": "How would you describe the method Cotton used to try to change her appearance to match her family's?",
-    "reference_answer": "Old farmer's orange paint",
+    "question": "How would you describe the primary objective of machine learning in terms of what it enables computer programs to do?",
+    "reference_answer": "It focuses on developing computer programs that can access data and use it to learn for themselves.",
     "student_answer": ""
   },
   {
-    "question": "In what situation would a kitten's desire to resemble its family members, such as wishing to look like the rest of her family, be a significant factor in its emotional well-being?",
-    "reference_answer": "Like the rest of her family.",
+    "question": "How would you use Key Concepts Supervised Learning Training with labeled data to make predictions in a real-world project, such as image classification or natural language processing?",
+    "reference_answer": "Key Concepts Supervised Learning Training with labeled data to make predictions.",
     "student_answer": ""
   },
   {
-    "question": "What does it reveal about Cotton's living situation that she shared a hay bed with her family members?",
-    "reference_answer": "Hay bed",
+    "question": "What does the concept of Unsupervised Learning reveal about the potential for machine learning systems to discover new insights from unstructured data?",
+    "reference_answer": "Unsupervised Learning Finding hidden patterns in unlabeled data.",
     "student_answer": ""
   },
   {
-    "question": "To what extent was it justified for Cotton to feel sad about not having the same appearance as her sisters, given that they all had beautiful white tiger stripes?",
-    "reference_answer": "Tiger stripes",
+    "question": "To what extent is Reinforcement Learning Learning through reward and penalty feedback a justified approach for training autonomous systems, given its potential for adaptability and real-time decision-making?",
+    "reference_answer": "Reinforcement Learning Learning through reward and penalty feedback.",
     "student_answer": ""
   },
   {
-    "question": "What would happen if Cotton's sisters started a comedy club for farm animals, and their first act was a sketch about a kitten who tried to paint herself orange, leading to a scene where the whole audience, including the sisters, ends up laughing?",
-    "reference_answer": "laughing",
-    "student_answer": ""
-  },
-  {
-    "question": "What was Cotton's desire regarding her appearance compared to her family?",
-    "reference_answer": "She wished she looked like them",
-    "student_answer": ""
-  },
-  {
-    "question": "How would you describe the unique physical characteristic of Cotton that made her stand out from her family?",
-    "reference_answer": "White",
-    "student_answer": ""
-  },
-  {
-    "question": "In what situation would being different, like Cotton's experience of being the only white kitten among her orange sisters, likely make someone feel sad?",
-    "reference_answer": "sad",
-    "student_answer": ""
-  },
-  {
-    "question": "What does Cotton's attempt to change her appearance reveal about her mommy's perception of her unique fur, and why might this be significant?",
-    "reference_answer": "They would never want her to be any other",
-    "student_answer": ""
-  },
-  {
-    "question": "To what extent was it justified to focus on the fish named Asta as the central character in this oceanic narrative, given the presence of other fish like Sharkie?",
-    "reference_answer": "Asta",
-    "student_answer": ""
-  },
-  {
-    "question": "What would happen if Asta and his friends designed an underwater messaging system where bottles floated over their heads, carrying notes and stories from other sea creatures?",
-    "reference_answer": "Asta and his friends",
-    "student_answer": ""
-  },
-  {
-    "question": "What object floated by that caught the attention of Asta and his friends?",
-    "reference_answer": "a bottle.",
-    "student_answer": ""
-  },
-  {
-    "question": "How would you describe the motivation behind Asta and his friends' actions when they encountered the bottle?",
-    "reference_answer": "They wanted to see what was inside",
-    "student_answer": ""
-  },
-  {
-    "question": "In what situation would you introduce Asta's friend to a new school of fish, and how would you use their name to facilitate a friendly interaction?",
-    "reference_answer": "Sharkie",
-    "student_answer": ""
-  },
-  {
-    "question": "What does the bottle's behavior reveal about its interaction with Asta and his friends, given that it floated above them?",
-    "reference_answer": "floated above them",
-    "student_answer": ""
-  },
-  {
-    "question": "To what extent was it effective for the note to be written on white paper, given the underwater context in which it was discovered?",
-    "reference_answer": "on white paper.",
-    "student_answer": ""
-  },
-  {
-    "question": "What would happen if Asta designed an underwater messaging system that allowed fish to read and write notes, considering he could not read the note found in the bottle?",
-    "reference_answer": "could not read the note",
+    "question": "What would happen if you designed an adaptive AI Presentation System — Sample Test Slide that could learn from user interactions and improve its presentation style using machine learning algorithms?",
+    "reference_answer": "AI Presentation System — Sample Test Slide",
     "student_answer": ""
   }
 ]

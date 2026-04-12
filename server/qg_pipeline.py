@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
     # RUN BLOOM PIPELINE
     print("Running Bloom pipeline...")
-    final_output = run_bloom_pipeline(QG_INPUT_PATH, OUTPUT_PATH)
+    final_output = run_bloom_pipeline(output_path, OUTPUT_PATH)
 
     # RETURN RESULT (Node.js friendly)
     print(json.dumps({

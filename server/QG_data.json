@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is Machine Learning?",
+    "answer": "Machine Learning What is Machine Learning?",
+    "context": "Machine Learning\nWhat is Machine Learning?\nMachine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing computer programs that can access data and use it to learn for themselves.\nKey Concepts\nSupervised Learning\nTraining with labeled data to make predictions.\nUnsupervised Learning\nFinding hidden patterns in unlabeled data.\nReinforcement Learning\nLearning through reward and penalty feedback.\nAI Presentation System — Sample Test Slide"
+  },
+  {
+    "question": "What is the focus of a computer program?",
+    "answer": "It focuses on developing computer programs that can access data and use it to learn for themselves.",
+    "context": "Machine Learning\nWhat is Machine Learning?\nMachine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing computer programs that can access data and use it to learn for themselves.\nKey Concepts\nSupervised Learning\nTraining with labeled data to make predictions.\nUnsupervised Learning\nFinding hidden patterns in unlabeled data.\nReinforcement Learning\nLearning through reward and penalty feedback.\nAI Presentation System — Sample Test Slide"
+  },
+  {
+    "question": "What does Key Concepts Supervised Learning Training do?",
+    "answer": "Key Concepts Supervised Learning Training with labeled data to make predictions.",
+    "context": "Machine Learning\nWhat is Machine Learning?\nMachine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing computer programs that can access data and use it to learn for themselves.\nKey Concepts\nSupervised Learning\nTraining with labeled data to make predictions.\nUnsupervised Learning\nFinding hidden patterns in unlabeled data.\nReinforcement Learning\nLearning through reward and penalty feedback.\nAI Presentation System — Sample Test Slide"
+  },
+  {
+    "question": "What is Unsupervised Learning?",
+    "answer": "Unsupervised Learning Finding hidden patterns in unlabeled data.",
+    "context": "Machine Learning\nWhat is Machine Learning?\nMachine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing computer programs that can access data and use it to learn for themselves.\nKey Concepts\nSupervised Learning\nTraining with labeled data to make predictions.\nUnsupervised Learning\nFinding hidden patterns in unlabeled data.\nReinforcement Learning\nLearning through reward and penalty feedback.\nAI Presentation System — Sample Test Slide"
+  },
+  {
+    "question": "What is reinforcement learning?",
+    "answer": "Reinforcement Learning Learning through reward and penalty feedback.",
+    "context": "Machine Learning\nWhat is Machine Learning?\nMachine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing computer programs that can access data and use it to learn for themselves.\nKey Concepts\nSupervised Learning\nTraining with labeled data to make predictions.\nUnsupervised Learning\nFinding hidden patterns in unlabeled data.\nReinforcement Learning\nLearning through reward and penalty feedback.\nAI Presentation System — Sample Test Slide"
+  },
+  {
+    "question": "What is the name of the AI Presentation System — Sample Test Slide?",
+    "answer": "AI Presentation System — Sample Test Slide",
+    "context": "Machine Learning\nWhat is Machine Learning?\nMachine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. It focuses on developing computer programs that can access data and use it to learn for themselves.\nKey Concepts\nSupervised Learning\nTraining with labeled data to make predictions.\nUnsupervised Learning\nFinding hidden patterns in unlabeled data.\nReinforcement Learning\nLearning through reward and penalty feedback.\nAI Presentation System — Sample Test Slide"
+  }
+]

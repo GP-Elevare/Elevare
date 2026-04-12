@@ -791,7 +791,7 @@ def load_input(filepath):
         for item in data:
             items.append({
                 'question': item.get('question', ''),
-                'answer':   item.get('reference_answer', ''),
+                'answer':   item.get('answer') or item.get('reference_answer', ''),
                 'context':  item.get('context', ''),
             })
 
@@ -803,9 +803,9 @@ def load_input(filepath):
             qa_pairs = story.get('qa_pairs', [])
             for pair in qa_pairs:
                 items.append({
-                    'question': pair.get('question', ''),
-                    'answer':   pair.get('answer', ''),
-                    'context':  context,
+                    'question': item.get('question', ''),
+                    'answer':   item.get('answer') or item.get('reference_answer', ''),
+                    'context':  item.get('context', ''),
                 })
     else:
         raise ValueError(f'Unknown input format: {type(data)}')
@@ -815,7 +815,12 @@ def load_input(filepath):
 
 # ── MAIN PIPELINE ─────────────────────────────────────────────────────────────
 def run_bloom_pipeline(input_path, output_path='QA_pairs.json'):
+  
+    print(f"CHECK -> Q:")
+
     items = load_input(input_path)
+
+  
 
     output = []
     for idx, item in enumerate(items):
@@ -862,23 +867,23 @@ def run_bloom_pipeline(input_path, output_path='QA_pairs.json'):
     print(f'\nDone! {len(output)} QA pairs saved to {output_path}')
     return output
 
-# ── ENTRY POINT Testing ───────────────────────────────────────────────────────────────
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print('Usage: python bloom_pipeline.py <input_json> [output_json]')
-        print('  input_json  : QA_pairs.json from QG_pipeline OR CoQA output dict')
-        print('  output_json : output file (default: QA_pairs_bloom.json)')
-        sys.exit(1)
+# # ── ENTRY POINT Testing ───────────────────────────────────────────────────────────────
+# if __name__ == '__main__':
+#     if len(sys.argv) < 2:
+#         print('Usage: python bloom_pipeline.py <input_json> [output_json]')
+#         print('  input_json  : QA_pairs.json from QG_pipeline OR CoQA output dict')
+#         print('  output_json : output file (default: QA_pairs_bloom.json)')
+#         sys.exit(1)
 
-    input_path  = sys.argv[1]
-    output_path = sys.argv[2] if len(sys.argv) > 2 else 'QA_pairs_bloom.json'
+#     input_path  = sys.argv[1]
+#     output_path = sys.argv[2] if len(sys.argv) > 2 else 'QA_pairs_bloom.json'
 
-    result = run_bloom_pipeline(input_path, output_path)
+#     result = run_bloom_pipeline(input_path, output_path)
 
-    # Print JSON summary for Node.js to parse
-    print(json.dumps({
-        'message':     'Bloom rephrasing complete',
-        'output_path': output_path,
-        'total':       len(result),
-        'result':      result,
-    }))
+#     # Print JSON summary for Node.js to parse
+#     print(json.dumps({
+#         'message':     'Bloom rephrasing complete',
+#         'output_path': output_path,
+#         'total':       len(result),
+#         'result':      result,
+#     }))
