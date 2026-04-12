@@ -55,19 +55,40 @@ app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
   // Full file path to uploaded PPTX
   const pptxPath = path.resolve(req.file.path);
 
+
+//   // Find the path with: conda activate sgcqg && where python
+// const SGCQG_PYTHON = "C:\\Users\\Nouran2026\\miniconda3\\envs\\sgcqg\\python.exe"
+// Then in your spawn/exec call, replace 'python' with SGCQG_PYTHON:
+const pythonProcess = spawn("python", ['qg_pipeline.py', pptxPath])
+
+console.log("Python process started, PID:", pythonProcess.pid);
+pythonProcess.on("error", (err) => {
+  console.error("Failed to start Python process:", err);
+});
+
   // Call python script
-  const pythonProcess = spawn("python", ["q_pipeline.py", pptxPath]);
+  // const pythonProcess = spawn("python", ["QG_pipeline.py", pptxPath]);
 
   let outputData = "";
   let errorData = "";
 
-  pythonProcess.stdout.on("data", (data) => {
-    outputData += data.toString();
-  });
+  // pythonProcess.stdout.on("data", (data) => {
+  //   outputData += data.toString();
+  // });
 
-  pythonProcess.stderr.on("data", (data) => {
-    errorData += data.toString();
-  });
+  // // pythonProcess.stderr.on("data", (data) => {
+  // //   errorData += data.toString();
+  // // });
+
+  pythonProcess.stdout.on("data", (data) => {
+  console.log("Python stdout:", data.toString());
+  outputData += data.toString();
+});
+
+pythonProcess.stderr.on("data", (data) => {
+  console.log("Python stderr:", data.toString());  // log always, not just on error
+  errorData += data.toString();
+});
 
   pythonProcess.on("close", (code) => {
     if (code !== 0) {
