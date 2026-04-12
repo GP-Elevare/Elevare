@@ -1,0 +1,92 @@
+[
+  {
+    "question": "What is the exact name of the little white kitten that lived in the barn?",
+    "reference_answer": "Cotton.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the method Cotton used to try to change her appearance to match her family's?",
+    "reference_answer": "Old farmer's orange paint",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would a kitten's desire to resemble its family members, such as wishing to look like the rest of her family, be a relevant factor in understanding its behavior?",
+    "reference_answer": "Like the rest of her family.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does it reveal about Cotton's living situation that she shared her hay bed with her family members?",
+    "reference_answer": "Hay bed",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent was it justified for Cotton to feel sad about not having the same appearance as her sisters, given that they all had beautiful white tiger stripes?",
+    "reference_answer": "Tiger stripes",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if Cotton's sisters were inspired to create a comedy show based on their reaction to her painted appearance, and how might their sketches and jokes change if they incorporated the theme of self-acceptance and individuality?",
+    "reference_answer": "laughing",
+    "student_answer": ""
+  },
+  {
+    "question": "What was Cotton's desire regarding her appearance?",
+    "reference_answer": "She wished she looked like them",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the color of Cotton that made her feel different from her family?",
+    "reference_answer": "White",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would being different, like Cotton's experience of being the only white kitten among her orange siblings, likely make someone feel sad?",
+    "reference_answer": "sad",
+    "student_answer": ""
+  },
+  {
+    "question": "What does Cotton's attempt to change her appearance reveal about her mommy's perception of her unique fur, and why might they respond with laughter?",
+    "reference_answer": "They would never want her to be any other",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent was it justified to focus on the character of Asta as the central figure in the story, given the presence of other fish like Sharkie?",
+    "reference_answer": "Asta",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if Asta and his friends designed an underwater messaging system where bottles floated over their heads, carrying notes and stories from other sea creatures?",
+    "reference_answer": "Asta and his friends",
+    "student_answer": ""
+  },
+  {
+    "question": "What object floated by that caught the attention of Asta and his friends?",
+    "reference_answer": "a bottle.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the motivation behind Asta and his friends' actions when they encountered the bottle?",
+    "reference_answer": "They wanted to see what was inside",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you introduce Asta's friend to a new school of fish, and how would you use their name to facilitate a friendly interaction?",
+    "reference_answer": "Sharkie",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the bottle's behavior reveal about its interaction with Asta and his friends, considering it floated above them?",
+    "reference_answer": "floated above them",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent was it effective for the note to be written on white paper, given the underwater context in which it was discovered?",
+    "reference_answer": "on white paper.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if Asta designed an underwater message system to help him decipher notes like the one he found, considering he could not read the note?",
+    "reference_answer": "could not read the note",
+    "student_answer": ""
+  }
+]
