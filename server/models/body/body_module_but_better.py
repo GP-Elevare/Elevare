@@ -13,36 +13,157 @@ import torch.nn as nn
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, f1_score
 from pathlib import Path
+from typing import List, Optional
+import numpy as np
+import torch
+import json
+import subprocess
+import tempfile
+import shutil
+import math
 
 
 output_json_dir = "outputs/openpose_keypoints"
 
+# class openposing:
+#     def extract_keypoints(window: list[str]) -> np.ndarray:
+#     """
+#     Extract OpenPose BODY_25 keypoints for each frame in a window.
 
-class openposing:
-    def extract_keypoints(window: list[str]) -> np.ndarray:
-    """
-    Extract OpenPose BODY_25 keypoints for each frame in a window.
+#     Args:
+#         window : list of frame file paths, len == window_size (e.g. 97)
 
-    Args:
-        window : list of frame file paths, len == window_size (e.g. 97)
+#     Returns:
+#         np.ndarray of shape (T, 25, 3)
+#             T  = number of frames (== len(window))
+#             25 = BODY_25 joints
+#             3  = [x (pixel), y (pixel), confidence (0–1)]
 
-    Returns:
-        np.ndarray of shape (T, 25, 3)
-            T  = number of frames (== len(window))
-            25 = BODY_25 joints
-            3  = [x (pixel), y (pixel), confidence (0–1)]
+#     Notes:
+#         - If no person is detected in a frame, that frame's slice is zeros.
+#         - If multiple people are detected, only the highest-confidence person is kept.
+#         - Confidence == 0 means the joint was not detected; these will be
+#           handled downstream by interpolate_missing().
+#     """
+#     raise NotImplementedError
 
-    Notes:
-        - If no person is detected in a frame, that frame's slice is zeros.
-        - If multiple people are detected, only the highest-confidence person is kept.
-        - Confidence == 0 means the joint was not detected; these will be
-          handled downstream by interpolate_missing().
-    """
-    raise NotImplementedError
 
-import numpy as np
-import torch
-
+class TemporalConvBlock(nn.Module):
+    def __init__(self, in_ch, out_ch, kernel=3, dropout=0.5):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Conv1d(in_ch, out_ch, kernel, padding=kernel//2),
+            nn.BatchNorm1d(out_ch),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Conv1d(out_ch, out_ch, kernel, padding=kernel//2),
+            nn.BatchNorm1d(out_ch),
+            nn.ReLU(),
+        )
+        self.skip = nn.Conv1d(in_ch, out_ch, 1) if in_ch != out_ch else nn.Identity()
+ 
+    def forward(self, x):
+        return self.net(x) + self.skip(x)
+ 
+ 
+class MultiScaleTemporalCNN(nn.Module):
+    def __init__(self, num_classes=5, num_joints=17, in_ch=2, hidden=256, dropout=0.5):
+        super().__init__()
+ 
+        joint_dim    = num_joints * in_ch
+        bone_dim     = num_joints * 2
+        velocity_dim = num_joints * 2
+ 
+        def make_embed(in_dim, hidden, dropout):
+            return nn.Sequential(
+                nn.Linear(in_dim, hidden),
+                nn.BatchNorm1d(hidden),
+                nn.ReLU(),
+                nn.Dropout(dropout),
+            )
+ 
+        self.joint_embed    = make_embed(joint_dim,    hidden, dropout)
+        self.bone_embed     = make_embed(bone_dim,     hidden, dropout)
+        self.velocity_embed = make_embed(velocity_dim, hidden, dropout)
+ 
+        def make_branches(h, drop):
+            return nn.ModuleDict({
+                'full': nn.Sequential(
+                    TemporalConvBlock(h, h, kernel=3,  dropout=drop),
+                    # TemporalConvBlock(h, h, kernel=3,  dropout=drop),
+                ),
+                'mid': nn.Sequential(
+                    TemporalConvBlock(h, h, kernel=7,  dropout=drop),
+                ),
+                'long': nn.Sequential(
+                    TemporalConvBlock(h, h, kernel=15, dropout=drop),
+                ),
+            })
+ 
+        self.joint_branches    = make_branches(hidden, dropout)
+        self.bone_branches     = make_branches(hidden, dropout)
+        self.velocity_branches = make_branches(hidden, dropout)
+ 
+        fused_dim = hidden * 3 * 3
+        self.attn_pool = nn.Sequential(
+            nn.Linear(fused_dim, 1),
+            nn.Softmax(dim=1)
+        )
+        self.head = nn.Sequential(
+            nn.Linear(fused_dim, hidden),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden, num_classes)
+        )
+ 
+    def _compute_bones(self, x):
+        parents = [0, 0, 1, 2, 0, 4, 5, 0, 7, 8, 9, 8, 11, 12, 8, 14, 15]
+        bones = x[:, :, :, :2].clone()
+        for i, p in enumerate(parents):
+            if i != p:
+                bones[:, :, i, :] = x[:, :, i, :2] - x[:, :, p, :2]
+            else:
+                bones[:, :, i, :] = 0.0
+        return bones
+ 
+    def _compute_velocity(self, x):
+        xy  = x[:, :, :, :2]
+        vel = torch.zeros_like(xy)
+        vel[:, 1:, :, :] = xy[:, 1:, :, :] - xy[:, :-1, :, :]
+        return vel
+ 
+    def _forward_stream(self, embed, branches, x_flat, B, T):
+        x = embed(x_flat)
+        x = x.reshape(B, T, -1).permute(0, 2, 1)
+        f1 = branches['full'](x)
+        f2 = branches['mid'](x)
+        f3 = branches['long'](x)
+        return torch.cat([f1, f2, f3], dim=1)
+ 
+    def forward(self, x):
+        x = x[..., :2]
+        B, T, J, C = x.shape
+ 
+        feat_joint = self._forward_stream(
+            self.joint_embed, self.joint_branches,
+            x.reshape(B*T, J*C), B, T
+        )
+        bones = self._compute_bones(x)
+        feat_bone = self._forward_stream(
+            self.bone_embed, self.bone_branches,
+            bones.reshape(B*T, J*2), B, T
+        )
+        vel = self._compute_velocity(x)
+        feat_vel = self._forward_stream(
+            self.velocity_embed, self.velocity_branches,
+            vel.reshape(B*T, J*2), B, T
+        )
+ 
+        fused  = torch.cat([feat_joint, feat_bone, feat_vel], dim=1)
+        fused  = fused.permute(0, 2, 1)
+        attn   = self.attn_pool(fused)
+        pooled = (fused * attn).sum(dim=1)
+        return self.head(pooled)
 
 class Preprocessing:
     """
@@ -168,7 +289,7 @@ class Preprocessing:
         return torch.FloatTensor(kps).unsqueeze(0)  # (1, target_len, 17, 3)
 
 class FrameProcessor:
-    def __init__(self, frame_files: list[str], source_fps: float, target_fps: float = 15):
+    def __init__(self, frame_files, source_fps, target_fps = 15):
         """
         Args:
             frame_files : sorted list of frame file paths (from extraction step)
@@ -179,7 +300,7 @@ class FrameProcessor:
         self.source_fps  = source_fps
         self.target_fps  = target_fps
 
-    def to_target_fps(self) -> list[str]:
+    def to_target_fps(self):
         if self.source_fps <= self.target_fps:
             return self.frame_files
 
@@ -190,7 +311,7 @@ class FrameProcessor:
 
         return [self.frame_files[i] for i in indices]
 
-    def split_into_windows(self, frames: list[str], window_size: int = 97) -> list[list[str]]:
+    def split_into_windows(self, frames, window_size = 97):
         windows = []
         for i in range(0, len(frames), window_size):
             chunk = frames[i:i + window_size]
@@ -199,7 +320,7 @@ class FrameProcessor:
             windows.append(chunk)
         return windows
 
-    def pad_window(self, frames: list[str], window_size: int) -> list[str]:
+    def pad_window(self, frames, window_size):
         if not frames:
             raise ValueError("Cannot pad an empty frame list.")
         pad_count = window_size - len(frames)
@@ -215,6 +336,104 @@ EMOTION_CLASSES = {
 
 NUM_CLASSES = len(EMOTION_CLASSES)
 
+OPENPOSE_DIR = "D:/openpose-1.7.0-binaries-win64-cpu-python3.7-flir-3d/openpose"
+
+
+import os
+import glob
+import json
+import subprocess
+import tempfile
+import shutil
+import numpy as np
+
+
+OPENPOSE_DIR = "D:\openpose-1.7.0-binaries-win64-cpu-python3.7-flir-3d\openpose"   
+
+class OpenPose:
+    def __init__(self, openpose_dir: str = OPENPOSE_DIR, output_dir: str = "outputs/openpose_keypoints"):
+        self.openpose_dir = openpose_dir
+        self.output_dir   = output_dir
+        os.makedirs(self.output_dir, exist_ok=True)
+
+        # Windows CPU build ships the demo exe directly in bin/
+        self.binary = os.path.join(openpose_dir, "bin", "OpenPoseDemo.exe")
+
+    def _run_openpose(self, input_dir, json_output_dir):
+        cmd = [
+            self.binary,
+            "--image_dir",         input_dir,
+            "--write_json",        json_output_dir,
+            "--display",           "0",
+            "--render_pose",       "0",
+            "--model_pose",        "BODY_25",
+            "--number_people_max", "1",
+        ]
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            cwd=self.openpose_dir   # ← must run from OpenPose root
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"OpenPose failed:\n{result.stderr}")
+
+    def _load_json(self, json_path: str) -> np.ndarray:
+        """
+        Parse one OpenPose JSON file.
+        Returns (25, 3) array — zeros if no person detected.
+        """
+        with open(json_path) as f:
+            data = json.load(f)
+
+        people = data.get("people", [])
+        if not people:
+            return np.zeros((25, 3), dtype=np.float32)
+
+        flat = np.array(people[0]["pose_keypoints_2d"], dtype=np.float32)
+        return flat.reshape(25, 3)
+
+    def extract_keypoints(self, window) -> np.ndarray:
+        # 1. Copy window frames into a temp input folder
+        tmp_input = tempfile.mkdtemp(prefix="op_input_")
+        tmp_json  = tempfile.mkdtemp(prefix="op_json_")
+
+        try:
+            for i, frame_path in enumerate(window):
+                ext = os.path.splitext(frame_path)[1]
+                dst = os.path.join(tmp_input, f"frame_{i:05d}{ext}")
+                shutil.copy(frame_path, dst)
+
+            # 2. Run OpenPose on the temp input folder
+            self._run_openpose(tmp_input, tmp_json)
+
+            # 3. Parse JSONs in order
+            json_files = sorted(glob.glob(os.path.join(tmp_json, "*.json")))
+            keypoints  = []
+
+            for i in range(len(window)):
+                # OpenPose names output as <input_name>_keypoints.json
+                expected = os.path.join(tmp_json, f"frame_{i:05d}_keypoints.json")
+                if os.path.exists(expected):
+                    kp = self._load_json(expected)
+                elif json_files:
+                    # fallback: take by position if naming differs
+                    kp = self._load_json(json_files[i]) if i < len(json_files) else np.zeros((25, 3), dtype=np.float32)
+                else:
+                    kp = np.zeros((25, 3), dtype=np.float32)
+                keypoints.append(kp)
+
+            # 4. Persist JSONs to the permanent output dir (one subdir per call)
+            window_id  = os.path.basename(tmp_input)
+            output_sub = os.path.join(self.output_dir, window_id)
+            shutil.copytree(tmp_json, output_sub)
+
+        finally:
+            shutil.rmtree(tmp_input, ignore_errors=True)
+            shutil.rmtree(tmp_json,  ignore_errors=True)
+
+        return np.stack(keypoints, axis=0)   # (T, 25, 3)
+
 class BodyEmotionRecognizer:
 
     def __init__(self, device: str = None):
@@ -229,7 +448,9 @@ class BodyEmotionRecognizer:
             hidden=128,
             dropout=0.5,
         )
-        self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+        checkpoint = torch.load(model_path, map_location=self.device, weights_only=False)
+        state_dict = checkpoint['model_state'] if 'model_state' in checkpoint else checkpoint
+        self.model.load_state_dict(state_dict)
         self.model.to(self.device)
         self.model.eval()
 
@@ -242,7 +463,7 @@ class BodyEmotionRecognizer:
 
         return EMOTION_CLASSES[pred]
 
-    def predict(self, frame_files: list[str], source_fps: float) -> list[str]:
+    def predict(self, frame_files, source_fps):
         """
         Full inference pipeline from raw frame files to emotion labels.
 
