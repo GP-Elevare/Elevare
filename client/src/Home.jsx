@@ -77,7 +77,7 @@ function Home() {
       <div className="section section-no">
         <div className="content">
           <div id="big">What are you waiting for?</div>
-          <div>Star recording yourself now!</div>
+          <div>Start recording yourself now!</div>
           
           <button 
             id="learn" 

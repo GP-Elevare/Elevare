@@ -6,8 +6,6 @@ from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
 from models.feedback.main_converted import run_full_pipeline
 from models.body.body_module import BodyEmotionRecognizer
-from models.qg.T5 import generate_questions
-from models.qg.Text_Extractor import extract_text_from_pptx
 import os, cv2, glob, librosa, io
 from pydub import AudioSegment
 from io import BytesIO

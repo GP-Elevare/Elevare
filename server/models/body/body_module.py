@@ -2,9 +2,9 @@ import os
 import torch
 
 
-from models import MultiScaleTemporalCNN, TemporalConvBlock
-from openpose import OpenPose, EMOTION_CLASSES, NUM_CLASSES, OPENPOSE_DIR
-from preprocessing import FrameProcessor, Preprocessing
+from models.body.models import MultiScaleTemporalCNN, TemporalConvBlock
+from models.body.openpose import OpenPose, EMOTION_CLASSES, NUM_CLASSES, OPENPOSE_DIR
+from models.body.preprocessing import FrameProcessor, Preprocessing
 
 
 class BodyEmotionRecognizer:
@@ -69,4 +69,3 @@ class BodyEmotionRecognizer:
             predictions.append(label)
 
         return predictions
-

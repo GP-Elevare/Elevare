@@ -35,3 +35,56 @@
   font-size: 1.1rem;
   white-space: pre-wrap; /* Preserves AI formatting and newlines */
 }
+
+/* Q&A Results Styling */
+.qa-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-left: 5px solid #222; /* Default border */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.qa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.qa-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.qa-text {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+}
+
+.label-incorrect {
+  background-color: #ff4d4d; /* Red */
+}
+
+.label-partial {
+  background-color: #ffaa00; /* Orange */
+}
+
+.label-correct {
+  background-color: #4caf50; /* Green */
+}

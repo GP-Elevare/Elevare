@@ -1,0 +1,37 @@
+/* Navigation Link Reset */
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main Container */
+.feedback-container {
+  padding: 60px 20px;
+  min-height: 70vh;
+  text-align: center;
+  background-color: #eeeeee;
+}
+
+/* Status Messages */
+.error-message {
+  color: #ff4d4d;
+  margintop: 20px;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  margin-top: 40px;
+}
+
+/* Feedback Content Layout */
+.feedback-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feedback-text-box {
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  white-space: pre-wrap; /* Preserves AI formatting and newlines */
+}

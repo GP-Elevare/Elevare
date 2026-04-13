@@ -10,9 +10,8 @@ function Questions() {
   const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // New states for tracking answers
+  // State for the text inside the box right now
   const [currentAnswer, setCurrentAnswer] = useState("");
-  const [allAnswers, setAllAnswers] = useState({});
 
   const navigate = useNavigate();
 
@@ -22,10 +21,15 @@ function Questions() {
         const response = await fetch('http://localhost:5000/questions');
         if (!response.ok) throw new Error('Unable to load questions');
         
-        const data = await response.json();
+        let data = await response.json();
         
-        // Adjusting based on your index.js JSON structure
-        const questionArray = data.questions?.questions || data.questions || [];
+        // Handle the data whether it's wrapped in an object or just a raw array
+        let questionArray = data.questions || data.result || data; 
+        if (!Array.isArray(questionArray)) questionArray = [];
+
+        // LIMIT TO 5 ENTRIES
+        questionArray = questionArray.slice(0, 5);
+        
         setQuestions(questionArray);
       } catch (err) {
         console.error(err);
@@ -39,29 +43,26 @@ function Questions() {
   }, []);
 
   const handleNext = async () => {
-    // 1. Save the current answer to our state object
-    const updatedAnswers = {
-      ...allAnswers,
-      [questions[currentIndex]]: currentAnswer
-    };
-    setAllAnswers(updatedAnswers);
+    // 1. Copy the questions array and update the student_answer for the current question
+    const updatedQuestions = [...questions];
+    updatedQuestions[currentIndex].student_answer = currentAnswer;
+    setQuestions(updatedQuestions);
 
     // 2. Clear the textarea for the next question
     setCurrentAnswer("");
 
-    // 3. Check if we are on the very last question
+    // 3. If it is the last question, send the updated array to the server
     if (currentIndex === questions.length - 1) {
       try {
-        // Send all collected answers to the backend
         const response = await fetch('http://localhost:5000/save-answers', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ answers: updatedAnswers }),
+          body: JSON.stringify({ updatedData: updatedQuestions }), // Sending the array of objects
         });
 
         if (response.ok) {
-          alert("All answers saved successfully!");
-          navigate('/'); // Send the user back to the home page
+          alert("All answers saved and graded successfully!");
+          navigate('/questions-feedback');
         } else {
           alert("Failed to save answers.");
         }
@@ -70,14 +71,13 @@ function Questions() {
         alert("Error connecting to server.");
       }
     } else {
-      // If not the last question, just move to the next one
+      // Move to the next question
       setCurrentIndex(currentIndex + 1);
     }
   };
 
   return (
     <div>
-      {/* Navigation Bar */}
       <div className="top-bar">
         <div id="title">Elevare</div>
         <div className="side-top-bar">
@@ -97,29 +97,27 @@ function Questions() {
           <p className="loading-text">Loading your questions...</p>
         ) : questions.length > 0 ? (
           <>
-            {/* Question Display */}
             <div className="question">
               <div id="question-label">
                 Question {currentIndex + 1} of {questions.length}:
               </div>
+              {/* Note the .question here, because it's now an object */}
               <div className="question-text">
-                {questions[currentIndex]}
+                {questions[currentIndex].question}
               </div>
             </div>
 
-            {/* Answer Input */}
             <div className="answer">
               <div id="answer-label">Your Answer:</div>
               <textarea 
                 id="answer-input" 
                 placeholder="Type your answer here..."
                 rows="4"
-                value={currentAnswer} // Tie the textarea to React state
-                onChange={(e) => setCurrentAnswer(e.target.value)} // Update state on type
+                value={currentAnswer} 
+                onChange={(e) => setCurrentAnswer(e.target.value)} 
               ></textarea>
               
               <div className="button-group">
-                {/* Note: Removed the "disabled" attribute so the final click triggers the POST request */}
                 <button id="learn" onClick={handleNext}>
                   {currentIndex === questions.length - 1 ? "Submit All" : "Next Question"}
                 </button>
@@ -131,7 +129,6 @@ function Questions() {
         )}
       </div>
 
-      {/* Footer */}
       <div className="bottom-bar">
         <div id="title">Elevare</div>
       </div>

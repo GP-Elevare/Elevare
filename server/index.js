@@ -4,6 +4,7 @@ const ffmpeg = require("fluent-ffmpeg");
 const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
+const { spawn } = require("child_process");
 
 const app = express();
 const PORT = 5000;
@@ -44,9 +45,7 @@ app.post("/process-video", upload.single("video"), (req, res) => {
     .save(outputPath);
 });
 
-const { spawn } = require("child_process");
-
-// --- POWERPOINT ROUTE (Upload + Call Python) ---
+// --- POWERPOINT ROUTE (Upload + Call Python QG Pipeline) ---
 app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
   if (!req.file) return res.status(400).send("No PPTX file.");
 
@@ -55,40 +54,27 @@ app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
   // Full file path to uploaded PPTX
   const pptxPath = path.resolve(req.file.path);
 
-
-//   // Find the path with: conda activate sgcqg && where python
-// const SGCQG_PYTHON = "C:\\Users\\Nouran2026\\miniconda3\\envs\\sgcqg\\python.exe"
-// Then in your spawn/exec call, replace 'python' with SGCQG_PYTHON:
-const pythonProcess = spawn("python", ['qg_pipeline.py', pptxPath])
-
-console.log("Python process started, PID:", pythonProcess.pid);
-pythonProcess.on("error", (err) => {
-  console.error("Failed to start Python process:", err);
-});
-
   // Call python script
-  // const pythonProcess = spawn("python", ["QG_pipeline.py", pptxPath]);
+  const pythonProcess = spawn("python", ["qg_pipeline.py", pptxPath]);
+
+  console.log("Python process started, PID:", pythonProcess.pid);
+
+  pythonProcess.on("error", (err) => {
+    console.error("Failed to start Python process:", err);
+  });
 
   let outputData = "";
   let errorData = "";
 
-  // pythonProcess.stdout.on("data", (data) => {
-  //   outputData += data.toString();
-  // });
-
-  // // pythonProcess.stderr.on("data", (data) => {
-  // //   errorData += data.toString();
-  // // });
-
   pythonProcess.stdout.on("data", (data) => {
-  console.log("Python stdout:", data.toString());
-  outputData += data.toString();
-});
+    console.log("Python stdout:", data.toString());
+    outputData += data.toString();
+  });
 
-pythonProcess.stderr.on("data", (data) => {
-  console.log("Python stderr:", data.toString());  // log always, not just on error
-  errorData += data.toString();
-});
+  pythonProcess.stderr.on("data", (data) => {
+    console.log("Python stderr:", data.toString()); // log always, not just on error
+    errorData += data.toString();
+  });
 
   pythonProcess.on("close", (code) => {
     if (code !== 0) {
@@ -105,7 +91,6 @@ pythonProcess.stderr.on("data", (data) => {
     // If python returns JSON, parse it
     try {
       const parsedOutput = JSON.parse(outputData);
-
       console.log("JSON parsed successfully!");
 
       return res.json({
@@ -124,10 +109,6 @@ pythonProcess.stderr.on("data", (data) => {
     }
   });
 });
-
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`),
-);
 
 // --- AI VIDEO ROUTE WITH FPS (FRAMES PER WINDOW) SUPPORT ---
 app.post("/process-video-ai", upload.single("video"), async (req, res) => {
@@ -182,10 +163,93 @@ app.get("/feedback", (req, res) => {
 });
 
 app.get("/questions", (req, res) => {
-  const filePath = path.join(__dirname, "questions.json");
+  // Update this to point to the Bloom JSON file instead of the old one
+  const filePath = path.join(__dirname, "QA_pairs_bloom.json");
   if (fs.existsSync(filePath)) {
     res.sendFile(filePath);
   } else {
     res.status(404).json({ error: "questions file not found" });
   }
 });
+
+app.get("/qa-results", (req, res) => {
+  const filePath = path.join(__dirname, "qa_results.json");
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    res.status(404).json({ error: "QA results file not found" });
+  }
+});
+
+// --- SAVE ANSWERS & GRADE ROUTE ---
+app.post("/save-answers", (req, res) => {
+  const { updatedData } = req.body;
+
+  if (!updatedData) {
+    return res.status(400).json({ error: "No updated data provided" });
+  }
+
+  // 1. Define our file paths
+  const inputFilePath = path.join(__dirname, "QA_pairs_bloom.json");
+  const outputResultsPath = path.join(__dirname, "qa_results.json");
+  const pythonScriptPath = path.join(__dirname, "QA_pipeline.py");
+
+  // 2. Overwrite the Bloom file with the new student answers
+  fs.writeFile(inputFilePath, JSON.stringify(updatedData, null, 2), (err) => {
+    if (err) {
+      console.error("Failed to save answers:", err);
+      return res.status(500).json({ error: "Failed to save answers" });
+    }
+
+    console.log(
+      "Answers saved to QA_pairs_bloom.json. Starting grading pipeline...",
+    );
+
+    // 3. Start the Python QA pipeline using the active environment's 'python'
+    const qaProcess = spawn("python", [
+      pythonScriptPath,
+      inputFilePath,
+      outputResultsPath,
+    ]);
+
+    // Optional: Catch spawn errors so the server doesn't crash completely
+    qaProcess.on("error", (err) => {
+      console.error("Failed to start the Python process:", err.message);
+      return res
+        .status(500)
+        .json({ error: "Failed to start grading pipeline." });
+    });
+
+    let pythonError = "";
+
+    qaProcess.stdout.on("data", (data) => {
+      console.log(`QA Pipeline: ${data.toString().trim()}`);
+    });
+
+    qaProcess.stderr.on("data", (data) => {
+      console.error(`QA Pipeline Error: ${data.toString().trim()}`);
+      pythonError += data.toString();
+    });
+
+    // 4. Wait for Python to finish grading
+    qaProcess.on("close", (code) => {
+      if (code !== 0) {
+        console.error("Grading failed:", pythonError);
+        return res.status(500).json({
+          error: "Answers were saved, but the grading pipeline failed.",
+          details: pythonError,
+        });
+      }
+
+      console.log("Grading complete! Results saved to qa_results.json");
+
+      // 5. Finally, tell React that everything worked!
+      res.json({ message: "Answers saved and graded successfully!" });
+    });
+  });
+});
+
+// Start the server (MUST be at the bottom)
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`),
+);

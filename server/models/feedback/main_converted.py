@@ -1139,7 +1139,7 @@ def run_full_pipeline(
     whisper_device: str = "cpu",
     whisper_compute_type: str = "int8",
     gemini_model_name: str = "gemini-2.5-flash",
-    gemini_api_key: str = "AIzaSyD08Ido5tImuVlBldgdg6bybr2BVC1Sxhk",
+    gemini_api_key: str = "AIzaSyBNj125zrbbtzfFjrNs5ZkQAOCb6jyUlDE",
 ) -> dict:
     """Run Stage 1 -> Stage 2 -> Stage 3 in order and return outputs."""
     raw_data = run_stage1_feature_extraction(

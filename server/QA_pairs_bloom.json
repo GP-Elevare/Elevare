@@ -1,32 +1,27 @@
 [
   {
-    "question": "What exactly is defined as a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed, which is Machine Learning?",
+    "question": "What exactly is defined as a subset of artificial intelligence that enables systems to learn and improve from experience?",
     "reference_answer": "Machine Learning What is Machine Learning?",
-    "student_answer": ""
+    "student_answer": "machine learning"
   },
   {
-    "question": "How would you describe the primary objective of machine learning in terms of what it enables computer programs to do?",
+    "question": "How would you describe the primary goal of machine learning in terms of what it enables computer programs to do?",
     "reference_answer": "It focuses on developing computer programs that can access data and use it to learn for themselves.",
-    "student_answer": ""
+    "student_answer": "a"
   },
   {
     "question": "How would you use Key Concepts Supervised Learning Training with labeled data to make predictions in a real-world project, such as image classification or natural language processing?",
     "reference_answer": "Key Concepts Supervised Learning Training with labeled data to make predictions.",
-    "student_answer": ""
+    "student_answer": "d"
   },
   {
-    "question": "What does the concept of Unsupervised Learning reveal about the potential for machine learning systems to discover new insights from unstructured data?",
+    "question": "What does the ability of Unsupervised Learning to find hidden patterns in unlabeled data reveal about its potential applications in machine learning?",
     "reference_answer": "Unsupervised Learning Finding hidden patterns in unlabeled data.",
-    "student_answer": ""
+    "student_answer": "s"
   },
   {
-    "question": "To what extent is Reinforcement Learning Learning through reward and penalty feedback a justified approach for training autonomous systems, given its potential for adaptability and real-time decision-making?",
+    "question": "To what extent is Reinforcement Learning Learning through reward and penalty feedback a valid approach for developing autonomous systems that can adapt to complex environments?",
     "reference_answer": "Reinforcement Learning Learning through reward and penalty feedback.",
-    "student_answer": ""
-  },
-  {
-    "question": "What would happen if you designed an adaptive AI Presentation System — Sample Test Slide that could learn from user interactions and improve its presentation style using machine learning algorithms?",
-    "reference_answer": "AI Presentation System — Sample Test Slide",
-    "student_answer": ""
+    "student_answer": "I don't know"
   }
 ]

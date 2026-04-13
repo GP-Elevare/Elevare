@@ -39,6 +39,15 @@ class OpenPose:
     # ------------------------------------------------------------------
 
     def _run_openpose(self, input_dir: str, json_output_dir: str) -> None:
+        # cmd = [
+        #     self.binary,
+        #     "--image_dir",         input_dir,
+        #     "--write_json",        json_output_dir,
+        #     "--display",           "0",
+        #     "--render_pose",       "0",
+        #     "--model_pose",        "BODY_25",
+        #     "--number_people_max", "1",
+        # ]
         cmd = [
             self.binary,
             "--image_dir",         input_dir,
@@ -47,6 +56,7 @@ class OpenPose:
             "--render_pose",       "0",
             "--model_pose",        "BODY_25",
             "--number_people_max", "1",
+            "--net_resolution",    "320x176",   # ← add this line
         ]
         result = subprocess.run(
             cmd,
@@ -56,6 +66,8 @@ class OpenPose:
         )
         if result.returncode != 0:
             raise RuntimeError(f"OpenPose failed:\n{result.stderr}")
+        
+        
 
     def _load_json(self, json_path: str) -> np.ndarray:
         """
