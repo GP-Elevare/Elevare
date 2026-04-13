@@ -5,7 +5,9 @@ import shutil
 from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
 from models.feedback.main_converted import run_full_pipeline
-from models.body.body_module import MediaPipeExtractor, BodyEmotionRecognizer, output_json_dir
+from models.body.body_module import BodyEmotionRecognizer
+from models.qg.T5 import generate_questions
+from models.qg.Text_Extractor import extract_text_from_pptx
 import os, cv2, glob, librosa, io
 from pydub import AudioSegment
 from io import BytesIO
@@ -13,7 +15,7 @@ from io import BytesIO
 speech_model = SpeechEmotionRecognizer()
 facial_model = FacialEmotionRecognizer()
 body_model = BodyEmotionRecognizer()
-extractor = MediaPipeExtractor()
+
 
 def extract_audio(video_path, audio_path):
     """Extract audio from video using pydub."""
@@ -43,20 +45,11 @@ def feedback_module(video_path, fps=5):
     print("Pipeline finished successfully!")
     print("Output saved to:", OUTPUT_PATH)
 
-def process_video(video_path, window_size = 5):
-    os.makedirs("outputs/frames", exist_ok = True)
-    
-    # Openpose Keypoint Extraction 
-    extractor.extract_from_video(video_path, output_json_dir)   
-
-    # ===== AUDIO EXTRACTION =====
-    audio_path = "outputs/audio.wav"
-    extract_audio(video_path, audio_path)
-    
-    # ===== FRAME EXTRACTION =====
-    frames_dir = "outputs/frames"
+def extract_frames(video_path, frames_dir):
+    """Extract all frames from video. Returns (frame_files, video_fps)."""
+    os.makedirs(frames_dir, exist_ok=True)
     cap = cv2.VideoCapture(video_path)
-    video_fps = cap.get(cv2.CAP_PROP_FPS)  # Get actual video FPS
+    video_fps = cap.get(cv2.CAP_PROP_FPS)
     frame_count = 0
     while True:
         ret, frame = cap.read()
@@ -65,32 +58,38 @@ def process_video(video_path, window_size = 5):
         cv2.imwrite(f"{frames_dir}/frame_{frame_count:05d}.jpg", frame)
         frame_count += 1
     cap.release()
-    
-    # fps parameter = frames per window
-    # Calculate seconds per window from frames
-    window_seconds = window_size / video_fps  # frames ÷ (frames/sec) = seconds
-    
-    # ===== WINDOWING audio and frames =====
-    y, sr = librosa.load(audio_path, sr=None)
-    samples_per_window = int(window_seconds * sr)  # seconds * sample rate = samples per window
+    frame_files = sorted(glob.glob(f"{frames_dir}/*.jpg"))
+    return frame_files, video_fps    
+
+def process_video(video_path, window_size=5):
+    # ===== FRAME EXTRACTION =====
+    frame_files, video_fps = extract_frames(video_path, "outputs/frames")
+
+    # ===== AUDIO EXTRACTION =====
+    audio_path = "outputs/audio.wav"
+    extract_audio(video_path, audio_path)
+
+    # ===== AUDIO WINDOWING =====
+    window_seconds     = window_size / video_fps
+    y, sr              = librosa.load(audio_path, sr=None)
+    samples_per_window = int(window_seconds * sr)
     audio_windows = [
         y[i:i + samples_per_window]
         for i in range(0, len(y), samples_per_window)
         if len(y[i:i + samples_per_window]) == samples_per_window
     ]
-    
-    # Use fps directly as frames per window
-    frame_files = sorted(glob.glob(f"{frames_dir}/*.jpg"))
+
+    # ===== FRAME WINDOWING (facial) =====
     image_windows = [
         frame_files[i:i + window_size]
         for i in range(0, len(frame_files), window_size)
         if len(frame_files[i:i + window_size]) == window_size
     ]
-    
+
     # ===== PREDICTIONS =====
-    speech_preds = speech_model.predict(audio_windows, sr)
-    facial_preds = facial_model.predict(image_windows)
-    body_preds = body_model.predict(image_windows)
+    speech_preds  = speech_model.predict(audio_windows, sr)
+    facial_preds  = facial_model.predict(image_windows)
+    body_preds    = body_model.predict(frame_files, video_fps)   
     feedback_module(video_path)
 
     return {"speech": speech_preds, "facial": facial_preds, "body": body_preds}
