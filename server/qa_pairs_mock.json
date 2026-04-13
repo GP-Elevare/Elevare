@@ -1,0 +1,17 @@
+[
+  {
+    "question": "State at least 3 differences between TCP and UDP.",
+    "reference_answer": "TCP is connection-oriented while UDP is connectionless. TCP guarantees delivery while UDP does not. TCP has error checking and flow control while UDP has minimal overhead. TCP is slower due to handshaking while UDP is faster.",
+    "student_answer": "TCP is reliable and UDP is faster. TCP does a three-way handshake before sending data."
+  },
+  {
+    "question": "What are the main layers of the OSI model? Name at least 4.",
+    "reference_answer": "Physical, Data Link, Network, Transport, Session, Presentation, Application.",
+    "student_answer": "The OSI model has the physical layer, network layer, transport layer, and application layer."
+  },
+  {
+    "question": "Explain what an IP address is.",
+    "reference_answer": "An IP address is a unique numerical label assigned to each device connected to a network that uses the Internet Protocol for communication. It serves two main functions: host identification and location addressing.",
+    "student_answer": "An IP address identifies a device on a network so data knows where to go."
+  }
+]
