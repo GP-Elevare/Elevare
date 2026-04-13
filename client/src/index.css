@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+
 @font-face {
   font-family: "sora";
   src: url("./assets/Sora/static/Sora-Bold.ttf") format("truetype");

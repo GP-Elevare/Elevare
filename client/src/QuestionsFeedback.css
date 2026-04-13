@@ -1,37 +1,98 @@
-/* Navigation Link Reset */
-.nav-link {
-  text-decoration: none;
-  color: inherit;
+/* ── Result summary row ───────────────────────────── */
+.result-summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
-/* Main Container */
-.feedback-container {
-  padding: 60px 20px;
-  min-height: 70vh;
-  text-align: center;
-  background-color: #eeeeee;
+.result-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
-/* Status Messages */
-.error-message {
-  color: #ff4d4d;
-  margintop: 20px;
+.result-pill.correct {
+  background: #eaf3de;
+  color: #3b6d11;
 }
 
-.loading-text {
-  font-size: 1.2rem;
-  margin-top: 40px;
+.result-pill.partial {
+  background: #faeeda;
+  color: #854f0b;
 }
 
-/* Feedback Content Layout */
-.feedback-content {
-  max-width: 800px;
-  margin: 0 auto;
+.result-pill.incorrect {
+  background: #fcebeb;
+  color: #a32d2d;
 }
 
-.feedback-text-box {
-  text-align: left;
+/* ── QA cards ─────────────────────────────────────── */
+.qa-result-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+}
+
+.qa-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.qa-result-num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.status-badge {
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.label-correct   { background: #eaf3de; color: #3b6d11; }
+.label-partial   { background: #faeeda; color: #854f0b; }
+.label-incorrect { background: #fcebeb; color: #a32d2d; }
+
+.qa-body p {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 8px;
   line-height: 1.6;
-  font-size: 1.1rem;
-  white-space: pre-wrap; /* Preserves AI formatting and newlines */
+}
+
+.qa-body p span {
+  color: var(--text-dim);
+}
+
+.qa-feedback-block {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.qa-feedback-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--purple-600);
+  margin-bottom: 6px;
 }

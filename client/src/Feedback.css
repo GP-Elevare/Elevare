@@ -1,90 +1,69 @@
-/* Navigation Link Reset */
-.nav-link {
-  text-decoration: none;
-  color: inherit;
+/* ── Score cards ──────────────────────────────────── */
+.score-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
 }
 
-/* Main Container */
-.feedback-container {
-  padding: 60px 20px;
-  min-height: 70vh;
+.score-card {
+  background: var(--purple-50);
+  border-radius: var(--radius-lg);
+  padding: 20px;
   text-align: center;
-  background-color: #eeeeee;
+  border: 1px solid var(--purple-100);
 }
 
-/* Status Messages */
-.error-message {
-  color: #ff4d4d;
-  margintop: 20px;
+.score-num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--purple-600);
+  letter-spacing: -1px;
 }
 
-.loading-text {
-  font-size: 1.2rem;
-  margin-top: 40px;
+.score-lbl {
+  font-size: 12px;
+  color: var(--purple-800);
+  margin-top: 2px;
+  font-weight: 500;
 }
 
-/* Feedback Content Layout */
-.feedback-content {
-  max-width: 800px;
-  margin: 0 auto;
+/* ── Feedback blocks ──────────────────────────────── */
+.feedback-block {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+}
+
+.feedback-block-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--purple-600);
+  margin-bottom: 10px;
 }
 
 .feedback-text-box {
-  text-align: left;
-  line-height: 1.6;
-  font-size: 1.1rem;
-  white-space: pre-wrap; /* Preserves AI formatting and newlines */
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.75;
+  white-space: pre-wrap;
 }
 
-/* Q&A Results Styling */
-.qa-card {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-left: 5px solid #222; /* Default border */
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 25px;
-  text-align: left;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.qa-header {
+/* ── Action row ───────────────────────────────────── */
+.action-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
 
-.qa-header h3 {
-  margin: 0;
-  color: #333;
-}
-
-.qa-text {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-/* Status Badges */
-.status-badge {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: white;
-}
-
-.label-incorrect {
-  background-color: #ff4d4d; /* Red */
-}
-
-.label-partial {
-  background-color: #ffaa00; /* Orange */
-}
-
-.label-correct {
-  background-color: #4caf50; /* Green */
+@media (max-width: 480px) {
+  .score-row { grid-template-columns: 1fr; }
+  .action-row { flex-direction: column; }
+  .action-row button { width: 100%; }
 }

@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import "./Feedback.css";
-import "./Home.css";
-import user from "./assets/user-stroke-rounded.png";
+import './App.css';
+import './Feedback.css';
 
 function Feedback() {
   const [feedback, setFeedback] = useState(null);
@@ -13,7 +12,6 @@ function Feedback() {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
 
-  // Fetch initial feedback on load
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
@@ -31,96 +29,109 @@ function Feedback() {
     fetchFeedback();
   }, []);
 
-  // Trigger hidden file input
   const handleGetQuestionsClick = () => {
     fileInputRef.current.click();
   };
 
-  // Handle PPT upload and navigation
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
-
     setUploading(true);
     const formData = new FormData();
     formData.append('powerpoint', file);
-
     try {
       const response = await fetch('http://localhost:5000/upload-ppt', {
         method: 'POST',
         body: formData,
       });
-
       if (response.ok) {
         const data = await response.json();
-        // Redirect to questions page with the data
         navigate('/questions', { state: { questions: data } });
       } else {
-        alert("PPT upload failed.");
+        alert('PPT upload failed.');
       }
     } catch (err) {
       console.error(err);
-      alert("Error connecting to server.");
+      alert('Error connecting to server.');
     } finally {
       setUploading(false);
     }
   };
 
   return (
-    <div>
-      {/* Hidden File Input for PPT */}
-      <input 
-        type="file" 
-        ref={fileInputRef} 
-        style={{ display: 'none' }} 
-        accept=".pptx, .ppt"
-        onChange={handleFileChange} 
+    <div className="page-wrapper">
+      <input
+        type="file"
+        ref={fileInputRef}
+        style={{ display: 'none' }}
+        accept=".pptx,.ppt"
+        onChange={handleFileChange}
       />
 
-      <div className="top-bar">
-        <div id="title">Elevare</div>
-        <div className="side-top-bar">
-          <Link to="/" className="nav-link">
-            <div>Home</div>
-          </Link>
-          <div>Start</div>
-          <div>Demo</div>
-          <div><img src={user} alt="User" id="user-icon" /></div>
+      <nav className="nav">
+        <Link to="/" className="nav-logo nav-link-a">Elevare</Link>
+        <div className="nav-links">
+          <Link to="/" className="nav-link nav-link-a">Home</Link>
+          <button className="nav-cta" onClick={handleGetQuestionsClick} disabled={uploading}>
+            {uploading ? 'Processing...' : 'Practice Q&A'}
+          </button>
         </div>
-      </div>
+      </nav>
 
       <div className="feedback-container">
-        <h2 id="big">Analysis Results</h2>
-        
+        <div className="page-header">
+          <h2>Your analysis</h2>
+          <p>Based on your most recent session</p>
+        </div>
+
         {error && <div className="error-message">{error}</div>}
 
         {loading ? (
           <p className="loading-text">Analyzing your performance...</p>
         ) : (
-          <div className="feedback-content">
-            <section className="feedback-section">
+          <>
+            {/* Score row — shown if we have structured scores */}
+            <div className="score-row">
+              <div className="score-card">
+                <div className="score-num">—</div>
+                <div className="score-lbl">Overall</div>
+              </div>
+              <div className="score-card">
+                <div className="score-num">—</div>
+                <div className="score-lbl">Clarity</div>
+              </div>
+              <div className="score-card">
+                <div className="score-num">—</div>
+                <div className="score-lbl">Pacing</div>
+              </div>
+            </div>
+
+            <div className="feedback-block">
+              <div className="feedback-block-label">Feedback</div>
               <div className="feedback-text-box">
                 {feedback?.stage3_feedback?.full_formatted_text || 'No feedback text available.'}
               </div>
-            </section>
-
-            {/* PPT Upload Button */}
-            <div className="action-area">
-              <button 
-                id="learn" 
-                onClick={handleGetQuestionsClick} 
-                disabled={uploading}
-              >
-                {uploading ? 'Processing PPT...' : 'get questions'}
-              </button>
             </div>
-          </div>
+
+            <div className="action-row">
+              <button className="btn-primary" onClick={handleGetQuestionsClick} disabled={uploading}>
+                {uploading ? 'Processing PPT...' : 'Practice Q&A from slides'}
+              </button>
+              <Link to="/" className="nav-link-a">
+                <button className="btn-secondary">Analyze another video</button>
+              </Link>
+            </div>
+          </>
         )}
       </div>
 
-      <div className="bottom-bar">
-        <div id="title">Elevare</div>
-      </div>
+      <footer className="site-footer">
+        <span className="footer-brand">Elevare</span>
+        <div className="footer-links">
+          <span className="footer-link">Privacy</span>
+          <span className="footer-link">Terms</span>
+        </div>
+      </footer>
     </div>
   );
 }
