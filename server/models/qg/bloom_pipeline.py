@@ -816,12 +816,7 @@ def load_input(filepath):
 # ── MAIN PIPELINE ─────────────────────────────────────────────────────────────
 def run_bloom_pipeline(input_path, output_path='QA_pairs.json'):
   
-    print(f"CHECK -> Q:")
-
     items = load_input(input_path)
-
-  
-
     output = []
     for idx, item in enumerate(items):
         base_q  = item['question']
