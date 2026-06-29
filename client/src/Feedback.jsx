@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Feedback.css";
-import "./Home.css";
-import user from "./assets/user-stroke-rounded.png";
 
 function Feedback() {
   const [feedback, setFeedback] = useState(null);
@@ -67,30 +65,37 @@ function Feedback() {
   };
 
   return (
-    <div>
+    <div className="page-wrapper">
       {/* Hidden File Input for PPT */}
       <input 
         type="file" 
         ref={fileInputRef} 
         style={{ display: 'none' }} 
-        accept=".pptx, .ppt"
+        accept=".pptx, .ppt, .pdf"
         onChange={handleFileChange} 
       />
 
-      <div className="top-bar">
-        <div id="title">Elevare</div>
-        <div className="side-top-bar">
-          <Link to="/" className="nav-link">
-            <div>Home</div>
-          </Link>
-          <div>Start</div>
-          <div>Demo</div>
-          <div><img src={user} alt="User" id="user-icon" /></div>
+      {/* Navigation Bar */}
+      <header className="top-bar">
+        <div className="logo-container">
+          <div className="logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+          </div>
+          <div className="title">Elev<span className="highlight">are</span></div>
         </div>
-      </div>
+        
+        <div className="header-center">
+          Video Analysis
+        </div>
 
-      <div className="feedback-container">
-        <h2 id="big">Analysis Results</h2>
+        <button className="sign-in-btn">Sign In</button>
+      </header>
+
+      <main className="feedback-page-container">
+        <div className="feedback-header-section">
+          <h2 className="main-heading">Analysis Results</h2>
+          <p className="subtitle">Review your presentation's emotion and delivery feedback.</p>
+        </div>
         
         {error && <div className="error-message">{error}</div>}
         
@@ -98,29 +103,35 @@ function Feedback() {
           <p className="loading-text">Analyzing your performance...</p>
         ) : (
           <div className="feedback-content">
-            <section className="feedback-section">
-              <div className="feedback-text-box">
-                {feedback?.full_formatted_text || 'No feedback text available.'}
+            <div className="result-card">
+              <div className="card-header">
+                <h3>AI Feedback</h3>
               </div>
-            </section>
+              <div className="card-body">
+                <div className="feedback-text-box">
+                  {feedback?.full_formatted_text || 'No feedback text available.'}
+                </div>
+              </div>
+            </div>
 
-            {/* PPT Upload Button */}
-            <div className="action-area">
+            <div className="bottom-actions">
+              <button 
+                className="secondary-btn" 
+                onClick={() => navigate('/')}
+              >
+                Back to Home
+              </button>
               <button
-                id="learn" 
+                className="primary-btn" 
                 onClick={handleGetQuestionsClick} 
                 disabled={uploading}
               >
-                {uploading ? 'Processing PPT...' : 'get questions'}
+                {uploading ? 'Processing Slides...' : 'Upload Slides for Q&A'}
               </button>
             </div>
           </div>
         )}
-      </div>
-
-      <div className="bottom-bar">
-        <div id="title">Elevare</div>
-      </div>
+      </main>
     </div>
   );
 }
