@@ -1,27 +1,27 @@
 [
   {
-    "question": "What exactly is defined as a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed, which is Machine Learning?",
-    "reference_answer": "Machine Learning What is Machine Learning?",
-    "student_answer": "machine learning"
+    "question": "What are the areas of expertise associated with Dr Hanan Hindy?",
+    "reference_answer": "Internet of Things Cloud Computing, Storage, and Data Analytics Dr Hanan Hindy hanan.hindy@cis.asu.edu.eg",
+    "student_answer": "ummm uuuh i think"
   },
   {
-    "question": "How would you describe the primary objective of machine learning in terms of what it enables computer programs to do?",
-    "reference_answer": "It focuses on developing computer programs that can access data and use it to learn for themselves.",
-    "student_answer": "focuses on developing computer programs that can access data and use it to learn for themselves"
+    "question": "How would you describe the structure and key components of the IoT course, including its introduction, building blocks, and security aspects?",
+    "reference_answer": "Course Outline IoT Introduction and Building Blocks IoT Physical Layer IoT Networking and Communication Layer IoT Cloud Computing, and Data Analytics IoT Case Studies and Real Applications IoT Security Introduction IoT Threat Modelling Targeting the IoT Ecosystem Intrusion Detection Systems ‹#›",
+    "student_answer": "like dat"
   },
   {
-    "question": "How would you use Key Concepts Supervised Learning Training with labeled data to make predictions in a real-world scenario where you need to classify customer feedback as positive or negative?",
-    "reference_answer": "Key Concepts Supervised Learning Training with labeled data to make predictions.",
-    "student_answer": "Don't know"
+    "question": "How would you use IoT Testing Functional to ensure the reliability of a smart home system with multiple interconnected devices?",
+    "reference_answer": "IoT Testing Functional which validates the correct functionality of the IoT application.",
+    "student_answer": "hell yuh"
   },
   {
-    "question": "What does the presence of Unsupervised Learning reveal about the system's ability to handle complex data sets without prior knowledge?",
-    "reference_answer": "Unsupervised Learning Finding hidden patterns in unlabeled data.",
-    "student_answer": "unsupervised learning finding hidden patterns in unlabled data"
+    "question": "What does the role of Connectivity in testing wireless signals reveal about the potential challenges in IoT application performance, especially in scenarios with weak connections or multiple devices?",
+    "reference_answer": "Connectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.",
+    "student_answer": "ok bud"
   },
   {
-    "question": "To what extent is Reinforcement Learning Learning through reward and penalty feedback a justified approach for training autonomous systems, given its potential for adaptive decision-making?",
-    "reference_answer": "Reinforcement Learning Learning through reward and penalty feedback.",
-    "student_answer": "i will get back to you later after checking my sources"
+    "question": "To what extent is it justified to rely solely on Performance which validates the communication and computation capabilities as a measure of an IoT application's overall performance?",
+    "reference_answer": "Performance which validates the communication and computation capabilities?",
+    "student_answer": "sure sure"
   }
 ]
