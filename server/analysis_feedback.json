@@ -1,0 +1,113 @@
+{
+  "top_3_issues": [
+    {
+      "issue": "Loudness is low",
+      "severity": "Moderate",
+      "category": "Voice/Delivery"
+    },
+    {
+      "issue": "Pitch variance is low",
+      "severity": "Minor",
+      "category": "Voice/Delivery"
+    },
+    {
+      "issue": "Limited content provided",
+      "severity": "High",
+      "category": "Content/Structure"
+    }
+  ],
+  "observations": [
+    {
+      "metric": "Speech Rate",
+      "value": "152.28 WPM",
+      "threshold": "130-165 WPM",
+      "status": "Ideal",
+      "label": "Observation"
+    },
+    {
+      "metric": "Filler Word Rate",
+      "value": "0.0%",
+      "threshold": "<0.05%",
+      "status": "Excellent",
+      "label": "Observation"
+    },
+    {
+      "metric": "Dysfunctional Pauses",
+      "value": "0",
+      "threshold": "0",
+      "status": "Excellent",
+      "label": "Observation"
+    },
+    {
+      "metric": "Content Length/Structure",
+      "value": "1 sentence",
+      "threshold": "N/A for full evaluation",
+      "status": "Insufficient data for detailed analysis",
+      "label": "Observation"
+    },
+    {
+      "metric": "Eye Contact",
+      "value": "89.44%",
+      "threshold": ">60%",
+      "status": "Excellent",
+      "label": "Observation"
+    },
+    {
+      "metric": "Audio Quality (SNR)",
+      "value": "46.97 dB",
+      "threshold": ">20 dB",
+      "status": "Excellent",
+      "label": "Observation"
+    },
+    {
+      "metric": "Pitch Variance",
+      "value": "1.82 Hz",
+      "threshold": "1.5-2.5 Hz (low to medium)",
+      "status": "Low-Moderate",
+      "label": "Observation"
+    },
+    {
+      "metric": "Loudness",
+      "value": "-30.66 dB",
+      "threshold": "User judgement (typical -20 to -15 dB for speech)",
+      "status": "Low",
+      "label": "Observation"
+    }
+  ],
+  "impacts": [
+    {
+      "issue": "Loudness is low",
+      "impact_description": "Difficulty hearing in unamplified settings; potential listener strain.",
+      "label": "Impact"
+    },
+    {
+      "issue": "Pitch variance is low",
+      "impact_description": "Speech may sound monotonous, potentially reducing audience engagement.",
+      "label": "Impact"
+    },
+    {
+      "issue": "Limited content provided",
+      "impact_description": "Inadequate information delivery; hinders comprehensive structural analysis.",
+      "label": "Impact"
+    }
+  ],
+  "suggestions": [
+    "Increase vocal projection",
+    "Vary vocal pitch",
+    "Expand content depth"
+  ],
+  "reasoning": "Issues were ranked by objective severity: low loudness directly impacts audibility, low pitch variance impacts engagement, and extremely limited content (1 sentence) severely restricts information delivery and analysis. Metrics were mapped directly to defined thresholds where available; loudness was interpreted qualitatively as 'low' based on typical speech ranges; content limitation was identified as an issue due to the overall context of a 'presentation'.",
+  "confidence_scores": {
+    "overall_confidence": 0.85,
+    "metric_confidence": {
+      "words_per_minute": 1.0,
+      "filler_word_analysis": 1.0,
+      "advanced_pause_analysis": 1.0,
+      "structure_evaluation": 0.7,
+      "gaze_analysis": 1.0,
+      "snr_db": 1.0,
+      "pitch_variance_hz": 0.9,
+      "loudness_db": 0.8
+    }
+  }
+}

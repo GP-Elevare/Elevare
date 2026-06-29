@@ -1,0 +1,41 @@
+{
+    "words_per_minute": {
+        "wpm": 152.28,
+        "total_words": 10,
+        "duration_seconds": 3.94,
+        "duration_minutes": 0.07
+    },
+    "filler_word_analysis": {
+        "feature": "filler_word_analysis",
+        "summary": {
+            "total_filler_words": 0,
+            "total_sentences": 1,
+            "mean_filler_words_per_sentence": 0.0,
+            "sentences_with_filler_words": 0
+        }
+    },
+    "advanced_pause_analysis": {
+        "feature": "advanced_pause_analysis",
+        "pause_gaps_total": 0,
+        "pause_gaps_over_0_75s": 0,
+        "functional_pauses": [],
+        "dysfunctional_pauses": [],
+        "summary": {
+            "count_functional": 0,
+            "count_dysfunctional": 0,
+            "count_stutter_recovery": 0
+        }
+    },
+    "structure_evaluation": {
+        "feature": "structure_evaluation_improved",
+        "num_sentences": 1,
+        "num_filtered_sentences": 0,
+        "flow": {},
+        "drift": {},
+        "summary": {}
+    },
+    "gaze_analysis": 89.43661971830986,
+    "snr_db": 46.97,
+    "pitch_variance_hz": 1.8220210235072083,
+    "loudness_db": -30.66
+}

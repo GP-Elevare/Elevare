@@ -93,20 +93,20 @@ function Feedback() {
         <h2 id="big">Analysis Results</h2>
         
         {error && <div className="error-message">{error}</div>}
-
+        
         {loading ? (
           <p className="loading-text">Analyzing your performance...</p>
         ) : (
           <div className="feedback-content">
             <section className="feedback-section">
               <div className="feedback-text-box">
-                {feedback?.stage3_feedback?.full_formatted_text || 'No feedback text available.'}
+                {feedback?.full_formatted_text || 'No feedback text available.'}
               </div>
             </section>
 
             {/* PPT Upload Button */}
             <div className="action-area">
-              <button 
+              <button
                 id="learn" 
                 onClick={handleGetQuestionsClick} 
                 disabled={uploading}

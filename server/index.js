@@ -154,7 +154,7 @@ app.post("/process-video-ai", upload.single("video"), async (req, res) => {
 
 // --- SIMPLE JSON RETRIEVAL ROUTES ---
 app.get("/feedback", (req, res) => {
-  const filePath = path.join(__dirname, "pipeline_output.json");
+  const filePath = path.join(__dirname, "final_feedback.json");
   if (fs.existsSync(filePath)) {
     res.sendFile(filePath);
   } else {

@@ -1,4 +1,9 @@
 {
+  "gaze_analysis": {
+    "ideal": 60.0,
+    "average": 50.0,
+    "poor": 0.0
+  },
   "words_per_minute": {
     "too_slow": 100,
     "low_bound": 110,
@@ -27,15 +32,11 @@
       "acceptable": 10,
       "poor": 0
     },
-    "loudness_db": {
-      "too_quiet": 60,
-      "normal_lower": 65,
-      "normal_upper": 75,
-      "too_loud": 80
-    },
+    "loudness_db": "use your own judgement",
     "pitch_variance_hz": {
-      "low_variance": 0,
-      "high_variance": 15
+      "low_variance": 1.5,
+      "medium_variance": 2.5,
+      "high_variance": 4.0
     }
   }
 }
