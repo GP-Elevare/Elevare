@@ -31,7 +31,6 @@ class OpenPose:
         self.output_dir   = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
 
-        # Windows CPU build ships the demo exe directly in bin/
         self.binary = os.path.join(openpose_dir, "bin", "OpenPoseDemo.exe")
 
     # ------------------------------------------------------------------
@@ -39,15 +38,6 @@ class OpenPose:
     # ------------------------------------------------------------------
 
     def _run_openpose(self, input_dir: str, json_output_dir: str) -> None:
-        # cmd = [
-        #     self.binary,
-        #     "--image_dir",         input_dir,
-        #     "--write_json",        json_output_dir,
-        #     "--display",           "0",
-        #     "--render_pose",       "0",
-        #     "--model_pose",        "BODY_25",
-        #     "--number_people_max", "1",
-        # ]
         cmd = [
             self.binary,
             "--image_dir",         input_dir,
@@ -56,18 +46,16 @@ class OpenPose:
             "--render_pose",       "0",
             "--model_pose",        "BODY_25",
             "--number_people_max", "1",
-            "--net_resolution",    "320x176",   # ← add this line
+            "--net_resolution",    "320x176",
         ]
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
-            cwd=self.openpose_dir,  # must run from OpenPose root
+            cwd=self.openpose_dir,
         )
         if result.returncode != 0:
             raise RuntimeError(f"OpenPose failed:\n{result.stderr}")
-        
-        
 
     def _load_json(self, json_path: str) -> np.ndarray:
         """
@@ -85,6 +73,16 @@ class OpenPose:
 
         flat = np.array(people[0]["pose_keypoints_2d"], dtype=np.float32)
         return flat.reshape(25, 3)
+
+    def _link_or_copy(self, src: str, dst: str) -> None:
+        """
+        Option 2: prefer a symlink (near-zero cost); fall back to copy when
+        src and dst are on different filesystems (e.g. network drive vs temp).
+        """
+        try:
+            os.symlink(os.path.abspath(src), dst)
+        except (OSError, NotImplementedError):
+            shutil.copy(src, dst)
 
     # ------------------------------------------------------------------
     # Public API
@@ -104,16 +102,13 @@ class OpenPose:
         tmp_json  = tempfile.mkdtemp(prefix="op_json_")
 
         try:
-            # 1. Copy frames into a clean temp folder with sequential names
             for i, frame_path in enumerate(window):
                 ext = os.path.splitext(frame_path)[1]
                 dst = os.path.join(tmp_input, f"frame_{i:05d}{ext}")
-                shutil.copy(frame_path, dst)
+                self._link_or_copy(frame_path, dst)  # Option 2
 
-            # 2. Run OpenPose
             self._run_openpose(tmp_input, tmp_json)
 
-            # 3. Parse JSONs in frame order
             json_files = sorted(glob.glob(os.path.join(tmp_json, "*.json")))
             keypoints  = []
 
@@ -127,7 +122,6 @@ class OpenPose:
                     kp = np.zeros((25, 3), dtype=np.float32)
                 keypoints.append(kp)
 
-            # 4. Persist JSONs to permanent output dir (one subdir per call)
             window_id  = os.path.basename(tmp_input)
             output_sub = os.path.join(self.output_dir, window_id)
             shutil.copytree(tmp_json, output_sub)
@@ -137,3 +131,48 @@ class OpenPose:
             shutil.rmtree(tmp_json,  ignore_errors=True)
 
         return np.stack(keypoints, axis=0)  # (T, 25, 3)
+
+    def extract_keypoints_batch(self, frame_files: list) -> np.ndarray:
+        """
+        Option 1: run OpenPose ONCE over all frames instead of once per window.
+        Eliminates repeated binary cold-starts and temp-dir overhead.
+
+        Args:
+            frame_files: all frames to process (already at target FPS)
+
+        Returns:
+            np.ndarray of shape (N, 25, 3) — one row per frame
+        """
+        tmp_input = tempfile.mkdtemp(prefix="op_input_")
+        tmp_json  = tempfile.mkdtemp(prefix="op_json_")
+
+        try:
+            for i, fp in enumerate(frame_files):
+                ext = os.path.splitext(fp)[1]
+                dst = os.path.join(tmp_input, f"frame_{i:06d}{ext}")
+                self._link_or_copy(fp, dst)
+
+            self._run_openpose(tmp_input, tmp_json)
+
+            json_files = sorted(glob.glob(os.path.join(tmp_json, "*.json")))
+            keypoints  = []
+
+            for i in range(len(frame_files)):
+                expected = os.path.join(tmp_json, f"frame_{i:06d}_keypoints.json")
+                if os.path.exists(expected):
+                    kp = self._load_json(expected)
+                elif i < len(json_files):
+                    kp = self._load_json(json_files[i])
+                else:
+                    kp = np.zeros((25, 3), dtype=np.float32)
+                keypoints.append(kp)
+
+            window_id  = os.path.basename(tmp_input)
+            output_sub = os.path.join(self.output_dir, window_id)
+            shutil.copytree(tmp_json, output_sub)
+
+        finally:
+            shutil.rmtree(tmp_input, ignore_errors=True)
+            shutil.rmtree(tmp_json,  ignore_errors=True)
+
+        return np.stack(keypoints, axis=0)  # (N, 25, 3)

@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import torch
+from multiprocessing import Pool, cpu_count
 
 
 class Preprocessing:
@@ -143,6 +144,30 @@ class Preprocessing:
         kps = self.pad_or_crop(kps)          # (target_len, 17, 3)
 
         return torch.FloatTensor(kps).unsqueeze(0)  # (1, target_len, 17, 3)
+
+    def process_windows_parallel(
+        self, windows: list, n_workers: int = None
+    ) -> torch.FloatTensor:
+        """
+        Option 5: preprocess all windows in parallel across CPU cores.
+
+        process_window is pure NumPy with no shared state, making it
+        embarrassingly parallel. Uses a process pool so the GIL is not
+        a bottleneck.
+
+        Args:
+            windows  : list of (T, 25, 3) arrays — one per window
+            n_workers: number of worker processes; defaults to cpu_count()
+
+        Returns:
+            FloatTensor of shape (B, target_len, 17, 3) — all windows stacked
+        """
+        n_workers = n_workers or cpu_count()
+
+        with Pool(processes=n_workers) as pool:
+            tensors = pool.map(self.process_window, windows)
+
+        return torch.cat(tensors, dim=0)  # (B, target_len, 17, 3)
 
 
 class FrameProcessor:
