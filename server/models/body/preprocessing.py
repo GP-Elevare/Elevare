@@ -3,41 +3,28 @@ import numpy as np
 import torch
 from multiprocessing import Pool, cpu_count
 
+from models.body.mediapipe import MEDIAPIPE_TO_H36M
+
+# Number of landmarks the MediaPipe model outputs
+_MP_NUM_LANDMARKS = 33
+
 
 class Preprocessing:
     """
-    Preprocesses raw OpenPose output for model prediction.
+    Preprocesses raw MediaPipe Pose output for model prediction.
 
-    Input  : (T, 25, 3) np.ndarray from OpenPose.extract_keypoints()
+    Input  : (T, 33, 3) np.ndarray from MediaPipePose.extract_keypoints()
     Output : (1, T, 17, 3) FloatTensor ready for model inference
+
+    All logic (interpolation, H36M conversion, normalization, padding) is
+    identical to the OpenPose version.  Only the source landmark indices
+    in the joint mapping have changed to reflect MediaPipe's 33-landmark
+    layout — every H36M joint still maps to the same body part.
     """
 
-    # ============================================================
-    # OpenPose BODY_25 → H36M 17-joint mapping
-    #  0=Hip(c), 1=RHip,  2=RKnee,   3=RAnkle
-    #  4=LHip,   5=LKnee, 6=LAnkle,  7=Spine
-    #  8=Thorax, 9=Nose,  10=Head,   11=LShoulder
-    # 12=LElbow, 13=LWrist, 14=RShoulder, 15=RElbow, 16=RWrist
-    # ============================================================
-    OPENPOSE_TO_H36M = {
-        0:  [8],       # Hip center  ← MidHip
-        1:  [9],       # RHip
-        2:  [10],      # RKnee
-        3:  [11],      # RAnkle
-        4:  [12],      # LHip
-        5:  [13],      # LKnee
-        6:  [14],      # LAnkle
-        7:  [1, 8],    # Spine       ← avg(Neck, MidHip)
-        8:  [1],       # Thorax      ← Neck
-        9:  [0],       # Nose
-        10: [15, 16],  # Head        ← avg(REye, LEye)
-        11: [5],       # LShoulder
-        12: [6],       # LElbow
-        13: [7],       # LWrist
-        14: [2],       # RShoulder
-        15: [3],       # RElbow
-        16: [4],       # RWrist
-    }
+    # MEDIAPIPE_TO_H36M is imported from mediapipe_pose.py and referenced
+    # here to keep the mapping in one place.
+    MEDIAPIPE_TO_H36M = MEDIAPIPE_TO_H36M
 
     def __init__(self, target_len: int = 97, conf_threshold: float = 0.55):
         self.target_len     = target_len
@@ -49,9 +36,9 @@ class Preprocessing:
         Halves confidence of interpolated joints.
 
         Args:
-            kps: (T, 25, 3)
+            kps: (T, 33, 3)
         Returns:
-            kps: (T, 25, 3) with gaps filled
+            kps: (T, 33, 3) with gaps filled
         """
         coords = kps[:, :, :2].copy()
         conf   = kps[:, :, 2].copy()
@@ -73,24 +60,28 @@ class Preprocessing:
 
     def convert_to_h36m(self, kps: np.ndarray) -> np.ndarray:
         """
-        Remap BODY_25 joints to H36M 17-joint layout.
+        Remap MediaPipe 33-landmark layout to H36M 17-joint layout.
+
+        Each H36M joint is the mean of one or more MediaPipe landmarks that
+        correspond to the same anatomical point.  This is semantically
+        identical to the original OpenPose -> H36M conversion.
 
         Args:
-            kps: (T, 25, 3)
+            kps: (T, 33, 3)
         Returns:
             out: (T, 17, 3)
         """
         T   = kps.shape[0]
         out = np.zeros((T, 17, 3), dtype=np.float32)
-        for h36m_idx, op_idxs in self.OPENPOSE_TO_H36M.items():
-            out[:, h36m_idx, :] = kps[:, op_idxs, :].mean(axis=1)
+        for h36m_idx, mp_idxs in self.MEDIAPIPE_TO_H36M.items():
+            out[:, h36m_idx, :] = kps[:, mp_idxs, :].mean(axis=1)
         return out
 
     def normalize_keypoints(self, kps: np.ndarray) -> np.ndarray:
         """
         Body-centered normalization:
-          1. Subtract hip center (joint 0) — removes camera position dependency.
-          2. Scale by mean torso height (hip→thorax) — removes distance-to-camera dependency.
+          1. Subtract hip center (joint 0) -- removes camera position dependency.
+          2. Scale by mean torso height (hip->thorax) -- removes distance-to-camera dependency.
 
         Args:
             kps: (T, 17, 3)
@@ -133,14 +124,14 @@ class Preprocessing:
         Full preprocessing pipeline for one window.
 
         Args:
-            kps: (T, 25, 3) raw OpenPose output from OpenPose.extract_keypoints()
+            kps: (T, 33, 3) raw MediaPipe output
         Returns:
-            FloatTensor of shape (1, target_len, 17, 3), batched and ready for inference
+            FloatTensor of shape (1, target_len, 17, 3)
         """
         kps = kps.copy().astype(np.float32)
-        kps = self.interpolate_missing(kps)  # (T, 25, 3) — fill gaps
-        kps = self.convert_to_h36m(kps)      # (T, 17, 3) — reindex joints
-        kps = self.normalize_keypoints(kps)  # (T, 17, 3) — body-centered
+        kps = self.interpolate_missing(kps)  # (T, 33, 3) -- fill gaps
+        kps = self.convert_to_h36m(kps)      # (T, 17, 3) -- reindex joints
+        kps = self.normalize_keypoints(kps)  # (T, 17, 3) -- body-centered
         kps = self.pad_or_crop(kps)          # (target_len, 17, 3)
 
         return torch.FloatTensor(kps).unsqueeze(0)  # (1, target_len, 17, 3)
@@ -156,11 +147,11 @@ class Preprocessing:
         a bottleneck.
 
         Args:
-            windows  : list of (T, 25, 3) arrays — one per window
+            windows  : list of (T, 33, 3) arrays -- one per window
             n_workers: number of worker processes; defaults to cpu_count()
 
         Returns:
-            FloatTensor of shape (B, target_len, 17, 3) — all windows stacked
+            FloatTensor of shape (B, target_len, 17, 3) -- all windows stacked
         """
         n_workers = n_workers or cpu_count()
 

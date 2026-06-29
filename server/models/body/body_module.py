@@ -1,9 +1,9 @@
 import os
-import torch
 import numpy as np
+import torch
 
 from models.body.models import MultiScaleTemporalCNN, TemporalConvBlock
-from models.body.openpose import OpenPose, EMOTION_CLASSES, NUM_CLASSES, OPENPOSE_DIR
+from models.body.mediapipe import MediaPipePose, EMOTION_CLASSES, NUM_CLASSES
 from models.body.preprocessing import FrameProcessor, Preprocessing
 
 
@@ -61,14 +61,14 @@ class BodyEmotionRecognizer:
         """
         frame_processor = FrameProcessor(frame_files, source_fps)
         preprocessor    = Preprocessing()
-        openpose        = OpenPose()
+        pose            = MediaPipePose()
 
         # Downsample FPS
         frames_15fps = frame_processor.to_target_fps()
 
-        # Option 1: extract keypoints for ALL frames in a single OpenPose call
-        # instead of once per window — eliminates repeated binary cold-starts.
-        all_keypoints = openpose.extract_keypoints_batch(frames_15fps)  # (N, 25, 3)
+        # Option 1: extract keypoints for ALL frames in a single pass
+        # (no subprocess overhead -- MediaPipe runs in-process).
+        all_keypoints = pose.extract_keypoints_batch(frames_15fps)  # (N, 33, 3)
 
         # Split the keypoints array into 97-frame windows (mirrors
         # split_into_windows but operates directly on the numpy array).
@@ -89,7 +89,7 @@ class BodyEmotionRecognizer:
 
         batch = batch.to(self.device)
         with torch.no_grad():
-            logits = self.model(batch)                    # (B, num_classes)
+            logits = self.model(batch)              # (B, num_classes)
             preds  = logits.argmax(dim=1).tolist()
 
         return [EMOTION_CLASSES[p] for p in preds]
