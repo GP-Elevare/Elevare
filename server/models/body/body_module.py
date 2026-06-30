@@ -30,7 +30,7 @@ class BodyEmotionRecognizer:
         # Option 4: fuse kernels and optimise the compute graph.
         # Adds a one-time compilation cost on the first forward call,
         # then gives 20-40% faster inference on every subsequent call.
-        self.model = torch.compile(self.model)
+        # self.model = torch.compile(self.model)
 
     def predict_window(self, keypoints: torch.FloatTensor) -> str:
         """
