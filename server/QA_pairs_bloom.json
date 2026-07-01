@@ -1,27 +1,697 @@
 [
   {
-    "question": "What are the areas of expertise associated with Dr Hanan Hindy?",
-    "reference_answer": "Internet of Things Cloud Computing, Storage, and Data Analytics Dr Hanan Hindy hanan.hindy@cis.asu.edu.eg",
-    "student_answer": "ummm uuuh i think"
+    "question": "What is the source of inspiration for the slide content regarding IoT Security?",
+    "reference_answer": "Slide content is inspired by Innovation Labs IoT Course:.",
+    "student_answer": ""
   },
   {
-    "question": "How would you describe the structure and key components of the IoT course, including its introduction, building blocks, and security aspects?",
-    "reference_answer": "Course Outline IoT Introduction and Building Blocks IoT Physical Layer IoT Networking and Communication Layer IoT Cloud Computing, and Data Analytics IoT Case Studies and Real Applications IoT Security Introduction IoT Threat Modelling Targeting the IoT Ecosystem Intrusion Detection Systems ‹#›",
-    "student_answer": "like dat"
+    "question": "How would you describe the best way to contact Dr. Hanan Hindy regarding the IoT Security course?",
+    "reference_answer": "hanan.hindy@cis.asu.edu.eg.",
+    "student_answer": ""
   },
   {
-    "question": "How would you use IoT Testing Functional to ensure the reliability of a smart home system with multiple interconnected devices?",
-    "reference_answer": "IoT Testing Functional which validates the correct functionality of the IoT application.",
-    "student_answer": "hell yuh"
+    "question": "How would you apply the principles from IoT Introduction and Building Blocks to design a secure and efficient IoT system for a smart home?",
+    "reference_answer": "IoT Introduction and Building Blocks.",
+    "student_answer": ""
   },
   {
-    "question": "What does the role of Connectivity in testing wireless signals reveal about the potential challenges in IoT application performance, especially in scenarios with weak connections or multiple devices?",
-    "reference_answer": "Connectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.",
-    "student_answer": "ok bud"
+    "question": "What does the inclusion of the IoT Networking and Communication Layer in the course outline reveal about the importance of data exchange and connectivity in IoT systems?",
+    "reference_answer": "IoT Networking and Communication Layer.",
+    "student_answer": ""
   },
   {
-    "question": "To what extent is it justified to rely solely on Performance which validates the communication and computation capabilities as a measure of an IoT application's overall performance?",
-    "reference_answer": "Performance which validates the communication and computation capabilities?",
-    "student_answer": "sure sure"
+    "question": "To what extent are IoT Cloud Computing, and Data Analytics. justified as core components in a comprehensive IoT course outline, given their role in enabling data-driven decision making and scalable IoT deployments?",
+    "reference_answer": "IoT Cloud Computing, and Data Analytics.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a new IoT-based smart city infrastructure, and how might IoT Case Studies and Real Applications inform your decisions on integrating different sensors, networks, and data analytics platforms?",
+    "reference_answer": "IoT Case Studies and Real Applications.",
+    "student_answer": ""
+  },
+  {
+    "question": "What topic is specifically focused on introducing security concepts in the Internet of Things course?",
+    "reference_answer": "IoT Security Introduction.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the significance of targeting the IoT ecosystem in the context of its security and applications?",
+    "reference_answer": "Targeting the IoT Ecosystem.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you use Intrusion Detection Systems to protect a network of IoT devices from potential security threats?",
+    "reference_answer": "Intrusion Detection Systems.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the detailed title of the eBook, as shown in the image, reveal about its focus and target audience?",
+    "reference_answer": "The image shows: Amazon.com: Practical IoT Hacking: The Definitive Guide to Attacking the Internet of Things eBook : Chantzis, Fotios, Stais, Ioannis, Calderon, Paulino, Deirmentzoglou, Evangelos, Woods, Beau: Kindle Store.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to prioritize IoT Security given the potential consequences of security breaches in IoT devices?",
+    "reference_answer": "Why is IoT Security important?",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if an IoT device manufacturer designed a default security protocol based on the principles outlined in Securing IoT devices 101, and how might this impact the overall security of their products?",
+    "reference_answer": "Securing IoT devices 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the main topic that the image is trying to explain?",
+    "reference_answer": "The image shows: What is the Internet of Things (IoT)?",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the pervasiveness of the Internet of Things in various industries?",
+    "reference_answer": "IoT is almost in every field.",
+    "student_answer": ""
+  },
+  {
+    "question": "In a smart city infrastructure project, how would you apply the concept of securing devices to ensure public safety and well-being?",
+    "reference_answer": "Securing it is not only about devices but about life.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the migration of security issues from the cyber world to the real world through IoT devices reveal about the importance of IoT security?",
+    "reference_answer": "Why is IoT security important?",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to prioritize IoT security, given that IoT is about 'Things', so if security issues would affect software, now it affects things that interact with the real world?",
+    "reference_answer": "IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if IoT devices were designed with integrated security features that prevented them from being used as covert channels into the network, and how might things change if security issues could no longer migrate from the cyber world to the real world through these things?",
+    "reference_answer": "Security issues migrate from the cyber world to the real world through things.",
+    "student_answer": ""
+  },
+  {
+    "question": "What exactly happens when there is a breach in one component of an IoT system?",
+    "reference_answer": "A breach in one component is a breach in the real world.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the common perception about the importance of IoT devices in terms of the data they hold or their role in a company's operations?",
+    "reference_answer": "The general thought is that the devices don't contain sensitive information or aren't critical to the company.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you use the knowledge of IoT devices being used as covert channels to inform your network security strategy and prevent undetected breaches?",
+    "reference_answer": "In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the definition of Security in IoT reveal about the scope of protection required for Internet of Things devices and networks?",
+    "reference_answer": "Security in IoT is the act of securing Internet of Things devices and the networks they're connected to.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified that IoT security covers both physical device security and network security, given the broad spectrum of IoT security attacks?",
+    "reference_answer": "IoT security covers both physical device security and network security, and impacts the processes, technologies, and measures necessary to protect IoT devices and networks.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a comprehensive IoT security framework that prioritizes the protection of systems, networks, and data from various IoT security attacks?",
+    "reference_answer": "IoT device security must protect systems, networks, and data from a broad spectrum of IoT security attacks.",
+    "student_answer": ""
+  },
+  {
+    "question": "What exactly is depicted in the radar chart related to IoT attacks in 2025?",
+    "reference_answer": "The image shows: Radar chart of industries most targeted by IoT attacks in 2025, highlighting transportation, manufacturing, healthcare, and energy..",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the significance of the top 3 IoT Cyber Threats as depicted in the image?",
+    "reference_answer": "The image shows: Breakdown of Top 3 IoT Cyber Threats.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would a cybersecurity expert use the fact that Why network scan is top?Zero-Day. to inform their threat assessment strategy?",
+    "reference_answer": "Why network scan is top?Zero-Day.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the diversity of Examples of Security Risks in IoT, including vulnerabilities in door locks, house appliances, medical devices, and public utilities, reveal about the potential consequences of inadequate security measures in these systems?",
+    "reference_answer": "Examples of Security Risks in IoT.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to prioritize the security of medical devices over other IoT devices in the system, given the potentially life-threatening risks associated with their compromise?",
+    "reference_answer": "In the following IoT System, identify the IoT devices and mention a risk for each.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a bot designed to mine bitcoins was integrated into various IoT devices, such as Door locks, House appliances, Medical devices, and Public utilities, and how might the associated risks, including Door locks (car/house/office)House appliances (burn/use as bot) mining bitcoins or soMedical devices (harmful/life threatening)Public utilities (power grid/ water network) shutdown, be mitigated?",
+    "reference_answer": "Door locks (car/house/office)House appliances (burn/use as bot) mining bitcoins or soMedical devices (harmful/life threatening)Public utilities (power grid/ water network) shutdown.",
+    "student_answer": ""
+  },
+  {
+    "question": "What exactly is displayed as the title in the given image?",
+    "reference_answer": "The image shows: IoT Security: 10 Challenges of Securing IoT Communications | PubNub.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the situation that the term 'medical incident' is associated with in the context of St. Jude Medical?",
+    "reference_answer": "Medical incident\" primarily refers to the premature battery depletion in certain heart devices, leading to recalls and lawsuits, and the company's acquisition by.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you apply the same strategy of scanning and login attempts used by Mirai to compromise IoT devices, and how would you adapt it to modern cybersecurity threats?",
+    "reference_answer": "It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the scale of the Mirai botnet's infection, which successfully infected hundreds of thousands of devices, reveal about the vulnerability of IoT devices to DDoS attacks?",
+    "reference_answer": "It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent was the emergence of Mantis a justified evolution from Mirai, given the significant shift in its architecture and capabilities?",
+    "reference_answer": "The Evolution to Mantis:.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a botnet were designed to leverage both the massive scale of IoT devices and the computational power of hijacked virtual machines, and how might this hybrid approach change the landscape of DDoS attacks?",
+    "reference_answer": "The modern botnet has evolved significantly.",
+    "student_answer": ""
+  },
+  {
+    "question": "What exactly is noted about the Mantis botnet in terms of its emergence and impact?",
+    "reference_answer": "The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the strategic shift in the evolution of botnets from Mirai to Mantis, particularly in terms of the composition of their fleets?",
+    "reference_answer": "While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what scenario would using HTTPS based DDoS attacks provide a significant advantage over traditional methods, and how would this impact the scale of the attack?",
+    "reference_answer": "This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the evolution from Mirai to Mantis botnets reveal about the changing nature of DDoS attacks and their implications for modern cybersecurity?",
+    "reference_answer": "For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to rely on 'Security by design' over 'Security by Obscurity' for IoT security, considering the potential risks and benefits of each approach?",
+    "reference_answer": "IoT security can be performed either by \"Security by design\" or \"Security by Obscurity\".",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a new IoT security framework combined the principles of Security by Design and crowdsourced vulnerability testing, and how might this hybrid approach impact the update process and trust models for IoT devices?",
+    "reference_answer": "Security by Design is - Theoretically proven - It is usually an open solution - Tested and reviewed by a large number of users - Trusts the users, Security by Obscurity is - Closed box - No one knows what's inside - If hacked, all the system fails - Trust the enterprise that designs it - How is it updated?",
+    "student_answer": ""
+  },
+  {
+    "question": "What are some key concepts related to understanding how systems are dissected and analyzed, such as reverse engineering?",
+    "reference_answer": "What about reverse engineering?What about decompilers de assemblers etc.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the process of addressing vulnerabilities in a security system that relies on mathematical design principles?",
+    "reference_answer": "Comes from a mathematical processAs soon as a vulnerability is found it can be fixed.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you apply the principle that security should not rely on secrecy in the design and implementation of a new encryption protocol?",
+    "reference_answer": "Security should not depend on secrecy of design or implementation.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the title Securing an IoT Device 101 reveal about the primary focus and target audience of the course?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is a course like Securing an IoT Device 101 justified in prioritizing local security measures, such as changing default passwords, as a foundational step in securing IoT devices?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a universal password update tool for IoT devices, and how might this tool ensure that users always Change the default password. during initial setup?",
+    "reference_answer": "Change the default password.",
+    "student_answer": ""
+  },
+  {
+    "question": "What exactly is displayed in the image related to changing the default password for LDAP Admin Login to FGT?",
+    "reference_answer": "The image shows: LDAP Admin Login to FGT - Change Default Password Request.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the significance of the default usernames and passwords list, as shown in the image, for securing a wireless router?",
+    "reference_answer": "The image shows: Default usernames & passwords list for your wireless router.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you use the information from The image shows: IP Cameras Default Passwords Directory. to secure an IP camera from unauthorized access?",
+    "reference_answer": "The image shows: IP Cameras Default Passwords Directory.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the presence of default usernames and passwords, such as admin, password, and 1234, reveal about the potential vulnerabilities in IoT device security?",
+    "reference_answer": "admin, password, and 1234.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is the presentation of password popularity in the image, The image shows: Infographic: The Most Popular Passwords Around the World | Statista, a valid representation of global password trends?",
+    "reference_answer": "The image shows: Infographic: The Most Popular Passwords Around the World | Statista.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a secure authentication system for Raspberry Pi devices, taking into account the vulnerabilities of default passwords like the Raspberry Pi Default Password, to prevent future Mirai-like attacks?",
+    "reference_answer": "Raspberry Pi Default Password.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is a notable issue with default passwords in relation to the internet?",
+    "reference_answer": "Default passwords are easily crawled off the internetUsed in.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the main focus of a course titled Securing an IoT Device 101 in terms of its security recommendations?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you apply the principle of changing the default password to prevent unauthorized access to an IoT device?",
+    "reference_answer": "Change the default password.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the recommendation to disable administration over the air reveal about the security risks associated with remote access in IoT devices?",
+    "reference_answer": "Disable administration over the air.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is a course like Securing an IoT Device 101 justified in emphasizing the avoidance of self-written protocols for IoT network security?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a secure IoT device framework that incorporates existing, widely-tested protocols, and how might this approach mitigate the risks associated with using self-written protocols?",
+    "reference_answer": "Avoid self-written protocols.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the key question to ask when considering the security of a self-written protocol for an IoT device?",
+    "reference_answer": "Is it theoretically proven?",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the potential limitation of using self-written protocols in IoT device security, particularly in relation to network firewalls?",
+    "reference_answer": "Might be stopped by firewalls.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you use the information from the image showing Open protocol development to advise a client on securing their IoT device?",
+    "reference_answer": "The image shows: Open protocol development (article) | Khan Academy.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the emphasis on Securing an IoT Device 101 reveal about the importance of network security in IoT development?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to prioritize established protocols like MQTT and SSLXMPP over self-written ones for securing IoT devices, considering the potential risks and benefits?",
+    "reference_answer": "Avoid self-written protocols.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a secure IoT device connection framework using MQTT/SSLXMPP, and how might this framework change if you used a computer instead of a microcontroller as the primary interface to the internet?",
+    "reference_answer": "MQTT/SSLXMPP Use a computer not a microcontroller when connecting to the internet.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the exact title of the course related to IoT security?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the primary focus of a course titled Securing an IoT Device 101 in the context of network security?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you apply the principle of avoiding self-written protocols when designing a secure communication system for an IoT device?",
+    "reference_answer": "Avoid self-written protocols.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the emphasis on reading before implementation or use reveal about the importance of understanding security protocols in IoT device development?",
+    "reference_answer": "Read before implementation/use.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to rely solely on reading about security issues as a means of securing IoT devices, given the complexity of modern network threats?",
+    "reference_answer": "Read about security issues.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a comprehensive IoT security framework inspired by the principles taught in Securing an IoT Device 101, incorporating software updates, open libraries, and trust stores?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the first step to take when researching the reliability of GiHub for securing an IoT device?",
+    "reference_answer": "Check GiHub stats and history.",
+    "student_answer": ""
+  },
+  {
+    "question": "How do upstream changes, such as patches, contribute to securing an IoT device's software?",
+    "reference_answer": "Upstream changes (patches).",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you apply the principles learned in Securing an IoT Device 101 to design a secure IoT-based home automation system?",
+    "reference_answer": "Securing an IoT Device 101.",
+    "student_answer": ""
+  },
+  {
+    "question": "What implications does using the right hardware for the right job have on the overall security of an IoT device, and how does it relate to following the IoT stack and built-in security practices?",
+    "reference_answer": "Use the right hardware for the right job.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to prioritize following security practices built into the development life cycle when securing IoT devices, given the complexity of hardware and software interactions?",
+    "reference_answer": "The key is to follow security practices built into the development life cycle.",
+    "student_answer": ""
+  },
+  {
+    "question": "Design a secure IoT device by choosing between microcontrollers and computers for a specific application, considering factors like power consumption, processing power, and cost, what would be the key differences to consider in your design decision?",
+    "reference_answer": "Microcontroller vs computers.",
+    "student_answer": ""
+  },
+  {
+    "question": "What statement accurately describes the current relationship between our dependence on connected technology and our ability to secure it?",
+    "reference_answer": "\"Our dependence on connected technology is growing faster than our ability to secure it.\".",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the term IoT in the context of this course, considering its definition and implications for security?",
+    "reference_answer": "For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what real-world scenario would you apply the concept that for hackers, the IoT ecosystem presents a vast array of opportunities, and how would you utilize this understanding to enhance security measures?",
+    "reference_answer": "For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the public's perception of autonomous vehicles reveal about the trade-offs between innovation and trust in the IoT ecosystem?",
+    "reference_answer": "Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is abandoning IoT a justified response to its security concerns, given the potential benefits of connected technology?",
+    "reference_answer": "IoT, which is not the solution!",
+    "student_answer": ""
+  },
+  {
+    "question": "How might things change if manufacturers and consumers collaborated to implement the 3 Paths Forward for IoT security, and what new security protocols could emerge from this partnership?",
+    "reference_answer": "3 Paths Forward for IoT security.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the exact option where no changes are made to the current state of IoT security?",
+    "reference_answer": "The status quo can remain.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does it mean for consumers to enhance the security of their IoT devices, and how can they achieve this?",
+    "reference_answer": "Consumers can begin to \"bolt\" security onto devices that are insecure by default.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would implementing a secure-by-design approach, where manufacturers can build security into the devices at the outset, be more effective than bolting on security measures later?",
+    "reference_answer": "Manufacturers can build security into the devices at the outset.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the presence of the image revealing the Federal Profile for IoT Device Cybersecurity indicate about the potential paths forward for securing IoT devices?",
+    "reference_answer": "The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to consider the 3 Paths Forward for IoT security as a viable solution, given the potential consequences of maintaining the status quo and accepting regular harms from security issues?",
+    "reference_answer": "3 Paths Forward for IoT security.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a new IoT security framework was designed to mitigate regular harms, how might things change if this framework was implemented globally, and what role would the status quo play in this transition?",
+    "reference_answer": "The status quo can remain.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is one possible outcome for society in relation to IoT security issues?",
+    "reference_answer": "Society would come to accept regularharms from security issues as a necessary part of using IoT devices.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the concept of the 3 Paths Forward for IoT security in relation to addressing device manufacturer shortcomings?",
+    "reference_answer": "3 Paths Forward for IoT security.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what scenario would the emergence of new companies to fill the security void left by device manufacturers lead to buyers paying more for less effective security solutions?",
+    "reference_answer": "New companies would fill the void neglected by device manufacturers, and buyers would end up paying more for security whose capabilities are less fit for purpose.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the integration of security into IoT devices, as opposed to bolted-on approaches, reveal about the potential effectiveness of the 3 Paths Forward for IoT security?",
+    "reference_answer": "3 Paths Forward for IoT security.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified that Manufacturers build security into IoT devices, given the potential for improved updatability, hardening, and threat modeling?",
+    "reference_answer": "Manufacturers build security.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if IoT device manufacturers and stakeholders collaborated to design a new supply chain framework, and how might this impact the way buyers and operators address issues and risk?",
+    "reference_answer": "Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the exact location mentioned in the context where the original fieescapes were found?",
+    "reference_answer": "For instance, the original fieescapes in.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the historical approach to fire escapes in New York, and what does it reveal about the evolution of security measures?",
+    "reference_answer": "York were frequently bolted to the outside of buildings.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you apply the lesson from the fire escapes in New York to IoT device security, considering the impact of bolted-on versus built-in security measures on cost and harm to occupants?",
+    "reference_answer": "As aresult, they often increased cost and harm to the occupants overall, according to an.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the reference to the Atlantic article titled 'How the' reveal about the evolution of safety measures and their potential application to IoT security?",
+    "reference_answer": "Atlantic article titled \"How the.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified that fire escapes, now built into buildings as ornaments, have become a model for integrating security into IoT devices, given their impact on resident safety and potential for updatability and threat modeling?",
+    "reference_answer": "Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if IoT device manufacturers designed security features into their products from the outset, similar to how fire escapes are now built into buildings, and how might this approach impact the overall safety and efficiency of these devices?",
+    "reference_answer": "Much the same as fie escapes inbuildings, security built into.",
+    "student_answer": ""
+  },
+  {
+    "question": "What specific advantages do IoT devices offer when security is built into them, rather than added on later?",
+    "reference_answer": "IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the approach to IoT security that involves the 3 Paths Forward, and what does it mean for the IoT market?",
+    "reference_answer": "3 Paths Forward for IoT security.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what real-world IoT deployment scenario would you apply the principle that the three paths forward aren't mutually exclusive, and how would this impact your security strategy?",
+    "reference_answer": "Note that the aforementioned three paths forward aren't mutually exclusive; the IoT market can support all three scenarios.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the distinction between IoT security and traditional IT security reveal about the unique challenges and vulnerabilities associated with IoT devices?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is the title 'The image shows: Beyond Imagination - The Real-Life Cases of IoT Security and Failures | CX Master' a valid representation of the differences between IoT security and traditional IT security?",
+    "reference_answer": "The image shows: Beyond Imagination - The Real-Life Cases of IoT Security and Failures | CX Master.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a cybersecurity expert designed a new framework for IoT security, taking into account the unique challenges and consequences of IoT security failures, and how might this framework address the differences between IoT and traditional IT security?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "What is a significant potential outcome of IoT security failures?",
+    "reference_answer": "Consequences of IoT security failures might cause a direct loss of life.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would a security failure in the IoT sector impact the reputation of a firm and the trust in the industry as a whole?",
+    "reference_answer": "They could also shatter confidence in the firm or the broader industry as well as trust in a government's ability to safeguard citizens through oversight and regulation.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would a cyberattack like WannaCry hit, resulting in patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly going untreated because the attack delayed care delivery for days, demonstrate the critical need for robust IoT security measures?",
+    "reference_answer": "WannaCry hit, patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly went untreated because the attack delayed care delivery for days.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the distinction between IoT security and traditional IT security reveal about the challenges of securing devices with limited resources, such as pacemakers?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified that the unique composition of IoT devices, including safety systems, necessitates distinct security approaches compared to traditional IT environments?",
+    "reference_answer": "The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if JAXenter designed a new power management system for IoT sensors and edge devices, and how might this change the way energy sources are utilized in these devices?",
+    "reference_answer": "The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter.",
+    "student_answer": ""
+  },
+  {
+    "question": "What specific example is given to illustrate the challenges of applying conventional IT security approaches due to limited resources?",
+    "reference_answer": "For instance, size and power constraints in a pacemaker create challenges for applying conventional.",
+    "student_answer": ""
+  },
+  {
+    "question": "How do the constraints of IoT devices, such as limited size and power, affect the application of traditional IT security approaches that require high amounts of storage or computing power?",
+    "reference_answer": "IT security approaches that require high amounts of storage or computing power.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would understanding how IoT security differs from traditional IT security be crucial for a cybersecurity specialist to develop an effective protection strategy?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the variation in goals, motivations, methods, and capabilities among adversaries reveal about the complexity of securing IoT systems?",
+    "reference_answer": "The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to assume that all adversaries of IoT systems seek to cause harm, given that some adversaries might try to avoid causing harm, whereas others might seek out IoT systems specifically to cause harm?",
+    "reference_answer": "Some adversaries might try to avoid causing harm, whereas others might seek out.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a cybersecurity framework were designed to protect against attacks on IoT systems specifically to cause harm, and how might this framework differ from traditional IT security measures?",
+    "reference_answer": "IoT systems specifically to cause harm.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is an example of a type of organization that is frequently targeted for ransom, and why does this occur?",
+    "reference_answer": "For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does it mean that IoT security has distinct challenges compared to traditional IT security, and how would you describe these differences?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you apply the principle that IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance, to develop a security strategy for a smart home system?",
+    "reference_answer": "IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the expectation of drivers not installing aftermarket security products in connected cars reveal about the differences between IoT security and traditional IT security?",
+    "reference_answer": "For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to assume that individuals operating IoT devices in personal environments have the necessary expertise to respond effectively during a security incident?",
+    "reference_answer": "Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident.",
+    "student_answer": ""
+  },
+  {
+    "question": "Design a security framework for connected cars that balances individual user needs with enterprise-level security expectations, considering the limitations of user expertise and resources.",
+    "reference_answer": "But we would expect this of an enterprise.",
+    "student_answer": ""
+  },
+  {
+    "question": "What is the primary distinction between IoT security and traditional IT security that beginners should know?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the relationship between IoT manufacturing economics and the prioritization of security in device development?",
+    "reference_answer": "The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you apply the understanding that many IoT devices are targeted at price-sensitive customers who lack experience in securing infrastructure, and how would this inform your security strategy?",
+    "reference_answer": "Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely.",
+    "student_answer": ""
+  },
+  {
+    "question": "What does it reveal about the impact of IoT device insecurity that the costs frequently accrue to individuals who aren't the primary owner or operator of a device?",
+    "reference_answer": "Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent was the Mirai botnet's ability to spread a consequence of inadequate security measures, given that it took advantage of hardcoded passwords embedded in chipset firmware?",
+    "reference_answer": "Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a new IoT device manufacturer designed an automated password management system, considering that most owners didn't know that they should change their passwords or didn't know how to do so?",
+    "reference_answer": "Most owners didn't know that they should change their passwords or didn't know how to do so.",
+    "student_answer": ""
+  },
+  {
+    "question": "What was the impact on the US economy in terms of dollars due to a third-party targeting?",
+    "reference_answer": "US economy billions of dollars by targeting a third-party.",
+    "student_answer": ""
+  },
+  {
+    "question": "How would you describe the role of a third-party DNS supplier in the context of IoT security risks, particularly one that didn't own any impacted devices?",
+    "reference_answer": "DNS supplier thatdidn't own any impacted devices.",
+    "student_answer": ""
+  },
+  {
+    "question": "In what situation would you apply the understanding of How Is IoT Security Different than Traditional IT Security? to secure a network of low-power devices?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "What does the integration of small, low-power, low-cost embedded devices in IoT systems reveal about the inherent security risks associated with these devices?",
+    "reference_answer": "Using small, low-power, low-cost embedded devices increase the insecurity of IoT systems.",
+    "student_answer": ""
+  },
+  {
+    "question": "To what extent is it justified to treat IoT security as a distinct entity from traditional IT security, given the differences in timescales, response times, and environmental factors?",
+    "reference_answer": "How Is IoT Security Different than Traditional IT Security?",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if you designed a new IoT device with a lifespan of only five years, how might the traditional timescales for design, development, implementation, operation, and retirement need to change?",
+    "reference_answer": "Timescales for design, development, implementation, operation, and retirement are often measured in decades.",
+    "student_answer": ""
+  },
+  {
+    "question": "What factors can affect the response time in IoT security?",
+    "reference_answer": "Response time might also be extended because of composition, context, and environment.",
+    "student_answer": ""
   }
 ]

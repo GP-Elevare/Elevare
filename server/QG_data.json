@@ -1,397 +1,697 @@
 [
   {
-    "question": "What does Hanan Hindy do?",
-    "answer": "Internet of Things Cloud Computing, Storage, and Data Analytics Dr Hanan Hindy hanan.hindy@cis.asu.edu.eg",
-    "context": "Internet of Things\nCloud Computing, Storage, and Data\nAnalytics\nDr Hanan Hindy\nhanan.hindy@cis.asu.edu.eg"
+    "question": "What content is inspired by Innovation Labs IoT Course?",
+    "answer": "Slide content is inspired by Innovation Labs IoT Course:.",
+    "context": "Slide content is inspired by Innovation Labs IoT Course:. IoT Security:. An Introduction. Dr Hanan Hindy. hanan.hindy@cis.asu.edu.eg."
   },
   {
-    "question": "What is the Course Outline of IoT Introduction and Building Blocks?",
-    "answer": "Course Outline IoT Introduction and Building Blocks IoT Physical Layer IoT Networking and Communication Layer IoT Cloud Computing, and Data Analytics IoT Case Studies and Real Applications IoT Security Introduction IoT Threat Modelling Targeting the IoT Ecosystem Intrusion Detection Systems ‹#›",
-    "context": "Course Outline\nIoT Introduction and Building Blocks\nIoT Physical Layer\nIoT Networking and Communication Layer\nIoT Cloud Computing, and Data Analytics\nIoT Case Studies and Real Applications\nIoT Security Introduction\nIoT Threat Modelling\nTargeting the IoT Ecosystem\nIntrusion Detection Systems\n‹#›"
+    "question": "What is the email address for Hanan Hindy?",
+    "answer": "hanan.hindy@cis.asu.edu.eg.",
+    "context": "Slide content is inspired by Innovation Labs IoT Course:. IoT Security:. An Introduction. Dr Hanan Hindy. hanan.hindy@cis.asu.edu.eg."
   },
   {
-    "question": "What does IoT Testing Functional do?",
-    "answer": "IoT Testing Functional which validates the correct functionality of the IoT application.",
-    "context": "IoT Testing\nFunctional which validates the correct functionality of the IoT application.\n\u000bConnectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.\n\u000bPerformance which validates the communication and computation capabilities? Stress testing can be used in order to fid how many simultaneous connections can be supported by a specific device.\n‹#›"
+    "question": "What are the two main components of the IoT?",
+    "answer": "IoT Introduction and Building Blocks.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What is Connectivity responsible for testing the wireless signal?",
-    "answer": "Connectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.",
-    "context": "IoT Testing\nFunctional which validates the correct functionality of the IoT application.\n\u000bConnectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.\n\u000bPerformance which validates the communication and computation capabilities? Stress testing can be used in order to fid how many simultaneous connections can be supported by a specific device.\n‹#›"
+    "question": "What is another name for the IoT Networking and Communication Layer?",
+    "answer": "IoT Networking and Communication Layer.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What type of performance validates the communication and computation capabilities?",
-    "answer": "Performance which validates the communication and computation capabilities?",
-    "context": "IoT Testing\nFunctional which validates the correct functionality of the IoT application.\n\u000bConnectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.\n\u000bPerformance which validates the communication and computation capabilities? Stress testing can be used in order to fid how many simultaneous connections can be supported by a specific device.\n‹#›"
+    "question": "What are two examples of what?",
+    "answer": "IoT Cloud Computing, and Data Analytics.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What can be used to determine how many simultaneous connections can be supported by a specific device?",
-    "answer": "Stress testing can be used in order to fid how many simultaneous connections can be supported by a specific device.",
-    "context": "IoT Testing\nFunctional which validates the correct functionality of the IoT application.\n\u000bConnectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.\n\u000bPerformance which validates the communication and computation capabilities? Stress testing can be used in order to fid how many simultaneous connections can be supported by a specific device.\n‹#›"
+    "question": "What are some examples of IoT Case Studies and Real Applications?",
+    "answer": "IoT Case Studies and Real Applications.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What does IoT Testing Security focus on?",
-    "answer": "IoT Testing Security focus in privacy, authorization and authentication features.",
-    "context": "IoT Testing\nSecurity focus in privacy, authorization and authentication features.\u000b\nCompatibility verifies the correct functionality under different protocols and configurations.\u000b\nExploratory user experience tests.\n‹#›"
+    "question": "What is the name of the topic?",
+    "answer": "IoT Security Introduction.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What does Compatibility do?",
-    "answer": "Compatibility verifies the correct functionality under different protocols and configurations.",
-    "context": "IoT Testing\nSecurity focus in privacy, authorization and authentication features.\u000b\nCompatibility verifies the correct functionality under different protocols and configurations.\u000b\nExploratory user experience tests.\n‹#›"
+    "question": "What is the goal of the IoT Ecosystem?",
+    "answer": "Targeting the IoT Ecosystem.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What type of tests are used?",
-    "answer": "Exploratory user experience tests.",
-    "context": "IoT Testing\nSecurity focus in privacy, authorization and authentication features.\u000b\nCompatibility verifies the correct functionality under different protocols and configurations.\u000b\nExploratory user experience tests.\n‹#›"
+    "question": "What is another name for Intrusion Detection Systems?",
+    "answer": "Intrusion Detection Systems.",
+    "context": "Course Outline. IoT Introduction and Building Blocks. IoT Physical Layer. IoT Networking and Communication Layer. IoT Cloud Computing, and Data Analytics. IoT Case Studies and Real Applications. IoT Security Introduction. IoT Threat Modelling. Targeting the IoT Ecosystem. Intrusion Detection Systems. IoT and Blockchain."
   },
   {
-    "question": "What is the main value of IoT?",
-    "answer": "Cloud Computing, Storage, and Data Analytics The main value of IoT lies in the data analysis and processing.",
-    "context": "Cloud Computing, Storage, and Data Analytics\nThe main value of IoT lies in the data analysis and processing.\n‹#›"
+    "question": "What is the name of the book?",
+    "answer": "The image shows: Amazon.com: Practical IoT Hacking: The Definitive Guide to Attacking the Internet of Things eBook : Chantzis, Fotios, Stais, Ioannis, Calderon, Paulino, Deirmentzoglou, Evangelos, Woods, Beau: Kindle Store.",
+    "context": "Book. The image shows: Amazon.com: Practical IoT Hacking: The Definitive Guide to Attacking the Internet of Things eBook : Chantzis, Fotios, Stais, Ioannis, Calderon, Paulino, Deirmentzoglou, Evangelos, Woods, Beau: Kindle Store."
   },
   {
-    "question": "What is cloud computing?",
-    "answer": "Cloud computing means storing and accessing data and programs over the Internet instead of your computer’s hard drive.",
-    "context": "Cloud Computing: What?\nCloud computing means storing and accessing data and programs over the Internet instead of your computer’s hard drive. \nCloud computing is a shared pool of computing/storage resources that can be accessed on demand and dynamically offered to the user. \nCloud computing services can be accessed at any time from any place. They are offered by many companies such as Google (AWS) and Microsoft (Azure). Moreover, there are open platforms for cloud computing such as Thingspeak and Thingsboard.\n‹#›"
+    "question": "Why is IoT Security important?",
+    "answer": "Why is IoT Security important?",
+    "context": "Agenda. Why is IoT Security important? Security issues in IoT. Security types in IoT. Securing IoT devices 101."
   },
   {
-    "question": "How can cloud computing services be accessed?",
-    "answer": "Cloud computing services can be accessed at any time from any place.",
-    "context": "Cloud Computing: What?\nCloud computing means storing and accessing data and programs over the Internet instead of your computer’s hard drive. \nCloud computing is a shared pool of computing/storage resources that can be accessed on demand and dynamically offered to the user. \nCloud computing services can be accessed at any time from any place. They are offered by many companies such as Google (AWS) and Microsoft (Azure). Moreover, there are open platforms for cloud computing such as Thingspeak and Thingsboard.\n‹#›"
+    "question": "What is the first step in securing IoT devices?",
+    "answer": "Securing IoT devices 101.",
+    "context": "Agenda. Why is IoT Security important? Security issues in IoT. Security types in IoT. Securing IoT devices 101."
   },
   {
-    "question": "What companies offer these services?",
-    "answer": "They are offered by many companies such as Google (AWS) and Microsoft (Azure).",
-    "context": "Cloud Computing: What?\nCloud computing means storing and accessing data and programs over the Internet instead of your computer’s hard drive. \nCloud computing is a shared pool of computing/storage resources that can be accessed on demand and dynamically offered to the user. \nCloud computing services can be accessed at any time from any place. They are offered by many companies such as Google (AWS) and Microsoft (Azure). Moreover, there are open platforms for cloud computing such as Thingspeak and Thingsboard.\n‹#›"
+    "question": "What does the image show?",
+    "answer": "The image shows: What is the Internet of Things (IoT)?",
+    "context": "Let's remember! The image shows: What is the Internet of Things (IoT)? | TIBCO Software. IoT is almost in every field. Securing it is not only about devices but about life."
   },
   {
-    "question": "What are two examples of open platforms for cloud computing?",
-    "answer": "Moreover, there are open platforms for cloud computing such as Thingspeak and Thingsboard.",
-    "context": "Cloud Computing: What?\nCloud computing means storing and accessing data and programs over the Internet instead of your computer’s hard drive. \nCloud computing is a shared pool of computing/storage resources that can be accessed on demand and dynamically offered to the user. \nCloud computing services can be accessed at any time from any place. They are offered by many companies such as Google (AWS) and Microsoft (Azure). Moreover, there are open platforms for cloud computing such as Thingspeak and Thingsboard.\n‹#›"
+    "question": "IoT is almost in every field?",
+    "answer": "IoT is almost in every field.",
+    "context": "Let's remember! The image shows: What is the Internet of Things (IoT)? | TIBCO Software. IoT is almost in every field. Securing it is not only about devices but about life."
   },
   {
-    "question": "What is cloud computing?",
-    "answer": "In Simplest terms, cloud computing means storing and accessing the data and programs on remote servers that are hosted on the internet instead of the computer’s hard drive or local server.",
-    "context": "Cloud Computing: What?\nIn Simplest terms, cloud computing means storing and accessing the data and programs on remote servers that are hosted on the internet instead of the computer’s hard drive or local server.\n‹#›"
+    "question": "What is the importance of securing a device?",
+    "answer": "Securing it is not only about devices but about life.",
+    "context": "Let's remember! The image shows: What is the Internet of Things (IoT)? | TIBCO Software. IoT is almost in every field. Securing it is not only about devices but about life."
   },
   {
-    "question": "What is one of the benefits of using less resources?",
-    "answer": "More efficient resource utilization Lower cost of servers Improved security Reduced time-to-market Virtualization Low-cost software Increased data reliability ‹#›",
-    "context": "Cloud Computing: Why?\nMore efficient resource utilization\nLower cost of servers\nImproved security\nReduced time-to-market\nVirtualization\nLow-cost software\nIncreased data reliability\n‹#›"
+    "question": "Why is IoT security important?",
+    "answer": "Why is IoT security important?",
+    "context": "Why is IoT security important? IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world. Security issues migrate from the cyber world to the real world through things. It is everywhere. A breach in one component is a breach in the real world. The general thought is that the devices don't contain sensitive information or aren't critical to the company. In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data."
   },
   {
-    "question": "What are the three categories of cloud service offerings?",
-    "answer": "Cloud service offerings are divided into three categories: Infrastructure as a Service (IaaS) Platform as a Service (PaaS) Software as a Service (SaaS) IaaS is responsible for managing the hardware, network, and other services.",
-    "context": "Cloud Computing: How?\nCloud service offerings are divided into three categories: \nInfrastructure as a Service (IaaS)\nPlatform as a Service (PaaS)\nSoftware as a Service (SaaS)\n\nIaaS is responsible for managing the hardware, network, and other services. \nPaaS supports the OS and application platform.\nSaaS supports everything.\n‹#›"
+    "question": "What does IoT mean?",
+    "answer": "IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world.",
+    "context": "Why is IoT security important? IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world. Security issues migrate from the cyber world to the real world through things. It is everywhere. A breach in one component is a breach in the real world. The general thought is that the devices don't contain sensitive information or aren't critical to the company. In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data."
   },
   {
-    "question": "What does PaaS support?",
-    "answer": "PaaS supports the OS and application platform.",
-    "context": "Cloud Computing: How?\nCloud service offerings are divided into three categories: \nInfrastructure as a Service (IaaS)\nPlatform as a Service (PaaS)\nSoftware as a Service (SaaS)\n\nIaaS is responsible for managing the hardware, network, and other services. \nPaaS supports the OS and application platform.\nSaaS supports everything.\n‹#›"
+    "question": "How do security issues move from the cyber world to the real world?",
+    "answer": "Security issues migrate from the cyber world to the real world through things.",
+    "context": "Why is IoT security important? IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world. Security issues migrate from the cyber world to the real world through things. It is everywhere. A breach in one component is a breach in the real world. The general thought is that the devices don't contain sensitive information or aren't critical to the company. In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data."
   },
   {
-    "question": "What does SaaS support?",
-    "answer": "SaaS supports everything.",
-    "context": "Cloud Computing: How?\nCloud service offerings are divided into three categories: \nInfrastructure as a Service (IaaS)\nPlatform as a Service (PaaS)\nSoftware as a Service (SaaS)\n\nIaaS is responsible for managing the hardware, network, and other services. \nPaaS supports the OS and application platform.\nSaaS supports everything.\n‹#›"
+    "question": "What is the difference between a breach in one component and a breach in the real world?",
+    "answer": "A breach in one component is a breach in the real world.",
+    "context": "Why is IoT security important? IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world. Security issues migrate from the cyber world to the real world through things. It is everywhere. A breach in one component is a breach in the real world. The general thought is that the devices don't contain sensitive information or aren't critical to the company. In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data."
   },
   {
-    "question": "Is a cloud system public or private?",
-    "answer": "A cloud system may be public or private.",
-    "context": "Cloud Computing: How?\nA cloud system may be public or private. \nPublic clouds can be  accessed by anyone. \nPrivate clouds offer services to a set of authorized users. \nA hybrid cloud is a combination of both public and private clouds.\n‹#›"
+    "question": "What is the general thought about the devices?",
+    "answer": "The general thought is that the devices don't contain sensitive information or aren't critical to the company.",
+    "context": "Why is IoT security important? IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world. Security issues migrate from the cyber world to the real world through things. It is everywhere. A breach in one component is a breach in the real world. The general thought is that the devices don't contain sensitive information or aren't critical to the company. In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data."
   },
   {
-    "question": "How can anyone access public clouds?",
-    "answer": "Public clouds can be accessed by anyone.",
-    "context": "Cloud Computing: How?\nA cloud system may be public or private. \nPublic clouds can be  accessed by anyone. \nPrivate clouds offer services to a set of authorized users. \nA hybrid cloud is a combination of both public and private clouds.\n‹#›"
+    "question": "What is a covert channel into the network that goes undetected for long periods of time?",
+    "answer": "In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data.",
+    "context": "Why is IoT security important? IoT is about \"Things\", so if security issues would affect software, now it affects things that interact with the real world. Security issues migrate from the cyber world to the real world through things. It is everywhere. A breach in one component is a breach in the real world. The general thought is that the devices don't contain sensitive information or aren't critical to the company. In reality, attackers use these devices as covert channels into the network that go undetected for long periods of time, leading directly to the rest of the organization's data."
   },
   {
-    "question": "What do private clouds offer to a set of authorized users?",
-    "answer": "Private clouds offer services to a set of authorized users.",
-    "context": "Cloud Computing: How?\nA cloud system may be public or private. \nPublic clouds can be  accessed by anyone. \nPrivate clouds offer services to a set of authorized users. \nA hybrid cloud is a combination of both public and private clouds.\n‹#›"
+    "question": "What is Security in IoT?",
+    "answer": "Security in IoT is the act of securing Internet of Things devices and the networks they're connected to.",
+    "context": "What is IoT Security? Security in IoT is the act of securing Internet of Things devices and the networks they're connected to. IoT security covers both physical device security and network security, and impacts the processes, technologies, and measures necessary to protect IoT devices and networks. IoT device security must protect systems, networks, and data from a broad spectrum of IoT security attacks."
   },
   {
-    "question": "What is a hybrid cloud?",
-    "answer": "A hybrid cloud is a combination of both public and private clouds.",
-    "context": "Cloud Computing: How?\nA cloud system may be public or private. \nPublic clouds can be  accessed by anyone. \nPrivate clouds offer services to a set of authorized users. \nA hybrid cloud is a combination of both public and private clouds.\n‹#›"
+    "question": "What does IoT security cover?",
+    "answer": "IoT security covers both physical device security and network security, and impacts the processes, technologies, and measures necessary to protect IoT devices and networks.",
+    "context": "What is IoT Security? Security in IoT is the act of securing Internet of Things devices and the networks they're connected to. IoT security covers both physical device security and network security, and impacts the processes, technologies, and measures necessary to protect IoT devices and networks. IoT device security must protect systems, networks, and data from a broad spectrum of IoT security attacks."
   },
   {
-    "question": "What does Edge/Fog Computing do?",
-    "answer": "Edge/Fog Computing What this basically does is process the time-sensitive data on the edge of the network itself, i.e., closest to where the data is being generated so that appropriate actions can be taken in time.",
-    "context": "Edge/Fog Computing\nWhat this basically does is process the time-sensitive data on the edge of the network itself, i.e., closest to where the data is being generated so that appropriate actions can be taken in time. \nSome key features of this model are: minimize latency, conserve network bandwidth, resolve the data privacy and security issue, and increase reliability.\n‹#›"
+    "question": "IoT device security must protect systems, networks, and data from a broad spectrum of IoT security attacks?",
+    "answer": "IoT device security must protect systems, networks, and data from a broad spectrum of IoT security attacks.",
+    "context": "What is IoT Security? Security in IoT is the act of securing Internet of Things devices and the networks they're connected to. IoT security covers both physical device security and network security, and impacts the processes, technologies, and measures necessary to protect IoT devices and networks. IoT device security must protect systems, networks, and data from a broad spectrum of IoT security attacks."
   },
   {
-    "question": "What are some key features of this model?",
-    "answer": "Some key features of this model are: minimize latency, conserve network bandwidth, resolve the data privacy and security issue, and increase reliability.",
-    "context": "Edge/Fog Computing\nWhat this basically does is process the time-sensitive data on the edge of the network itself, i.e., closest to where the data is being generated so that appropriate actions can be taken in time. \nSome key features of this model are: minimize latency, conserve network bandwidth, resolve the data privacy and security issue, and increase reliability.\n‹#›"
+    "question": "What is the image of the most targeted industries by IoT attacks in 2025?",
+    "answer": "The image shows: Radar chart of industries most targeted by IoT attacks in 2025, highlighting transportation, manufacturing, healthcare, and energy..",
+    "context": "The image shows: Radar chart of industries most targeted by IoT attacks in 2025, highlighting transportation, manufacturing, healthcare, and energy.."
   },
   {
-    "question": "Why is Edge computing separate from cloud computing?",
-    "answer": "Edge/Fog Computing Edge computing is separate from cloud for 2 main reasons: Time sensitivity.",
-    "context": "Edge/Fog Computing\nEdge computing is separate from cloud for 2 main reasons:\n\nTime sensitivity. The rate at which a decision needs to be made doesn’t allow for the lag that would normally take place as data is collected by an edge device, transferred to a central cloud without modification, and then processed before a decision is sent back to the edge device for execution.\n\nData volume. The sheer volume of data collected is too much to send—unaltered—to a cloud.\n‹#›"
+    "question": "What is the image of the top 3 IoT Cyber Threats?",
+    "answer": "The image shows: Breakdown of Top 3 IoT Cyber Threats.",
+    "context": "The image shows: Breakdown of Top 3 IoT Cyber Threats. Why network scan is top?Zero-Day."
   },
   {
-    "question": "What does the rate of a decision need to be made not allow for the lag that would normally take place when data is collected by an edge device, transferred to a central cloud without modification, and then processed before a decision is sent back to the edge device for execution?",
-    "answer": "The rate at which a decision needs to be made doesn’t allow for the lag that would normally take place as data is collected by an edge device, transferred to a central cloud without modification, and then processed before a decision is sent back to the edge device for execution.",
-    "context": "Edge/Fog Computing\nEdge computing is separate from cloud for 2 main reasons:\n\nTime sensitivity. The rate at which a decision needs to be made doesn’t allow for the lag that would normally take place as data is collected by an edge device, transferred to a central cloud without modification, and then processed before a decision is sent back to the edge device for execution.\n\nData volume. The sheer volume of data collected is too much to send—unaltered—to a cloud.\n‹#›"
+    "question": "Why is network scan top?",
+    "answer": "Why network scan is top?Zero-Day.",
+    "context": "The image shows: Breakdown of Top 3 IoT Cyber Threats. Why network scan is top?Zero-Day."
   },
   {
-    "question": "How much data is too much to send to a cloud?",
-    "answer": "The sheer volume of data collected is too much to send—unaltered—to a cloud.",
-    "context": "Edge/Fog Computing\nEdge computing is separate from cloud for 2 main reasons:\n\nTime sensitivity. The rate at which a decision needs to be made doesn’t allow for the lag that would normally take place as data is collected by an edge device, transferred to a central cloud without modification, and then processed before a decision is sent back to the edge device for execution.\n\nData volume. The sheer volume of data collected is too much to send—unaltered—to a cloud.\n‹#›"
+    "question": "What are some examples of Security Risks in IoT?",
+    "answer": "Examples of Security Risks in IoT.",
+    "context": "Examples of Security Risks in IoT. In the following IoT System, identify the IoT devices and mention a risk for each. Door locks (car/house/office)House appliances (burn/use as bot) mining bitcoins or soMedical devices (harmful/life threatening)Public utilities (power grid/ water network) shutdown."
   },
   {
-    "question": "What is the goal of IoT development?",
-    "answer": "Data Analytics The goal of IoT development is to use data, gain insight, and take action.",
-    "context": "Data Analytics\nThe goal of IoT development is to use data, gain insight, and take action.\n‹#›"
+    "question": "What should you do in the following IoT System?",
+    "answer": "In the following IoT System, identify the IoT devices and mention a risk for each.",
+    "context": "Examples of Security Risks in IoT. In the following IoT System, identify the IoT devices and mention a risk for each. Door locks (car/house/office)House appliances (burn/use as bot) mining bitcoins or soMedical devices (harmful/life threatening)Public utilities (power grid/ water network) shutdown."
   },
   {
-    "question": "What is the need for advanced analytics to visualize IoT data?",
-    "answer": "Data Analytics for Big Data This requires advanced analytics to visualize IoT data.",
-    "context": "Data Analytics for Big Data\nThis requires advanced analytics to visualize IoT data. \nAnalytical techniques can be categorized into data mining, statistical analysis, visualization, and machine learning.\n‹#›"
+    "question": "What is a danger of using a bot to mine bitcoins?",
+    "answer": "Door locks (car/house/office)House appliances (burn/use as bot) mining bitcoins or soMedical devices (harmful/life threatening)Public utilities (power grid/ water network) shutdown.",
+    "context": "Examples of Security Risks in IoT. In the following IoT System, identify the IoT devices and mention a risk for each. Door locks (car/house/office)House appliances (burn/use as bot) mining bitcoins or soMedical devices (harmful/life threatening)Public utilities (power grid/ water network) shutdown."
   },
   {
-    "question": "What are some examples of analytical techniques?",
-    "answer": "Analytical techniques can be categorized into data mining, statistical analysis, visualization, and machine learning.",
-    "context": "Data Analytics for Big Data\nThis requires advanced analytics to visualize IoT data. \nAnalytical techniques can be categorized into data mining, statistical analysis, visualization, and machine learning.\n‹#›"
+    "question": "What is the title of the image?",
+    "answer": "The image shows: IoT Security: 10 Challenges of Securing IoT Communications | PubNub.",
+    "context": "The image shows: IoT Security: 10 Challenges of Securing IoT Communications | PubNub."
   },
   {
-    "question": "What type of data does IoT Data Analytics use?",
-    "answer": "IoT Data Analytics: Types ‹#›",
-    "context": "IoT Data Analytics: Types\n‹#›"
+    "question": "What does \"medical incident\" refer to?",
+    "answer": "Medical incident\" primarily refers to the premature battery depletion in certain heart devices, leading to recalls and lawsuits, and the company's acquisition by.",
+    "context": "St. Jude Medical. The \"St. Jude. Medical incident\" primarily refers to the premature battery depletion in certain heart devices, leading to recalls and lawsuits, and the company's acquisition by. Abbott. Laboratories in 2017."
   },
   {
-    "question": "What is the purpose of Types Descriptive Analytics?",
-    "answer": "IoT Data Analytics: Types Descriptive Analytics: Find an answer to question “what happened?”, generate reports or visualize the data.",
-    "context": "IoT Data Analytics: Types\nDescriptive Analytics: \nFind an answer to question “what happened?”, generate reports or visualize the data.\nDiagnostic Analytics: \nFind an answer to question “why did it happen?”, find correlations.\nPredictive Analytics: \nFind an answer to question “what will happen?”, it uses machine learning.\nPrescriptive Analytics: \nFind an answer to question “how can we make it happen?”, it uses more complicated machine learning algorithms to find recommendation.\n‹#›"
+    "question": "How did it work?",
+    "answer": "It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What type of analytics is used to find the answer to the question \"why did it happen?\"",
-    "answer": "Diagnostic Analytics: Find an answer to question “why did it happen?”, find correlations.",
-    "context": "IoT Data Analytics: Types\nDescriptive Analytics: \nFind an answer to question “what happened?”, generate reports or visualize the data.\nDiagnostic Analytics: \nFind an answer to question “why did it happen?”, find correlations.\nPredictive Analytics: \nFind an answer to question “what will happen?”, it uses machine learning.\nPrescriptive Analytics: \nFind an answer to question “how can we make it happen?”, it uses more complicated machine learning algorithms to find recommendation.\n‹#›"
+    "question": "How many devices were infected by the DDoS attack?",
+    "answer": "It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What does predictive analytics do?",
-    "answer": "Predictive Analytics: Find an answer to question “what will happen?”, it uses machine learning.",
-    "context": "IoT Data Analytics: Types\nDescriptive Analytics: \nFind an answer to question “what happened?”, generate reports or visualize the data.\nDiagnostic Analytics: \nFind an answer to question “why did it happen?”, find correlations.\nPredictive Analytics: \nFind an answer to question “what will happen?”, it uses machine learning.\nPrescriptive Analytics: \nFind an answer to question “how can we make it happen?”, it uses more complicated machine learning algorithms to find recommendation.\n‹#›"
+    "question": "What is the name of the book that describes the evolution of Mantis?",
+    "answer": "The Evolution to Mantis:.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What does Prescriptive Analytics do?",
-    "answer": "Prescriptive Analytics: Find an answer to question “how can we make it happen?”, it uses more complicated machine learning algorithms to find recommendation.",
-    "context": "IoT Data Analytics: Types\nDescriptive Analytics: \nFind an answer to question “what happened?”, generate reports or visualize the data.\nDiagnostic Analytics: \nFind an answer to question “why did it happen?”, find correlations.\nPredictive Analytics: \nFind an answer to question “what will happen?”, it uses machine learning.\nPrescriptive Analytics: \nFind an answer to question “how can we make it happen?”, it uses more complicated machine learning algorithms to find recommendation.\n‹#›"
+    "question": "How has the botnet evolved?",
+    "answer": "The modern botnet has evolved significantly.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What is the main difference between data analysis and data analytics?",
-    "answer": "Data Analysis vs Data Analytics The main difference between data analysis and analytics lies in their approach, as analysis looks towards the past while analytics towards the future.",
-    "context": "Data Analysis vs Data Analytics\nThe main difference between data analysis and analytics lies in their approach, as analysis looks towards the past while analytics towards the future. \nData analysis is the process of studying a given data set (in close detail), dividing them into small components, and studying the subcomponents individually and their relationship with each another. \nData analytics, on the other hand, is a more comprehensive term referring to a discipline that comprises the complete management of data, including collection, cleaning, organizing, storing, administering, and analysis of data with the help of specialized tools and techniques. \nIn other words, data analysis is a process or method, whereas data analytics is an overarching discipline (science).\n‹#›"
+    "question": "What is the significance of the Mantis botnet?",
+    "answer": "The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What is data analysis?",
-    "answer": "Data analysis is the process of studying a given data set (in close detail), dividing them into small components, and studying the subcomponents individually and their relationship with each another.",
-    "context": "Data Analysis vs Data Analytics\nThe main difference between data analysis and analytics lies in their approach, as analysis looks towards the past while analytics towards the future. \nData analysis is the process of studying a given data set (in close detail), dividing them into small components, and studying the subcomponents individually and their relationship with each another. \nData analytics, on the other hand, is a more comprehensive term referring to a discipline that comprises the complete management of data, including collection, cleaning, organizing, storing, administering, and analysis of data with the help of specialized tools and techniques. \nIn other words, data analysis is a process or method, whereas data analytics is an overarching discipline (science).\n‹#›"
+    "question": "What is the difference between Mantis and Mirai?",
+    "answer": "While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What is a more comprehensive term for data analytics?",
-    "answer": "Data analytics, on the other hand, is a more comprehensive term referring to a discipline that comprises the complete management of data, including collection, cleaning, organizing, storing, administering, and analysis of data with the help of specialized tools and techniques.",
-    "context": "Data Analysis vs Data Analytics\nThe main difference between data analysis and analytics lies in their approach, as analysis looks towards the past while analytics towards the future. \nData analysis is the process of studying a given data set (in close detail), dividing them into small components, and studying the subcomponents individually and their relationship with each another. \nData analytics, on the other hand, is a more comprehensive term referring to a discipline that comprises the complete management of data, including collection, cleaning, organizing, storing, administering, and analysis of data with the help of specialized tools and techniques. \nIn other words, data analysis is a process or method, whereas data analytics is an overarching discipline (science).\n‹#›"
+    "question": "What is the advantage of using HTTPS based DDoS?",
+    "answer": "This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What is the difference between data analysis and data analytics?",
-    "answer": "In other words, data analysis is a process or method, whereas data analytics is an overarching discipline (science).",
-    "context": "Data Analysis vs Data Analytics\nThe main difference between data analysis and analytics lies in their approach, as analysis looks towards the past while analytics towards the future. \nData analysis is the process of studying a given data set (in close detail), dividing them into small components, and studying the subcomponents individually and their relationship with each another. \nData analytics, on the other hand, is a more comprehensive term referring to a discipline that comprises the complete management of data, including collection, cleaning, organizing, storing, administering, and analysis of data with the help of specialized tools and techniques. \nIn other words, data analysis is a process or method, whereas data analytics is an overarching discipline (science).\n‹#›"
+    "question": "What is the full report on DDoS attack statistics and case studies?",
+    "answer": "For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies.",
+    "context": "Mirai (2016):. It worked by relentlessly scanning the internet for IoT devices and attempting to log in using a hardcoded list of just 60 common factory default usernames and passwords. It successfully infected hundreds of thousands of devices, which were then used to launch a record breaking Distributed Denial of Service (DDoS) attack that disrupted major websites across North America and Europe. The Evolution to Mantis:. The modern botnet has evolved significantly. The Mantis botnet, first observed launching major attacks in 2022, represents a strategic shift. While Mirai relied on a massive fleet of low power IoT devices, Mantis uses a much smaller fleet with only around 5,000 bots of powerful, hijacked virtual machines and servers. This allows it to generate more sophisticated and resource intensive HTTPS based DDoS attacks, including one that peaked at 26 million requests per second. For more on modern DDoS trends, see our full report on DDoS attack statistics and case studies."
   },
   {
-    "question": "What is the difference between True or False A LiDAR and RADAR?",
-    "answer": "True or False A LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser.",
-    "context": "True or False\nA LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser. \n\nAny sensor connected to the internet is considered part of an IoT ecosystem.\n\nBLE, same as Bluetooth, offer reduced power consumption."
+    "question": "IoT security can be performed by \"Security by design\" or \"Security by Obscurity\"?",
+    "answer": "IoT security can be performed either by \"Security by design\" or \"Security by Obscurity\".",
+    "context": "IoT Security. IoT security can be performed either by \"Security by design\" or \"Security by Obscurity\"."
   },
   {
-    "question": "What is an IoT ecosystem?",
-    "answer": "Any sensor connected to the internet is considered part of an IoT ecosystem.",
-    "context": "True or False\nA LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser. \n\nAny sensor connected to the internet is considered part of an IoT ecosystem.\n\nBLE, same as Bluetooth, offer reduced power consumption."
+    "question": "What is Security by Design - Theoretically proven - It is usually an open solution - Tested and reviewed by a large number of users - Trust the enterprise that designs it - How is it updated?",
+    "answer": "Security by Design is - Theoretically proven - It is usually an open solution - Tested and reviewed by a large number of users - Trusts the users, Security by Obscurity is - Closed box - No one knows what's inside - If hacked, all the system fails - Trust the enterprise that designs it - How is it updated?",
+    "context": "Security Types in IoT. Security by Design is - Theoretically proven - It is usually an open solution - Tested and reviewed by a large number of users - Trusts the users, Security by Obscurity is - Closed box - No one knows what's inside - If hacked, all the system fails - Trust the enterprise that designs it - How is it updated? What about reverse engineering?What about decompilers de assemblers etc. Code mapping. By design. Comes from a mathematical processAs soon as a vulnerability is found it can be fixed."
   },
   {
-    "question": "What is the difference between BLE and Bluetooth?",
-    "answer": "BLE, same as Bluetooth, offer reduced power consumption.",
-    "context": "True or False\nA LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser. \n\nAny sensor connected to the internet is considered part of an IoT ecosystem.\n\nBLE, same as Bluetooth, offer reduced power consumption."
+    "question": "What is another term for reverse engineering?",
+    "answer": "What about reverse engineering?What about decompilers de assemblers etc.",
+    "context": "Security Types in IoT. Security by Design is - Theoretically proven - It is usually an open solution - Tested and reviewed by a large number of users - Trusts the users, Security by Obscurity is - Closed box - No one knows what's inside - If hacked, all the system fails - Trust the enterprise that designs it - How is it updated? What about reverse engineering?What about decompilers de assemblers etc. Code mapping. By design. Comes from a mathematical processAs soon as a vulnerability is found it can be fixed."
   },
   {
-    "question": "What is the difference between True or False A LiDAR and RADAR?",
-    "answer": "True or False A LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser.",
-    "context": "True or False\nA LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser. False\n\nAny sensor connected to the internet is considered part of an IoT ecosystem. False\n\nBLE, same as Bluetooth, offer reduced power consumption. False"
+    "question": "What happens when a vulnerability is found?",
+    "answer": "Comes from a mathematical processAs soon as a vulnerability is found it can be fixed.",
+    "context": "Security Types in IoT. Security by Design is - Theoretically proven - It is usually an open solution - Tested and reviewed by a large number of users - Trusts the users, Security by Obscurity is - Closed box - No one knows what's inside - If hacked, all the system fails - Trust the enterprise that designs it - How is it updated? What about reverse engineering?What about decompilers de assemblers etc. Code mapping. By design. Comes from a mathematical processAs soon as a vulnerability is found it can be fixed."
   },
   {
-    "question": "Is a sensor connected to the internet considered part of an IoT ecosystem?",
-    "answer": "False Any sensor connected to the internet is considered part of an IoT ecosystem.",
-    "context": "True or False\nA LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser. False\n\nAny sensor connected to the internet is considered part of an IoT ecosystem. False\n\nBLE, same as Bluetooth, offer reduced power consumption. False"
+    "question": "Does security depend on secrecy of design or implementation?",
+    "answer": "Security should not depend on secrecy of design or implementation.",
+    "context": "Open Design. Security should not depend on secrecy of design or implementation."
   },
   {
-    "question": "What is the difference between False BLE and Bluetooth?",
-    "answer": "False BLE, same as Bluetooth, offer reduced power consumption.",
-    "context": "True or False\nA LiDAR is the same as RADAR except that LiDAR uses radio waves instead of laser. False\n\nAny sensor connected to the internet is considered part of an IoT ecosystem. False\n\nBLE, same as Bluetooth, offer reduced power consumption. False"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101."
   },
   {
-    "question": "Which communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?",
-    "answer": "Answer each of the following: Which communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?",
-    "context": "Answer each of the following:\nWhich communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?\n\n\nWhich IoT Level is used for systems where data is huge, and the analysis is computationally intensive?\n\n\nWhich hardware platform would you choose if your main concern is performance regardless cost and time?"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. The image shows: LDAP Admin Login to FGT - Change Default Password Request. The image shows: Default usernames & passwords list for your wireless router. The image shows: IP Cameras Default Passwords Directory. admin, password, and 1234."
   },
   {
-    "question": "What IoT Level is used for systems where data is huge and the analysis is computationally intensive?",
-    "answer": "Which IoT Level is used for systems where data is huge, and the analysis is computationally intensive?",
-    "context": "Answer each of the following:\nWhich communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?\n\n\nWhich IoT Level is used for systems where data is huge, and the analysis is computationally intensive?\n\n\nWhich hardware platform would you choose if your main concern is performance regardless cost and time?"
+    "question": "What do you do to change the default password?",
+    "answer": "Change the default password.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. The image shows: LDAP Admin Login to FGT - Change Default Password Request. The image shows: Default usernames & passwords list for your wireless router. The image shows: IP Cameras Default Passwords Directory. admin, password, and 1234."
   },
   {
-    "question": "What hardware platform would you choose if your main concern is performance?",
-    "answer": "Which hardware platform would you choose if your main concern is performance regardless cost and time?",
-    "context": "Answer each of the following:\nWhich communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?\n\n\nWhich IoT Level is used for systems where data is huge, and the analysis is computationally intensive?\n\n\nWhich hardware platform would you choose if your main concern is performance regardless cost and time?"
+    "question": "What is the LDAP Admin Login to FGT - Change Default Password Request?",
+    "answer": "The image shows: LDAP Admin Login to FGT - Change Default Password Request.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. The image shows: LDAP Admin Login to FGT - Change Default Password Request. The image shows: Default usernames & passwords list for your wireless router. The image shows: IP Cameras Default Passwords Directory. admin, password, and 1234."
   },
   {
-    "question": "Which communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?",
-    "answer": "Answer each of the following: Which communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?",
-    "context": "Answer each of the following:\nWhich communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?\nPush-Pull Communication Model\nWhich IoT Level is used for systems where data is huge, and the analysis is computationally intensive?\nLevel 3 \nWhich hardware platform would you choose if your main concern is performance regardless cost and time?\nASIC"
+    "question": "What is the name of the default usernames & passwords list for your wireless router?",
+    "answer": "The image shows: Default usernames & passwords list for your wireless router.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. The image shows: LDAP Admin Login to FGT - Change Default Password Request. The image shows: Default usernames & passwords list for your wireless router. The image shows: IP Cameras Default Passwords Directory. admin, password, and 1234."
   },
   {
-    "question": "What type of model is used for systems where data is huge and the analysis is computationally intensive?",
-    "answer": "Push-Pull Communication Model Which IoT Level is used for systems where data is huge, and the analysis is computationally intensive?",
-    "context": "Answer each of the following:\nWhich communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?\nPush-Pull Communication Model\nWhich IoT Level is used for systems where data is huge, and the analysis is computationally intensive?\nLevel 3 \nWhich hardware platform would you choose if your main concern is performance regardless cost and time?\nASIC"
+    "question": "What is the name of the IP Cameras Default Passwords Directory?",
+    "answer": "The image shows: IP Cameras Default Passwords Directory.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. The image shows: LDAP Admin Login to FGT - Change Default Password Request. The image shows: Default usernames & passwords list for your wireless router. The image shows: IP Cameras Default Passwords Directory. admin, password, and 1234."
   },
   {
-    "question": "Which hardware platform would you choose if your main concern is performance?",
-    "answer": "Level 3 Which hardware platform would you choose if your main concern is performance regardless cost and time?",
-    "context": "Answer each of the following:\nWhich communication model would you use when the rate at which the producers generate data is faster than the rate at which the consumers consume data?\nPush-Pull Communication Model\nWhich IoT Level is used for systems where data is huge, and the analysis is computationally intensive?\nLevel 3 \nWhich hardware platform would you choose if your main concern is performance regardless cost and time?\nASIC"
+    "question": "What are the three main parts of a user account?",
+    "answer": "admin, password, and 1234.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. The image shows: LDAP Admin Login to FGT - Change Default Password Request. The image shows: Default usernames & passwords list for your wireless router. The image shows: IP Cameras Default Passwords Directory. admin, password, and 1234."
   },
   {
-    "question": "What is required of a network to have 100 host per subnet?",
-    "answer": "IP Subnetting Given a network address “163.220.0.0” and the network is required to have 100 host per subnet.",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network?\nWhat is the default subnet mask of this network? \nWhat is the custom subnet mask that you would use? \nWhat is the broadcast and network address of the first subnet?"
+    "question": "What does the image show?",
+    "answer": "The image shows: Infographic: The Most Popular Passwords Around the World | Statista.",
+    "context": "The image shows: Infographic: The Most Popular Passwords Around the World | Statista."
   },
   {
-    "question": "What do you do after answering the questions?",
-    "answer": "Answer the following, show your steps.",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network?\nWhat is the default subnet mask of this network? \nWhat is the custom subnet mask that you would use? \nWhat is the broadcast and network address of the first subnet?"
+    "question": "What is the default password for Raspberry Pi?",
+    "answer": "Raspberry Pi Default Password.",
+    "context": "Raspberry Pi Default Password. Default passwords are easily crawled off the internetUsed in. Mirai attack."
   },
   {
-    "question": "What is the address class of this network?",
-    "answer": "What is the address class of this network?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network?\nWhat is the default subnet mask of this network? \nWhat is the custom subnet mask that you would use? \nWhat is the broadcast and network address of the first subnet?"
+    "question": "Why are default passwords easily crawled off the internet?",
+    "answer": "Default passwords are easily crawled off the internetUsed in.",
+    "context": "Raspberry Pi Default Password. Default passwords are easily crawled off the internetUsed in. Mirai attack."
   },
   {
-    "question": "What is the default subnet mask of this network?",
-    "answer": "What is the default subnet mask of this network?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network?\nWhat is the default subnet mask of this network? \nWhat is the custom subnet mask that you would use? \nWhat is the broadcast and network address of the first subnet?"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. Disable unused services. No one needs. SSH on production. Disable administration over the air."
   },
   {
-    "question": "What is the subnet mask that you would use?",
-    "answer": "What is the custom subnet mask that you would use?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network?\nWhat is the default subnet mask of this network? \nWhat is the custom subnet mask that you would use? \nWhat is the broadcast and network address of the first subnet?"
+    "question": "What do you do to change the default password?",
+    "answer": "Change the default password.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. Disable unused services. No one needs. SSH on production. Disable administration over the air."
   },
   {
-    "question": "What is the broadcast and network address of the first subnet?",
-    "answer": "What is the broadcast and network address of the first subnet?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network?\nWhat is the default subnet mask of this network? \nWhat is the custom subnet mask that you would use? \nWhat is the broadcast and network address of the first subnet?"
+    "question": "What is another way to disable administration over the air?",
+    "answer": "Disable administration over the air.",
+    "context": "Securing an IoT Device 101. Local security. Change the default password. Disable unused services. No one needs. SSH on production. Disable administration over the air."
   },
   {
-    "question": "What is required of a network to have 100 host per subnet?",
-    "answer": "IP Subnetting Given a network address “163.220.0.0” and the network is required to have 100 host per subnet.",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. No one tested it. Is it theoretically proven? Might be stopped by firewalls. The image shows: Open protocol development (article) | Khan Academy. The image shows: Protocol creation."
   },
   {
-    "question": "What do you do after answering the questions?",
-    "answer": "Answer the following, show your steps.",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "What do you do to avoid self-written protocols?",
+    "answer": "Avoid self-written protocols.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. No one tested it. Is it theoretically proven? Might be stopped by firewalls. The image shows: Open protocol development (article) | Khan Academy. The image shows: Protocol creation."
   },
   {
-    "question": "What is the address class of this network?",
-    "answer": "What is the address class of this network?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "Is it theoretically proven?",
+    "answer": "Is it theoretically proven?",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. No one tested it. Is it theoretically proven? Might be stopped by firewalls. The image shows: Open protocol development (article) | Khan Academy. The image shows: Protocol creation."
   },
   {
-    "question": "What is the default subnet mask of this network?",
-    "answer": "B What is the default subnet mask of this network?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "What might be stopped by firewalls?",
+    "answer": "Might be stopped by firewalls.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. No one tested it. Is it theoretically proven? Might be stopped by firewalls. The image shows: Open protocol development (article) | Khan Academy. The image shows: Protocol creation."
   },
   {
-    "question": "What is the subnet mask that you would use?",
-    "answer": "255.255.0.0 What is the custom subnet mask that you would use?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "What does the image show?",
+    "answer": "The image shows: Open protocol development (article) | Khan Academy.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. No one tested it. Is it theoretically proven? Might be stopped by firewalls. The image shows: Open protocol development (article) | Khan Academy. The image shows: Protocol creation."
   },
   {
-    "question": "What is the broadcast and network address of the first subnet?",
-    "answer": "255.255.255.128 What is the broadcast and network address of the first subnet?",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. MQTT/SSLXMPP Use a computer not a microcontroller when connecting to the internet."
   },
   {
-    "question": "What is the name of the broadcaster?",
-    "answer": "Network: 163.220.0.0 Broadcast: 163.220.0.127",
-    "context": "IP Subnetting\nGiven a network address “163.220.0.0” and the network is required to have 100 host per subnet. Answer the following, show your steps. \nWhat is the address class of this network? B\nWhat is the default subnet mask of this network? 255.255.0.0\nWhat is the custom subnet mask that you would use? 255.255.255.128\nWhat is the broadcast and network address of the first subnet? \nNetwork: 163.220.0.0\nBroadcast: 163.220.0.127"
+    "question": "What do you do to avoid self-written protocols?",
+    "answer": "Avoid self-written protocols.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. MQTT/SSLXMPP Use a computer not a microcontroller when connecting to the internet."
   },
   {
-    "question": "What is a complete product?",
-    "answer": "Complete 1- People 2- Sensors 3- Electrical Actuators",
-    "context": "Complete\n1- People\n2- Sensors\n3- Electrical Actuators"
+    "question": "What is the use of a computer not a microcontroller when connecting to the internet?",
+    "answer": "MQTT/SSLXMPP Use a computer not a microcontroller when connecting to the internet.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. MQTT/SSLXMPP Use a computer not a microcontroller when connecting to the internet."
   },
   {
-    "question": "What is required of a network to have 18 subnets?",
-    "answer": "IP Subnetting Given a network address “135.100.0.0” and the network is required to have 18 subnets.",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network?\nWhat is the custom subnet mask to support the required number of subnets?\nWhat is the total number of host addresses per subnet?"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101."
   },
   {
-    "question": "What do you do after answering the questions?",
-    "answer": "Answer the following, show your steps.",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network?\nWhat is the custom subnet mask to support the required number of subnets?\nWhat is the total number of host addresses per subnet?"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. Read before implementation/use. Read about security issues."
   },
   {
-    "question": "What is the address class of this network?",
-    "answer": "What is the address class of this network?",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network?\nWhat is the custom subnet mask to support the required number of subnets?\nWhat is the total number of host addresses per subnet?"
+    "question": "What do you do to avoid self-written protocols?",
+    "answer": "Avoid self-written protocols.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. Read before implementation/use. Read about security issues."
   },
   {
-    "question": "What is the custom subnet mask to support the required number of subnets?",
-    "answer": "What is the custom subnet mask to support the required number of subnets?",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network?\nWhat is the custom subnet mask to support the required number of subnets?\nWhat is the total number of host addresses per subnet?"
+    "question": "What should be done before implementation/use?",
+    "answer": "Read before implementation/use.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. Read before implementation/use. Read about security issues."
   },
   {
-    "question": "What is the total number of host addresses per subnet?",
-    "answer": "What is the total number of host addresses per subnet?",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network?\nWhat is the custom subnet mask to support the required number of subnets?\nWhat is the total number of host addresses per subnet?"
+    "question": "What is a good way to learn about security issues?",
+    "answer": "Read about security issues.",
+    "context": "Securing an IoT Device 101. Network security. Avoid self-written protocols. Use secure protocols. Read before implementation/use. Read about security issues."
   },
   {
-    "question": "What is required of a network to have 18 subnets?",
-    "answer": "IP Subnetting Given a network address “135.100.0.0” and the network is required to have 18 subnets.",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network? B\nWhat is the custom subnet mask to support the required number of subnets? 255.255.248.0\nWhat is the total number of host addresses per subnet? 2048 hosts & 2046 usable hosts"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Software. Use supported software. Use open libraries. Is it maintained? Check GiHub stats and history. Upstream changes (patches). Trust store. Dual partition. Verify with the. HW that the. SW is fine."
   },
   {
-    "question": "What do you do after answering the questions?",
-    "answer": "Answer the following, show your steps.",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network? B\nWhat is the custom subnet mask to support the required number of subnets? 255.255.248.0\nWhat is the total number of host addresses per subnet? 2048 hosts & 2046 usable hosts"
+    "question": "What can you do to find out more about GiHub?",
+    "answer": "Check GiHub stats and history.",
+    "context": "Securing an IoT Device 101. Software. Use supported software. Use open libraries. Is it maintained? Check GiHub stats and history. Upstream changes (patches). Trust store. Dual partition. Verify with the. HW that the. SW is fine."
   },
   {
-    "question": "What is the address class of this network?",
-    "answer": "What is the address class of this network?",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network? B\nWhat is the custom subnet mask to support the required number of subnets? 255.255.248.0\nWhat is the total number of host addresses per subnet? 2048 hosts & 2046 usable hosts"
+    "question": "What is the name of a change in the code?",
+    "answer": "Upstream changes (patches).",
+    "context": "Securing an IoT Device 101. Software. Use supported software. Use open libraries. Is it maintained? Check GiHub stats and history. Upstream changes (patches). Trust store. Dual partition. Verify with the. HW that the. SW is fine."
   },
   {
-    "question": "What is the custom subnet mask to support the required number of subnets?",
-    "answer": "B What is the custom subnet mask to support the required number of subnets?",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network? B\nWhat is the custom subnet mask to support the required number of subnets? 255.255.248.0\nWhat is the total number of host addresses per subnet? 2048 hosts & 2046 usable hosts"
+    "question": "What is the name of the course that focuses on securing an IoT device?",
+    "answer": "Securing an IoT Device 101.",
+    "context": "Securing an IoT Device 101. Hardware. Use the right hardware for the right job. Follow IoT stack. The key is to follow security practices built into the development life cycle. Microcontroller vs computers."
   },
   {
-    "question": "What is the total number of host addresses per subnet?",
-    "answer": "255.255.248.0 What is the total number of host addresses per subnet?",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network? B\nWhat is the custom subnet mask to support the required number of subnets? 255.255.248.0\nWhat is the total number of host addresses per subnet? 2048 hosts & 2046 usable hosts"
+    "question": "What does it mean to use the right hardware for the right job?",
+    "answer": "Use the right hardware for the right job.",
+    "context": "Securing an IoT Device 101. Hardware. Use the right hardware for the right job. Follow IoT stack. The key is to follow security practices built into the development life cycle. Microcontroller vs computers."
   },
   {
-    "question": "How many hosts are there?",
-    "answer": "2048 hosts & 2046 usable hosts",
-    "context": "IP Subnetting\nGiven a network address “135.100.0.0” and the network is required to have 18 subnets. Answer the following, show your steps.\n\nWhat is the address class of this network? B\nWhat is the custom subnet mask to support the required number of subnets? 255.255.248.0\nWhat is the total number of host addresses per subnet? 2048 hosts & 2046 usable hosts"
+    "question": "What is the key to security practices built into the development life cycle?",
+    "answer": "The key is to follow security practices built into the development life cycle.",
+    "context": "Securing an IoT Device 101. Hardware. Use the right hardware for the right job. Follow IoT stack. The key is to follow security practices built into the development life cycle. Microcontroller vs computers."
   },
   {
-    "question": "What should you do with the 3 IoT devices in the IoT ecosystem?",
-    "answer": "Given the following IoT ecosystem, identify 3 IoT devices and mention one associated security risk for each.",
-    "context": "Given the following IoT ecosystem, identify 3 IoT devices and mention one associated security risk for each."
+    "question": "What is the difference between microcontrollers and computers?",
+    "answer": "Microcontroller vs computers.",
+    "context": "Securing an IoT Device 101. Hardware. Use the right hardware for the right job. Follow IoT stack. The key is to follow security practices built into the development life cycle. Microcontroller vs computers."
   },
   {
-    "question": "How many different communication mediums would these devices use to transfer their data?",
-    "answer": "Identify 4 different communication mediums that these devices would use to transfer their data.",
-    "context": "Identify 4 different communication mediums that these devices would use to transfer their data.\n1\n2\n3\n4"
+    "question": "What is one of the reasons that connected technology is growing faster than security?",
+    "answer": "\"Our dependence on connected technology is growing faster than our ability to secure it.\".",
+    "context": "The IoT Security World. \"Our dependence on connected technology is growing faster than our ability to secure it.\". For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction. For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits. Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon. IoT, which is not the solution!"
+  },
+  {
+    "question": "What does the term IoT refer to?",
+    "answer": "For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction.",
+    "context": "The IoT Security World. \"Our dependence on connected technology is growing faster than our ability to secure it.\". For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction. For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits. Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon. IoT, which is not the solution!"
+  },
+  {
+    "question": "What is the IoT ecosystem for hackers?",
+    "answer": "For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits.",
+    "context": "The IoT Security World. \"Our dependence on connected technology is growing faster than our ability to secure it.\". For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction. For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits. Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon. IoT, which is not the solution!"
+  },
+  {
+    "question": "What do people think about autonomous vehicles?",
+    "answer": "Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon.",
+    "context": "The IoT Security World. \"Our dependence on connected technology is growing faster than our ability to secure it.\". For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction. For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits. Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon. IoT, which is not the solution!"
+  },
+  {
+    "question": "What is the problem with IoT?",
+    "answer": "IoT, which is not the solution!",
+    "context": "The IoT Security World. \"Our dependence on connected technology is growing faster than our ability to secure it.\". For purposes of this course, the term IoT refers to physical devices that have computing power and can transfer data over networks, yet don't typically require human-to-computer interaction. For hackers, the IoT ecosystem is a world of opportunities: billions of interconnected devices transferring and sharing data, creating a massive playground for tinkering, crafting, exploiting, and taking these systems to their limits. Autonomous vehicles can drastically reduce those numbers and make our roads safer, but only if they're trustworthy // People think that it is easier to just abandon. IoT, which is not the solution!"
+  },
+  {
+    "question": "What are the 3 Paths Forward for IoT security?",
+    "answer": "3 Paths Forward for IoT security.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Consumers can begin to \"bolt\" security onto devices that are insecure by default. Manufacturers can build security into the devices at the outset. The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST."
+  },
+  {
+    "question": "What happens to the status quo?",
+    "answer": "The status quo can remain.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Consumers can begin to \"bolt\" security onto devices that are insecure by default. Manufacturers can build security into the devices at the outset. The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST."
+  },
+  {
+    "question": "How can consumers begin to \"bolt\" security onto devices that are insecure by default?",
+    "answer": "Consumers can begin to \"bolt\" security onto devices that are insecure by default.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Consumers can begin to \"bolt\" security onto devices that are insecure by default. Manufacturers can build security into the devices at the outset. The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST."
+  },
+  {
+    "question": "How can manufacturers build security into devices?",
+    "answer": "Manufacturers can build security into the devices at the outset.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Consumers can begin to \"bolt\" security onto devices that are insecure by default. Manufacturers can build security into the devices at the outset. The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST."
+  },
+  {
+    "question": "What does the image show?",
+    "answer": "The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Consumers can begin to \"bolt\" security onto devices that are insecure by default. Manufacturers can build security into the devices at the outset. The image shows: Building the Federal Profile for IoT Device Cybersecurity | Post-Workshop Update | NIST."
+  },
+  {
+    "question": "What are the 3 Paths Forward for IoT security?",
+    "answer": "3 Paths Forward for IoT security.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Society would come to accept regularharms from security issues as a necessary part of using IoT devices."
+  },
+  {
+    "question": "What happens to the status quo?",
+    "answer": "The status quo can remain.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Society would come to accept regularharms from security issues as a necessary part of using IoT devices."
+  },
+  {
+    "question": "Why would society accept regularharms from security issues as a necessary part of using IoT devices?",
+    "answer": "Society would come to accept regularharms from security issues as a necessary part of using IoT devices.",
+    "context": "3 Paths Forward for IoT security. The status quo can remain. Society would come to accept regularharms from security issues as a necessary part of using IoT devices."
+  },
+  {
+    "question": "What are the 3 Paths Forward for IoT security?",
+    "answer": "3 Paths Forward for IoT security.",
+    "context": "3 Paths Forward for IoT security. Aftermarket security. New companies would fill the void neglected by device manufacturers, and buyers would end up paying more for security whose capabilities are less fit for purpose."
+  },
+  {
+    "question": "What would happen if new companies were created to fill the void left by device manufacturers?",
+    "answer": "New companies would fill the void neglected by device manufacturers, and buyers would end up paying more for security whose capabilities are less fit for purpose.",
+    "context": "3 Paths Forward for IoT security. Aftermarket security. New companies would fill the void neglected by device manufacturers, and buyers would end up paying more for security whose capabilities are less fit for purpose."
+  },
+  {
+    "question": "What are the 3 Paths Forward for IoT security?",
+    "answer": "3 Paths Forward for IoT security.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "How do manufacturers build security?",
+    "answer": "Manufacturers build security.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What happens when buyers and operators are better equipped to address issues and risk and cost decisions?",
+    "answer": "Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "Where are the original fieescapes located?",
+    "answer": "For instance, the original fieescapes in.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "Why was York often bolted to the outside of buildings?",
+    "answer": "York were frequently bolted to the outside of buildings.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What is the main reason for the increased cost and harm to the occupants?",
+    "answer": "As aresult, they often increased cost and harm to the occupants overall, according to an.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What was the title of the Atlantic article?",
+    "answer": "Atlantic article titled \"How the.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What kind of ornaments are built into buildings?",
+    "answer": "Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What is the difference between a fie escape inbuildings and a fie escape inbuildings?",
+    "answer": "Much the same as fie escapes inbuildings, security built into.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What can IoT devices bring new capabilities not possible in bolted-on approaches?",
+    "answer": "IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book.",
+    "context": "3 Paths Forward for IoT security. Manufacturers build security. Buyers and operators become better equipped to address issues and risk and cost decisions shift toward more efficient points in the supply chain. For instance, the original fieescapes in. New. York were frequently bolted to the outside of buildings. As aresult, they often increased cost and harm to the occupants overall, according to an. Atlantic article titled \"How the. Fire. Escape. Became an. Ornament.\"Today, they're built into buildings, often the fist thing constructed, andresidents have never been safer from fies. Much the same as fie escapes inbuildings, security built into. IoT devices can bring new capabilities not possible in bolted-on approaches, such as updatability, hardening, threat modeling, and component isolation-all of which you'll read about in this book."
+  },
+  {
+    "question": "What are the 3 Paths Forward for IoT security?",
+    "answer": "3 Paths Forward for IoT security.",
+    "context": "3 Paths Forward for IoT security. Note that the aforementioned three paths forward aren't mutually exclusive; the IoT market can support all three scenarios."
+  },
+  {
+    "question": "How can the IoT market support all three scenarios?",
+    "answer": "Note that the aforementioned three paths forward aren't mutually exclusive; the IoT market can support all three scenarios.",
+    "context": "3 Paths Forward for IoT security. Note that the aforementioned three paths forward aren't mutually exclusive; the IoT market can support all three scenarios."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? The image shows: Beyond Imagination - The Real-Life Cases of IoT Security and Failures | CX Master."
+  },
+  {
+    "question": "What is the title of the image?",
+    "answer": "The image shows: Beyond Imagination - The Real-Life Cases of IoT Security and Failures | CX Master.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The image shows: Beyond Imagination - The Real-Life Cases of IoT Security and Failures | CX Master."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? Consequences of IoT security failures might cause a direct loss of life. They could also shatter confidence in the firm or the broader industry as well as trust in a government's ability to safeguard citizens through oversight and regulation. For instance, when. WannaCry hit, patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly went untreated because the attack delayed care delivery for days."
+  },
+  {
+    "question": "What are the consequences of IoT security failures?",
+    "answer": "Consequences of IoT security failures might cause a direct loss of life.",
+    "context": "How Is IoT Security Different than Traditional IT Security? Consequences of IoT security failures might cause a direct loss of life. They could also shatter confidence in the firm or the broader industry as well as trust in a government's ability to safeguard citizens through oversight and regulation. For instance, when. WannaCry hit, patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly went untreated because the attack delayed care delivery for days."
+  },
+  {
+    "question": "What could happen to a firm's reputation?",
+    "answer": "They could also shatter confidence in the firm or the broader industry as well as trust in a government's ability to safeguard citizens through oversight and regulation.",
+    "context": "How Is IoT Security Different than Traditional IT Security? Consequences of IoT security failures might cause a direct loss of life. They could also shatter confidence in the firm or the broader industry as well as trust in a government's ability to safeguard citizens through oversight and regulation. For instance, when. WannaCry hit, patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly went untreated because the attack delayed care delivery for days."
+  },
+  {
+    "question": "When did WannaCry hit?",
+    "answer": "WannaCry hit, patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly went untreated because the attack delayed care delivery for days.",
+    "context": "How Is IoT Security Different than Traditional IT Security? Consequences of IoT security failures might cause a direct loss of life. They could also shatter confidence in the firm or the broader industry as well as trust in a government's ability to safeguard citizens through oversight and regulation. For instance, when. WannaCry hit, patients with time sensitive conditions, such as strokes or heart attacks, undoubtedly went untreated because the attack delayed care delivery for days."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments. The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter. For instance, size and power constraints in a pacemaker create challenges for applying conventional. IT security approaches that require high amounts of storage or computing power."
+  },
+  {
+    "question": "What constraint does the composition of IoT devices create?",
+    "answer": "The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments. The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter. For instance, size and power constraints in a pacemaker create challenges for applying conventional. IT security approaches that require high amounts of storage or computing power."
+  },
+  {
+    "question": "What does the image of JAXenter show?",
+    "answer": "The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments. The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter. For instance, size and power constraints in a pacemaker create challenges for applying conventional. IT security approaches that require high amounts of storage or computing power."
+  },
+  {
+    "question": "What challenges do size and power constraints in a pacemaker create?",
+    "answer": "For instance, size and power constraints in a pacemaker create challenges for applying conventional.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments. The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter. For instance, size and power constraints in a pacemaker create challenges for applying conventional. IT security approaches that require high amounts of storage or computing power."
+  },
+  {
+    "question": "What are IT security approaches that require high amounts of storage or computing power?",
+    "answer": "IT security approaches that require high amounts of storage or computing power.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The composition of IoT devices, including safety systems, creates constraints that aren't found in typical IT environments. The image shows: Energy sources and power management in IoT sensors and edge devices - JAXenter. For instance, size and power constraints in a pacemaker create challenges for applying conventional. IT security approaches that require high amounts of storage or computing power."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities. Some adversaries might try to avoid causing harm, whereas others might seek out. IoT systems specifically to cause harm. For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying."
+  },
+  {
+    "question": "Do adversaries have the same goals, motivations, methods, and capabilities?",
+    "answer": "The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities. Some adversaries might try to avoid causing harm, whereas others might seek out. IoT systems specifically to cause harm. For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying."
+  },
+  {
+    "question": "What might some adversaries try to avoid causing harm?",
+    "answer": "Some adversaries might try to avoid causing harm, whereas others might seek out.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities. Some adversaries might try to avoid causing harm, whereas others might seek out. IoT systems specifically to cause harm. For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying."
+  },
+  {
+    "question": "What is the purpose of IoT systems?",
+    "answer": "IoT systems specifically to cause harm.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities. Some adversaries might try to avoid causing harm, whereas others might seek out. IoT systems specifically to cause harm. For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying."
+  },
+  {
+    "question": "Why are hospitals often targeted for ransom?",
+    "answer": "For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The adversaries who attack these kinds of systems have different goals, motivations, methods, and capabilities. Some adversaries might try to avoid causing harm, whereas others might seek out. IoT systems specifically to cause harm. For instance, hospitals are frequently targeted for ransom because the potential harm to patients increases the likelihood and speed of the victims paying."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance. For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection. Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident. But we would expect this of an enterprise."
+  },
+  {
+    "question": "What happens to IoT devices when they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance?",
+    "answer": "IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance.",
+    "context": "How Is IoT Security Different than Traditional IT Security? IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance. For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection. Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident. But we would expect this of an enterprise."
+  },
+  {
+    "question": "What should the driver of a connected car not install aftermarket security products?",
+    "answer": "For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection.",
+    "context": "How Is IoT Security Different than Traditional IT Security? IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance. For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection. Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident. But we would expect this of an enterprise."
+  },
+  {
+    "question": "Do we expect them to respond quickly enough during a security incident?",
+    "answer": "Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident.",
+    "context": "How Is IoT Security Different than Traditional IT Security? IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance. For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection. Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident. But we would expect this of an enterprise."
+  },
+  {
+    "question": "What would you expect from an enterprise?",
+    "answer": "But we would expect this of an enterprise.",
+    "context": "How Is IoT Security Different than Traditional IT Security? IoT devices often operate in specific contexts and environments, such as homes, where they're controlled by individuals without the knowledge or resources needed for secure deployment, operation, and maintenance. For instance, we shouldn't expect the driver of a connected car to install aftermarket security products, such as antivirus protection. Nor should we expect them to have the expertise or capability to respond quickly enough during a security incident. But we would expect this of an enterprise."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "What makes security an expensive afterthought?",
+    "answer": "The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "Why are many of these devices targeted at price sensitive customers?",
+    "answer": "Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "What does the cost of devices' insecurity often accrue to individuals who aren't the primary owner or operator of a device?",
+    "answer": "Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "What did the Mirai botnet use to spread?",
+    "answer": "Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "Did most owners know how to change their passwords?",
+    "answer": "Most owners didn't know that they should change their passwords or didn't know how to do so.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "How much money did the US economy make by targeting a third-party?",
+    "answer": "US economy billions of dollars by targeting a third-party.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "What is the name of the DNS supplier that didn't own any impacted devices?",
+    "answer": "DNS supplier thatdidn't own any impacted devices.",
+    "context": "How Is IoT Security Different than Traditional IT Security? The economics of IoT manufacturing drive device costs (and therefore component costs) to a minimum, often making security an expensive afterthought. Also, many of these devices are targeted at price-sensitive customers who lack experience selecting and deploying infrastructure securely. Additionally, the costs of the devices' insecurity frequently accrue to individuals who aren't the primary owner or operator of a device. For instance, the. Mirai botnet took advantage of hardcoded passwords, embedded in chipset fimware, to spread. Most owners didn't know that they should change their passwords or didn't know how to do so. Mirai cost the. US economy billions of dollars by targeting a third-party. DNS supplier thatdidn't own any impacted devices."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? Using small, low-power, low-cost embedded devices increase the insecurity of IoT systems."
+  },
+  {
+    "question": "What does using small, low-power, low-cost embedded devices increase the insecurity of IoT systems?",
+    "answer": "Using small, low-power, low-cost embedded devices increase the insecurity of IoT systems.",
+    "context": "How Is IoT Security Different than Traditional IT Security? Using small, low-power, low-cost embedded devices increase the insecurity of IoT systems."
+  },
+  {
+    "question": "How is IoT Security Different from Traditional IT Security?",
+    "answer": "How Is IoT Security Different than Traditional IT Security?",
+    "context": "How Is IoT Security Different than Traditional IT Security? Timescales for design, development, implementation, operation, and retirement are often measured in decades. Response time might also be extended because of composition, context, and environment."
+  },
+  {
+    "question": "How are timescales for design, development, implementation, operation, and retirement measured?",
+    "answer": "Timescales for design, development, implementation, operation, and retirement are often measured in decades.",
+    "context": "How Is IoT Security Different than Traditional IT Security? Timescales for design, development, implementation, operation, and retirement are often measured in decades. Response time might also be extended because of composition, context, and environment."
+  },
+  {
+    "question": "Is response time extended because of composition, context, and environment?",
+    "answer": "Response time might also be extended because of composition, context, and environment.",
+    "context": "How Is IoT Security Different than Traditional IT Security? Timescales for design, development, implementation, operation, and retirement are often measured in decades. Response time might also be extended because of composition, context, and environment."
   }
 ]
