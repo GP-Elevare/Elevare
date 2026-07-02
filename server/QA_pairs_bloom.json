@@ -1,27 +1,32 @@
 [
   {
-    "question": "What are the areas of expertise associated with Dr Hanan Hindy?",
-    "reference_answer": "Internet of Things Cloud Computing, Storage, and Data Analytics Dr Hanan Hindy hanan.hindy@cis.asu.edu.eg",
-    "student_answer": "ummm uuuh i think"
+    "question": "What specific botnet is mentioned in the article as a wake-up call for IoT security?",
+    "reference_answer": "The Mirai Botnet.",
+    "student_answer": ""
   },
   {
-    "question": "How would you describe the structure and key components of the IoT course, including its introduction, building blocks, and security aspects?",
-    "reference_answer": "Course Outline IoT Introduction and Building Blocks IoT Physical Layer IoT Networking and Communication Layer IoT Cloud Computing, and Data Analytics IoT Case Studies and Real Applications IoT Security Introduction IoT Threat Modelling Targeting the IoT Ecosystem Intrusion Detection Systems ‹#›",
-    "student_answer": "like dat"
+    "question": "How would you describe the primary vulnerability that the Mirai botnet exploited to gain unauthorized access to IoT devices?",
+    "reference_answer": "Weak default passwords.",
+    "student_answer": ""
   },
   {
-    "question": "How would you use IoT Testing Functional to ensure the reliability of a smart home system with multiple interconnected devices?",
-    "reference_answer": "IoT Testing Functional which validates the correct functionality of the IoT application.",
-    "student_answer": "hell yuh"
+    "question": "In what situation would you apply the lessons learned from the Mirai botnet attack that occurred in 2016 to prevent similar IoT device infections?",
+    "reference_answer": "2016",
+    "student_answer": ""
   },
   {
-    "question": "What does the role of Connectivity in testing wireless signals reveal about the potential challenges in IoT application performance, especially in scenarios with weak connections or multiple devices?",
-    "reference_answer": "Connectivity it is responsible for testing the wireless signal in order to determine what happens in case of weak connection, or when there are many devices trying to communicate.",
-    "student_answer": "ok bud"
+    "question": "What does the presence of Unpatched firmware as an attack vector reveal about the vulnerabilities of IoT devices?",
+    "reference_answer": "Unpatched firmware.",
+    "student_answer": ""
   },
   {
-    "question": "To what extent is it justified to rely solely on Performance which validates the communication and computation capabilities as a measure of an IoT application's overall performance?",
-    "reference_answer": "Performance which validates the communication and computation capabilities?",
-    "student_answer": "sure sure"
+    "question": "To what extent is the 28% contribution of unpatched firmware to the Mirai botnet attack significant, considering the dominant role of weak default passwords?",
+    "reference_answer": "28%.",
+    "student_answer": ""
+  },
+  {
+    "question": "What would happen if a similar botnet to Mirai were to be launched today, exploiting new vulnerabilities in IoT devices, and how might its impact compare to the 2016 incident where the Mirai botnet infected thousands?",
+    "reference_answer": "Mirai botnet infected thousands",
+    "student_answer": ""
   }
 ]
