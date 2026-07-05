@@ -21,7 +21,7 @@ facial_model = FacialEmotionRecognizer()
 body_model = BodyEmotionRecognizer()
 
 #Test
-API_KEY = "AQ.Ab8RN6JZgobuLC3xOpQNoDRKGBL8ps_bqjfdImI59Loj4Xzfrw" 
+
 
 def extract_audio(video_path, audio_path):
     """Extract audio from video using pydub."""
