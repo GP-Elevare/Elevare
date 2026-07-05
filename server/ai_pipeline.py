@@ -11,18 +11,106 @@ from models.body.body_module import BodyEmotionRecognizer
 import os, cv2, glob, librosa, io
 from pydub import AudioSegment
 from io import BytesIO
+import math
+import json
+from collections import Counter
+from typing import Dict, Any
 
 speech_model = SpeechEmotionRecognizer()
 facial_model = FacialEmotionRecognizer()
 body_model = BodyEmotionRecognizer()
 
 #Test
-API_KEY = "AIzaSyDTwm2LsemdKYOS9-68GbearQgZDZEaNjQ" 
+API_KEY = "AQ.Ab8RN6JZgobuLC3xOpQNoDRKGBL8ps_bqjfdImI59Loj4Xzfrw" 
 
 def extract_audio(video_path, audio_path):
     """Extract audio from video using pydub."""
     audio = AudioSegment.from_file(video_path)
     audio.export(audio_path, format="wav")
+
+
+
+def get_video_duration(video_path):
+    video = cv2.VideoCapture(video_path)
+    fps = video.get(cv2.CAP_PROP_FPS)
+    frame_count = video.get(cv2.CAP_PROP_FRAME_COUNT)
+    duration = frame_count / fps if fps > 0 else 0.0
+    video.release()
+    return duration
+
+def extract_dynamic_timeline_features(
+    raw_emotions: Dict[str, list], 
+    total_duration: float, 
+    num_slices: int = 4
+) -> Dict[str, Any]:
+    """
+    Converts asynchronous raw emotion arrays into a dynamically scaled timeline.
+    
+    Args:
+        raw_emotions: The dictionary containing speech, facial, and body arrays.
+        total_duration: The actual length of the video in seconds (from metadata).
+        num_slices: The exact number of chronological windows to send to the agent.
+    """
+    # Calculate the exact slice duration dynamically based on the video length
+    slice_duration = total_duration / num_slices
+    
+    # Initialize empty buckets for each calculated slice window
+    buckets = {i: {"facial": [], "speech": [], "body": []} for i in range(num_slices)}
+    
+    # Distribute raw data into time buckets based on sample midpoints
+    for modality, emotions in raw_emotions.items():
+        if not emotions:
+            continue
+            
+        sample_interval = total_duration / len(emotions)
+        
+        for i, emotion in enumerate(emotions):
+            # Calculate the exact middle timestamp of this specific sample
+            midpoint_time = (i + 0.5) * sample_interval
+            
+            # Determine which time slice bucket this midpoint falls into
+            slice_index = int(midpoint_time // slice_duration)
+            slice_index = min(slice_index, num_slices - 1)  # Safeguard for bounding errors
+            
+            buckets[slice_index][modality].append(emotion)
+
+    def get_majority(items):
+        if not items:
+            return "none"
+        counts = Counter(items)
+        most_common = counts.most_common(2)
+        if len(most_common) > 1 and most_common[0][1] == most_common[1][1]:
+            return f"{most_common[0][0]}/{most_common[1][0]}"
+        return most_common[0][0]
+
+    def get_shift(items):
+        if not items:
+            return "none"
+        unique_ordered = []
+        for item in items:
+            if not unique_ordered or item != unique_ordered[-1]:
+                unique_ordered.append(item)
+        return " -> ".join(unique_ordered) if len(unique_ordered) > 1 else unique_ordered[0]
+
+    # Build the dynamic timeline array
+    timeline_slices = []
+    for i in range(num_slices):
+        start_time = i * slice_duration
+        end_time = min((i + 1) * slice_duration, total_duration)
+        
+        slice_data = {
+            "window": f"{start_time:.1f}s - {end_time:.1f}s",
+            "facial_majority": get_majority(buckets[i]["facial"]),
+            "speech_shift": get_shift(buckets[i]["speech"]),
+            "body_state": get_majority(buckets[i]["body"])
+        }
+        timeline_slices.append(slice_data)
+
+    return {
+        "total_duration_seconds": round(total_duration, 2),
+        "slice_intervals_seconds": round(slice_duration, 2),
+        "timeline_slices": timeline_slices
+    }
 
 def feedback_module(video_path, fps=5):
     
@@ -47,7 +135,7 @@ def feedback_module(video_path, fps=5):
     print("Pipeline finished successfully!")
     print("Output saved to:", OUTPUT_PATH)
 
-def new_feedback_module(video_path):
+def new_feedback_module(video_path, results):
     print("--- Initializing Feedback Engine ---\n")
     feedback_engine.initialize_models(api_key=API_KEY)
     mp3_output_path = "outputs/audio.mp3"
@@ -82,7 +170,8 @@ def new_feedback_module(video_path):
         "gaze_analysis": gaze_result,
         "snr_db": snr_result,
         "pitch_variance_hz": pitch_result,
-        "loudness_db": loudness_result
+        "loudness_db": loudness_result,
+        "emotion_evaluation": results
     }
     output_filename = "presentation_feedback_raw.json"
     
@@ -150,9 +239,11 @@ def process_video(video_path, window_size=5):
 
     # ===== PREDICTIONS =====
     speech_preds  = speech_model.predict(audio_windows, sr)
+    print("speech done\n")
     facial_preds  = facial_model.predict(image_windows)
-    body_preds    = body_model.predict(frame_files, video_fps)   
-    new_feedback_module(video_path)
+    print("facial done\n")
+    body_preds    = body_model.predict(frame_files, video_fps)
+    print("body done\n")
 
     return {"speech": speech_preds, "facial": facial_preds, "body": body_preds}
     
@@ -187,7 +278,11 @@ if __name__ == "__main__":
 
     with open("final_emotions.json", "w") as f:
         json.dump(results, f, indent=2)
-    
+
+    video_len = get_video_duration(video_path)
+    processed_features = extract_dynamic_timeline_features(results, total_duration=video_len, num_slices=4)
+    new_feedback_module(video_path, processed_features)
+
     print(f"Results saved to {output_file}")
     print(f"Speech emotions saved to {speech_output}")
     print(f"Facial emotions saved to {facial_output}")

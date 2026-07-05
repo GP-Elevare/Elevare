@@ -38,5 +38,14 @@
       "medium_variance": 2.5,
       "high_variance": 4.0
     }
+  },
+  "emotion_evaluation": {
+    "target_primary_emotions": ["neutral", "happiness", "confidence"],
+    "penalty_emotions": ["fear", "sadness", "anger", "surprise"],
+    "modality_congruence": {
+      "ideal": "All 3 modalities (speech, facial, body) align",
+      "acceptable_variance": "2 of 3 modalities align",
+      "conflict_threshold": "Facial emotion contradicts body/speech emotion"
+    }
   }
 }

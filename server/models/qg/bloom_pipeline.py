@@ -834,7 +834,7 @@ def run_bloom_pipeline(input_path, output_path='QA_pairs.json'):
         persona, bloom = _assign_persona(idx, answer)
         print(f'\n[{idx+1}/{len(items)}] Persona={persona} | Bloom={bloom}')
         print(f'  base_q : {base_q[:80]}')
-        print(f'  answer : {answer[:60]}')
+        print(f'  answer : {answer[:60].encode("cp1252", errors="ignore").decode("cp1252")}')
 
         # Try rephrasing up to MAX_GEN_RETRIES times
         rephrased = None

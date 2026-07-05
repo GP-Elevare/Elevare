@@ -108,9 +108,48 @@ function Feedback() {
                 <h3>AI Feedback</h3>
               </div>
               <div className="card-body">
-                <div className="feedback-text-box">
-                  {feedback?.full_formatted_text || 'No feedback text available.'}
-                </div>
+                {feedback ? (
+                  <div className="structured-feedback">
+                    
+                    {/* 1. Praise Section */}
+                    {feedback.praise && (
+                      <div className="feedback-section praise">
+                        <h4 style={{ color: '#2e7d32', marginBottom: '8px' }}>The Good News</h4>
+                        <p style={{ lineHeight: '1.6', marginBottom: '20px' }}>{feedback.praise}</p>
+                      </div>
+                    )}
+
+                    {/* 2. Constructive Feedback Section (Iterating over the 3 issues) */}
+                    {feedback.constructive_feedback && feedback.constructive_feedback.length > 0 && (
+                      <div className="feedback-section constructive">
+                        <h4 style={{ color: '#d32f2f', marginBottom: '12px' }}>Areas for Improvement</h4>
+                        {feedback.constructive_feedback.map((item, index) => (
+                          <div key={index} style={{ marginBottom: '16px', padding: '12px', backgroundColor: '#f9f9f9', borderRadius: '6px' }}>
+                            <h5 style={{ margin: '0 0 8px 0', fontSize: '1.05rem', color: '#333' }}>
+                              {index + 1}. {item.issue}
+                            </h5>
+                            <p style={{ margin: 0, lineHeight: '1.5', color: '#555' }}>
+                              {item.ois_delivery}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* 3. Encouragement Section */}
+                    {feedback.encouragement && (
+                      <div className="feedback-section encouragement" style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid #eee' }}>
+                        <h4 style={{ color: '#1976d2', marginBottom: '8px' }}>Moving Forward</h4>
+                        <p style={{ lineHeight: '1.6', fontStyle: 'italic', color: '#444' }}>{feedback.encouragement}</p>
+                      </div>
+                    )}
+
+                  </div>
+                ) : (
+                  <div className="feedback-text-box">
+                    No feedback text available.
+                  </div>
+                )}
               </div>
             </div>
 

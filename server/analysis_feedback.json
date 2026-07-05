@@ -1,113 +1,122 @@
 {
   "top_3_issues": [
     {
-      "issue": "Loudness is low",
-      "severity": "Moderate",
-      "category": "Voice/Delivery"
+      "issue": "Gaze Analysis",
+      "severity": "Critical",
+      "category": "Non-Verbal Communication"
     },
     {
-      "issue": "Pitch variance is low",
-      "severity": "Minor",
-      "category": "Voice/Delivery"
-    },
-    {
-      "issue": "Limited content provided",
+      "issue": "Emotion Inconsistency and Negative Expressions",
       "severity": "High",
-      "category": "Content/Structure"
+      "category": "Non-Verbal & Paraverbal Communication"
+    },
+    {
+      "issue": "Words Per Minute",
+      "severity": "Moderate",
+      "category": "Verbal Delivery"
     }
   ],
   "observations": [
     {
-      "metric": "Speech Rate",
-      "value": "152.28 WPM",
-      "threshold": "130-165 WPM",
-      "status": "Ideal",
+      "metric": "Gaze Analysis",
+      "value": "0.0%",
+      "threshold": "Poor (0.0% of duration)",
+      "status": "Poor",
+      "label": "Observation"
+    },
+    {
+      "metric": "Emotion Evaluation",
+      "value": "Mixed and Inconsistent across modalities",
+      "threshold": "Frequent penalty emotions and modality incongruence",
+      "status": "Inconsistent/Negative",
+      "label": "Observation"
+    },
+    {
+      "metric": "Words Per Minute",
+      "value": "125.79 wpm",
+      "threshold": "Below ideal range (130-165 wpm)",
+      "status": "Slightly Slow",
+      "label": "Observation"
+    },
+    {
+      "metric": "Pitch Variance",
+      "value": "2.90 Hz",
+      "threshold": "Medium to High Variance (2.5 - 4.0 Hz)",
+      "status": "Slightly High Variance",
       "label": "Observation"
     },
     {
       "metric": "Filler Word Rate",
       "value": "0.0%",
-      "threshold": "<0.05%",
+      "threshold": "Ideal (<0.05%)",
       "status": "Excellent",
       "label": "Observation"
     },
     {
       "metric": "Dysfunctional Pauses",
       "value": "0",
-      "threshold": "0",
+      "threshold": "Ideal (0)",
       "status": "Excellent",
       "label": "Observation"
     },
     {
-      "metric": "Content Length/Structure",
+      "metric": "SNR dB",
+      "value": "34.53 dB",
+      "threshold": "Good (>20 dB)",
+      "status": "Excellent",
+      "label": "Observation"
+    },
+    {
+      "metric": "Loudness dB",
+      "value": "-24.59 dB",
+      "threshold": "Acceptable (-18 to -30 dBFS)",
+      "status": "Acceptable",
+      "label": "Observation"
+    },
+    {
+      "metric": "Structure Evaluation",
       "value": "1 sentence",
-      "threshold": "N/A for full evaluation",
-      "status": "Insufficient data for detailed analysis",
-      "label": "Observation"
-    },
-    {
-      "metric": "Eye Contact",
-      "value": "89.44%",
-      "threshold": ">60%",
-      "status": "Excellent",
-      "label": "Observation"
-    },
-    {
-      "metric": "Audio Quality (SNR)",
-      "value": "46.97 dB",
-      "threshold": ">20 dB",
-      "status": "Excellent",
-      "label": "Observation"
-    },
-    {
-      "metric": "Pitch Variance",
-      "value": "1.82 Hz",
-      "threshold": "1.5-2.5 Hz (low to medium)",
-      "status": "Low-Moderate",
-      "label": "Observation"
-    },
-    {
-      "metric": "Loudness",
-      "value": "-30.66 dB",
-      "threshold": "User judgement (typical -20 to -15 dB for speech)",
-      "status": "Low",
+      "threshold": "N/A",
+      "status": "Inconclusive due to insufficient data",
       "label": "Observation"
     }
   ],
   "impacts": [
     {
-      "issue": "Loudness is low",
-      "impact_description": "Difficulty hearing in unamplified settings; potential listener strain.",
+      "issue": "Gaze Analysis",
+      "impact_description": "Audience feels disengaged, speaker perceived as lacking confidence or uninterested.",
       "label": "Impact"
     },
     {
-      "issue": "Pitch variance is low",
-      "impact_description": "Speech may sound monotonous, potentially reducing audience engagement.",
+      "issue": "Emotion Inconsistency and Negative Expressions",
+      "impact_description": "Audience may feel confused, disconnected, or perceive speaker as uncertain, upset, or inauthentic. Distracts from message.",
       "label": "Impact"
     },
     {
-      "issue": "Limited content provided",
-      "impact_description": "Inadequate information delivery; hinders comprehensive structural analysis.",
+      "issue": "Words Per Minute",
+      "impact_description": "Audience engagement may decrease, leading to perception of a slow pace or less energy.",
       "label": "Impact"
     }
   ],
   "suggestions": [
-    "Increase vocal projection",
-    "Vary vocal pitch",
-    "Expand content depth"
+    "Establish consistent eye contact",
+    "Practice maintaining positive/neutral emotional display",
+    "Align facial expressions with intended message",
+    "Increase speaking rate slightly for energy"
   ],
-  "reasoning": "Issues were ranked by objective severity: low loudness directly impacts audibility, low pitch variance impacts engagement, and extremely limited content (1 sentence) severely restricts information delivery and analysis. Metrics were mapped directly to defined thresholds where available; loudness was interpreted qualitatively as 'low' based on typical speech ranges; content limitation was identified as an issue due to the overall context of a 'presentation'.",
+  "reasoning": "Issues were ranked by severity, prioritizing elements that critically affect audience engagement and perception (gaze, emotion) over less severe deviations (pacing). Metrics were mapped to predefined communication science thresholds. Loudness dB used a standard acceptable range, and structure evaluation was noted as inconclusive due to minimal data.",
   "confidence_scores": {
-    "overall_confidence": 0.85,
+    "overall_confidence": 0.9,
     "metric_confidence": {
-      "words_per_minute": 1.0,
-      "filler_word_analysis": 1.0,
-      "advanced_pause_analysis": 1.0,
+      "words_per_minute": 0.95,
+      "filler_word_analysis": 0.95,
+      "advanced_pause_analysis": 0.95,
       "structure_evaluation": 0.7,
-      "gaze_analysis": 1.0,
-      "snr_db": 1.0,
-      "pitch_variance_hz": 0.9,
-      "loudness_db": 0.8
+      "gaze_analysis": 0.95,
+      "snr_db": 0.95,
+      "pitch_variance_hz": 0.95,
+      "loudness_db": 0.8,
+      "emotion_evaluation": 0.9
     }
   }
 }

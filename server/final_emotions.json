@@ -1,0 +1,30 @@
+{
+  "speech": [
+    "surprise",
+    "happy",
+    "disgust",
+    "angry",
+    "angry",
+    "angry",
+    "angry",
+    "angry"
+  ],
+  "facial": [
+    "neutral",
+    "sadness",
+    "neutral",
+    "sadness",
+    "sadness",
+    "neutral",
+    "sadness",
+    "neutral",
+    "surprise",
+    "surprise",
+    "neutral"
+  ],
+  "body": [
+    "happiness",
+    "fear",
+    "fear"
+  ]
+}
