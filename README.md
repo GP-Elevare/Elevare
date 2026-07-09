@@ -90,14 +90,14 @@ Main/
 ```bash
 # Clone the repository
 git clone https://github.com/GP-Elevare/Main.git
-cd Main
+cd Elevare
 
 # Pull LFS-tracked model files
 git lfs pull
 
 # Backend setup
 cd server
-pip install -r requirements.txt
+npm install
 
 # Frontend setup
 cd ../client
@@ -109,11 +109,11 @@ npm install
 ```bash
 # Start the backend
 cd server
-python app.py     # or the appropriate entry point
+node index.js  
 
 # Start the frontend
 cd client
-npm start
+npm run dev
 ```
 
 ## 👥 Team
@@ -125,7 +125,7 @@ Developed by students of the Computer Science Department, Faculty of Computer & 
 - Malek Ahmed Mohamed
 - Mohammed Wael Marwan
 - Mohammed Akram Mohammed
-- Abdel-Rahman Osama Mohammed
+- Abd-Rhman Osama Mohammed
 
 **Under the supervision of:**
 - Dr. Hanan Hindy — Lecturer, Computer Science Department
