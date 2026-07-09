@@ -1,6 +1,9 @@
 <div align="center">
 
-# 🎤 Elevare
+<h1>
+  <img src="misc/full_icon.png" alt="Elevare Logo" width="50" style="vertical-align: 100px;" />
+</h1>
+
 ### AI-Powered Public Speaking & Soft Skills Coach
 
 *Master your delivery. Master your material. Master the room.*
@@ -129,7 +132,7 @@ Developed by students of the Computer Science Department, Faculty of Computer & 
 
 **Under the supervision of:**
 - Dr. Hanan Hindy — Lecturer, Computer Science Department
-- Eng. Radwa Reda Hossieny — Assistant Lecturer, Scientific Computing Department
+- TA. Radwa Reda Hossieny — Assistant Lecturer, Scientific Computing Department
 
 ## 📄 Documentation
 
