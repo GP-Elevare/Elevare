@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1>
-  <img src="misc/full_icon.png" alt="Elevare Logo" width="50" style="vertical-align: 100px;" />
+  <img src="misc/full_icon.png" alt="Elevare Logo" width="300" style="vertical-align: 100px;" />
 </h1>
 
 ### AI-Powered Public Speaking & Soft Skills Coach
@@ -28,10 +28,7 @@ Nearly 50% of students report high levels of public speaking anxiety, and profes
 Built as a graduation project at **Ain Shams University — Faculty of Computer & Information Sciences**.
 
 ## 🎥 Demo
-
-> _Add your demo video link/embed here_
->
-> `[![Watch the demo](docs/thumbnail.png)](YOUR_VIDEO_LINK_HERE)`
+> ▶️ [Watch the demo video](misc/demo.mp4)
 
 ## ✨ Key Features
 
@@ -136,7 +133,7 @@ Developed by students of the Computer Science Department, Faculty of Computer & 
 
 ## 📄 Documentation
 
-The full graduation project documentation — covering related work, system design, implementation details, and experimental results — is available in [`/docs`](./docs).
+The full graduation project documentation — covering related work, system design, implementation details, and experimental results — is available in [`docs/Documentation.pdf`](docs/Documentation.pdf).
 
 ## 🔮 Future Work
 
