@@ -17,7 +17,9 @@ def analyze_video_gaze_headless(video_path):
     import os
 
     # Ensure the model file exists before starting
-    model_path = 'face_landmarker.task'
+    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "face_landmarker.task")
+
+
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Missing required model file: {model_path}. Please download it and place it in the script directory.")
 

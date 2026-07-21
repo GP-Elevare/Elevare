@@ -2,13 +2,15 @@ import sys
 import json
 from pathlib import Path
 import shutil
+import os, cv2, glob, librosa, io
+from dotenv import load_dotenv
+load_dotenv()
 from models.speech.speech_module import SpeechEmotionRecognizer
 from models.facial.facial_module import FacialEmotionRecognizer
 from models.feedback.main_converted import run_full_pipeline
 from models.feedback import eye_gaze
 from models.feedback import feedback_engine
 from models.body.body_module import BodyEmotionRecognizer
-import os, cv2, glob, librosa, io
 from pydub import AudioSegment
 from io import BytesIO
 import math
@@ -20,9 +22,11 @@ speech_model = SpeechEmotionRecognizer()
 facial_model = FacialEmotionRecognizer()
 body_model = BodyEmotionRecognizer()
 
-#Test
-API_KEY = "AIzaSyDTwm2LsemdKYOS9-68GbearQgZDZEaNjQ" 
 
+API_KEY = os.getenv("GEMINI_API_KEY")
+
+if not API_KEY:
+    raise ValueError("GEMINI_API_KEY not found in .env file")
 
 def extract_audio(video_path, audio_path):
     """Extract audio from video using pydub."""
