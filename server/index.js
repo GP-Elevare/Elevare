@@ -5,6 +5,12 @@ const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
 const { spawn } = require("child_process");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const db = require("./db"); // The pool we created
+const protect = require("./auth"); // The middleware
+require('./init_db'); // This will run the table/admin check on startup
+require('dotenv').config();
 
 const app = express();
 const PORT = 5000;
@@ -21,6 +27,39 @@ app.use(express.json());
 
 // Set up storage
 const upload = multer({ dest: "uploads/" });
+
+//Database
+
+app.post('/auth/register', async (req, res) => {
+  const { first_name, last_name, email, password } = req.body;
+  try {
+    const hashed = await bcrypt.hash(password, 10);
+    await db.query(
+      'INSERT INTO users (first_name, last_name, email, password_hash) VALUES ($1, $2, $3, $4)',
+                   [first_name, last_name, email, hashed]
+    );
+    res.status(201).json({ message: 'User registered' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/auth/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const result = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+    if (result.rows.length === 0) return res.status(400).json({ error: 'Invalid credentials' });
+
+    const user = result.rows[0];
+    const valid = await bcrypt.compare(password, user.password_hash);
+    if (!valid) return res.status(400).json({ error: 'Invalid credentials' });
+
+    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    res.json({ token, user: { id: user.id, first_name: user.first_name } });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 // --- VIDEO ROUTE ---
 app.post("/process-video", upload.single("video"), (req, res) => {
@@ -111,47 +150,56 @@ app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
 });
 
 // --- AI VIDEO ROUTE WITH FPS (FRAMES PER WINDOW) SUPPORT ---
-app.post("/process-video-ai", upload.single("video"), async (req, res) => {
+app.post("/process-video-ai", protect, upload.single("video"), (req, res) => {
   if (!req.file) return res.status(400).send("No video file.");
 
   const inputPath = req.file.path;
-  const fps = req.body.fps || 5; // fps = frames per window (default 5)
-  const intervalSec = req.body.intervalSec || 1; // feedback metrics interval in seconds (default 1)
+  const fps = req.body.fps || 5;
+  const intervalSec = req.body.intervalSec || 1;
   const timestamp = Date.now();
-  const outputJson = path.join(
-    __dirname,
-    "outputs",
-    `emotion-analysis-${timestamp}.json`,
-  );
+  const outputJsonPath = path.join(__dirname, "outputs", `emotion-analysis-${timestamp}.json`);
+  const userId = req.user.id;
 
-  // Pass fps (frames per window) as third argument to Python script
-  const pyProcess = spawn("python", [
-    "-u",
-    "ai_pipeline.py",
-    inputPath,
-    outputJson,
-    fps.toString(),
-    intervalSec.toString(),
-  ]);
+  const pyProcess = spawn("python", ["-u", "ai_pipeline.py", inputPath, outputJsonPath, fps.toString(), intervalSec.toString()]);
 
-  pyProcess.stdout.on("data", (data) => {
-    console.log(`Python stdout: ${data.toString().trim()}`);
-  });
+  pyProcess.on("close", async (code) => {
+    // Delete the heavy video file immediately
+    fs.unlinkSync(inputPath);
 
-  pyProcess.stderr.on("data", (data) => {
-    console.error(`Python stderr: ${data.toString().trim()}`);
-  });
-
-  pyProcess.on("close", (code) => {
-    fs.unlinkSync(inputPath); // remove uploaded video
     if (code === 0) {
-      res.json({ downloadUrl: `/outputs/${path.basename(outputJson)}` });
+      try {
+        const analysisData = fs.readFileSync(outputJsonPath, 'utf8');
+
+        await db.query(
+          'INSERT INTO reports (user_id, report_type, report_data) VALUES ($1, $2, $3)',
+                       [userId, 'AI_Video_Analysis', analysisData]
+        );
+
+        res.json({ message: "Video analyzed and saved to your account." });
+      } catch (err) {
+        res.status(500).json({ error: "Failed to save analysis to DB" });
+      }
+
+      // Delete the generated JSON file from the outputs folder
+      if (fs.existsSync(outputJsonPath)) fs.unlinkSync(outputJsonPath);
+
     } else {
       res.status(500).send("Processing failed");
     }
   });
 });
 
+app.get('/api/my-reports', protect, async (req, res) => {
+  try {
+    const result = await db.query(
+      'SELECT id, report_type, report_data, created_at FROM reports WHERE user_id = $1 ORDER BY created_at DESC',
+      [req.user.id]
+    );
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch reports" });
+  }
+});
 // --- SIMPLE JSON RETRIEVAL ROUTES ---
 app.get("/feedback", (req, res) => {
   const filePath = path.join(__dirname, "final_feedback.json");
@@ -182,73 +230,48 @@ app.get("/qa-results", (req, res) => {
 });
 
 // --- SAVE ANSWERS & GRADE ROUTE ---
-app.post("/save-answers", (req, res) => {
+app.post("/save-answers", protect, (req, res) => {
   const { updatedData } = req.body;
+  const userId = req.user.id; // From the auth middleware
+  const timestamp = Date.now();
 
-  if (!updatedData) {
-    return res.status(400).json({ error: "No updated data provided" });
-  }
-
-  // 1. Define our file paths
-  const inputFilePath = path.join(__dirname, "QA_pairs_bloom.json");
-  const outputResultsPath = path.join(__dirname, "qa_results.json");
+  // Create temporary files specific to this request
+  const inputFilePath = path.join(__dirname, `temp_qa_input_${timestamp}.json`);
+  const outputResultsPath = path.join(__dirname, `temp_qa_output_${timestamp}.json`);
   const pythonScriptPath = path.join(__dirname, "QA_pipeline.py");
 
-  // 2. Overwrite the Bloom file with the new student answers
+  // Write the user's specific answers to a temp file
   fs.writeFile(inputFilePath, JSON.stringify(updatedData, null, 2), (err) => {
-    if (err) {
-      console.error("Failed to save answers:", err);
-      return res.status(500).json({ error: "Failed to save answers" });
-    }
+    if (err) return res.status(500).json({ error: "Failed to write temp file" });
 
-    console.log(
-      "Answers saved to QA_pairs_bloom.json. Starting grading pipeline...",
-    );
+    const qaProcess = spawn("python", [pythonScriptPath, inputFilePath, outputResultsPath]);
 
-    // 3. Start the Python QA pipeline using the active environment's 'python'
-    const qaProcess = spawn("python", [
-      pythonScriptPath,
-      inputFilePath,
-      outputResultsPath,
-    ]);
+    qaProcess.on("close", async (code) => {
+      if (code === 0) {
+        try {
+          // Read the output from Python
+          const resultData = fs.readFileSync(outputResultsPath, 'utf8');
 
-    // Optional: Catch spawn errors so the server doesn't crash completely
-    qaProcess.on("error", (err) => {
-      console.error("Failed to start the Python process:", err.message);
-      return res
-        .status(500)
-        .json({ error: "Failed to start grading pipeline." });
-    });
+          // Insert straight into PostgreSQL as JSONB
+          await db.query(
+            'INSERT INTO reports (user_id, report_type, report_data) VALUES ($1, $2, $3)',
+                         [userId, 'QA_Evaluation', resultData] // resultData is auto-parsed to JSONB by pg
+          );
 
-    let pythonError = "";
-
-    qaProcess.stdout.on("data", (data) => {
-      console.log(`QA Pipeline: ${data.toString().trim()}`);
-    });
-
-    qaProcess.stderr.on("data", (data) => {
-      console.error(`QA Pipeline Error: ${data.toString().trim()}`);
-      pythonError += data.toString();
-    });
-
-    // 4. Wait for Python to finish grading
-    qaProcess.on("close", (code) => {
-      if (code !== 0) {
-        console.error("Grading failed:", pythonError);
-        return res.status(500).json({
-          error: "Answers were saved, but the grading pipeline failed.",
-          details: pythonError,
-        });
+          res.json({ message: "Graded and saved to database successfully!" });
+        } catch (dbErr) {
+          res.status(500).json({ error: "Failed to save to database" });
+        }
+      } else {
+        res.status(500).json({ error: "Python pipeline failed" });
       }
 
-      console.log("Grading complete! Results saved to qa_results.json");
-
-      // 5. Finally, tell React that everything worked!
-      res.json({ message: "Answers saved and graded successfully!" });
+      // CLEANUP: Delete the temp files so they don't clutter your server
+      if (fs.existsSync(inputFilePath)) fs.unlinkSync(inputFilePath);
+      if (fs.existsSync(outputResultsPath)) fs.unlinkSync(outputResultsPath);
     });
   });
 });
-
 // Start the server (MUST be at the bottom)
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`),
