@@ -21,6 +21,7 @@ facial_model = FacialEmotionRecognizer()
 body_model = BodyEmotionRecognizer()
 
 #Test
+API_KEY = "AIzaSyDTwm2LsemdKYOS9-68GbearQgZDZEaNjQ" 
 
 
 def extract_audio(video_path, audio_path):

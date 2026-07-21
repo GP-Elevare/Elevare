@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const multer = require("multer");
 const ffmpeg = require("fluent-ffmpeg");
@@ -7,10 +8,9 @@ const fs = require("fs");
 const { spawn } = require("child_process");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const db = require("./db"); // The pool we created
-const protect = require("./auth"); // The middleware
-require('./init_db'); // This will run the table/admin check on startup
-require('dotenv').config();
+const db = require("./db/db"); // The pool we created
+const protect = require("./db/auth"); // The middleware
+require('./db/init_db'); // This will run the table/admin check on startup
 
 const app = express();
 const PORT = 5000;
@@ -149,7 +149,7 @@ app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
   });
 });
 
-// --- AI VIDEO ROUTE WITH FPS (FRAMES PER WINDOW) SUPPORT ---
+// --- AI VIDEO ROUTE WITH FPS (FRAMES PER WINDOW) SUPPORT USEDDDDDDD ---
 app.post("/process-video-ai", protect, upload.single("video"), (req, res) => {
   if (!req.file) return res.status(400).send("No video file.");
 
@@ -162,6 +162,12 @@ app.post("/process-video-ai", protect, upload.single("video"), (req, res) => {
 
   const pyProcess = spawn("python", ["-u", "ai_pipeline.py", inputPath, outputJsonPath, fps.toString(), intervalSec.toString()]);
 
+  let errorData = "";
+  pyProcess.stderr.on("data", (data) => {
+    console.error("Python stderr:", data.toString());
+    errorData += data.toString();
+  });
+
   pyProcess.on("close", async (code) => {
     // Delete the heavy video file immediately
     fs.unlinkSync(inputPath);
@@ -172,7 +178,7 @@ app.post("/process-video-ai", protect, upload.single("video"), (req, res) => {
 
         await db.query(
           'INSERT INTO reports (user_id, report_type, report_data) VALUES ($1, $2, $3)',
-                       [userId, 'AI_Video_Analysis', analysisData]
+                      [userId, 'AI_Video_Analysis', analysisData]
         );
 
         res.json({ message: "Video analyzed and saved to your account." });
@@ -184,7 +190,8 @@ app.post("/process-video-ai", protect, upload.single("video"), (req, res) => {
       if (fs.existsSync(outputJsonPath)) fs.unlinkSync(outputJsonPath);
 
     } else {
-      res.status(500).send("Processing failed");
+      console.error("Python pipeline failed:", errorData);
+      res.status(500).json({ error: "Processing failed", details: errorData });
     }
   });
 });
