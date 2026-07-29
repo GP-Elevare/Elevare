@@ -6,6 +6,8 @@ import Home from './Home'
 import Feedback from './Feedback'
 import Questions from './Questions'
 import QuestionsFeedback from './QuestionsFeedback';
+import Signup from './Signup';
+import Signin from './Signin';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -14,6 +16,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/questions" element={<Questions />} />
         <Route path="/questions-feedback" element={<QuestionsFeedback />} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/signin" element={<Signin/>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

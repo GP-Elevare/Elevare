@@ -7,25 +7,30 @@ body {
     sans-serif;
   background-color: #ffffff;
   color: #0f172a;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 40px;
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* --- Header Styling --- */
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0 60px 0;
+  padding: 16px 40px;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 200px;
 }
 
 .logo-icon {
@@ -59,16 +64,26 @@ body {
   font-size: 15px;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 200px;
+  max-width: fit-content;
+  margin-left: auto;
 }
 
 .sign-in-btn:hover {
   background-color: #e9d5ff;
 }
 
+/* --- Main Layout --- */
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1;
 }
 
 .hero {
@@ -242,4 +257,87 @@ body {
   background-color: #f1f5f9;
   padding: 6px 16px;
   border-radius: 20px;
+}
+
+.top-bar-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sign-in-nav-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s;
+}
+
+.sign-in-nav-btn:hover {
+  color: #0f172a;
+}
+
+.sign-up-nav-btn {
+  background-color: #f3e8ff;
+  color: #a855f7;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sign-up-nav-btn:hover {
+  background-color: #e9d5ff;
+}
+
+/* --- History Section --- */
+.history-section {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 40px;
+}
+
+.history-title {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.empty-history {
+  background-color: #f8fafc;
+  border: 1px dashed #e2e8f0;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-history-icon {
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.empty-history p {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.empty-history span {
+  font-size: 14px;
+  color: #94a3b8;
 }

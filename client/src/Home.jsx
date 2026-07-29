@@ -64,7 +64,7 @@ function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="page-wrapper">
       <input
         type="file"
         ref={fileInputRef}
@@ -81,7 +81,11 @@ function Home() {
           </div>
           <div className="title">Elev<span className="highlight">are</span></div>
         </div>
-        <button className="sign-in-btn">Sign In</button>
+        
+        <div className="top-bar-actions">
+          <button className="sign-in-nav-btn" onClick={() => navigate('/signin')}>Sign In</button>
+          <button className="sign-up-nav-btn" onClick={() => navigate('/signup')}>Sign Up</button>
+        </div>
       </header>
 
       <main className="main-content">
@@ -153,6 +157,17 @@ function Home() {
             {loading ? 'Processing...' : 'Browse files'}
           </button>
         </div>
+
+        {/* History Section Placeholder */}
+        <div className="history-section">
+          <h3 className="history-title">Previous Feedback</h3>
+          <div className="empty-history">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="empty-history-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <p>No previous sessions yet.</p>
+            <span>Your past video and slide feedback will appear here.</span>
+          </div>
+        </div>
+
       </main>
     </div>
   );
