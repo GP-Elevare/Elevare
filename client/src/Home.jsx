@@ -1,17 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useRef } from 'react';
+import { useAuth } from './AuthContext';
 import "./Home.css";
 
 function Home() {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const [loading, setLoading] = useState(false);
-  
+  const { user, isAuthenticated, logout } = useAuth();
+
   // State to track if the user is uploading a video or slides
   const [uploadMode, setUploadMode] = useState('video'); // 'video' or 'slides'
 
   const handleButtonClick = () => {
     fileInputRef.current.click();
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
   const handleFileChange = async (event) => {
@@ -66,7 +73,7 @@ function Home() {
         const errData = await response.json().catch(() => ({}));
         if (response.status === 401) {
           alert("Your session has expired. Please sign in again.");
-          localStorage.removeItem("token");
+          logout();
           navigate('/signin');
         } else {
           alert(errData.error || "Upload failed.");
@@ -98,10 +105,24 @@ function Home() {
           </div>
           <div className="title">Elev<span className="highlight">are</span></div>
         </div>
-        
+
         <div className="top-bar-actions">
-          <button className="sign-in-nav-btn" onClick={() => navigate('/signin')}>Sign In</button>
-          <button className="sign-up-nav-btn" onClick={() => navigate('/signup')}>Sign Up</button>
+          {isAuthenticated ? (
+            <div className="user-menu">
+              <div className="user-chip">
+                <div className="user-avatar">
+                  {(user?.first_name?.[0] || user?.email?.[0] || "?").toUpperCase()}
+                </div>
+                <span className="user-name">{user?.first_name || user?.email}</span>
+              </div>
+              <button className="sign-out-btn" onClick={handleLogout}>Sign Out</button>
+            </div>
+          ) : (
+            <>
+              <button className="sign-in-nav-btn" onClick={() => navigate('/signin')}>Sign In</button>
+              <button className="sign-up-nav-btn" onClick={() => navigate('/signup')}>Sign Up</button>
+            </>
+          )}
         </div>
       </header>
 

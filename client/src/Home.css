@@ -1,5 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
 
+/* Add this to Home.css — styles for the logged-in state in the top bar */
+
+/* Add this to Home.css — styles for the logged-in state in the top bar,
+   matching the existing Sign In / Sign Up pill styling */
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px 8px 8px;
+  border-radius: 999px;
+  background: #f3e8ff; /* same light purple as Sign Up pill */
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #7c3aed; /* same purple as "are" highlight / Sign Up text */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #7c3aed; /* matches Sign Up text color */
+}
+
+.sign-out-btn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280; /* same gray as Sign In text */
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.sign-out-btn:hover {
+  color: #374151;
+}
+
 body {
   margin: 0;
   font-family:

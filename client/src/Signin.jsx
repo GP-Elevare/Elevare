@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 import "./Signup.css"; // Can share the layout styling with signup
 
 function Signin() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -34,9 +36,8 @@ function Signin() {
         throw new Error(data.error || "Login failed");
       }
 
-      // Save token + user info for use across the app
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      // Save token + user info via AuthContext so the whole app knows we're logged in
+      login(data.token, data.user);
 
       navigate("/"); // change this to your actual landing route
     } catch (err) {
