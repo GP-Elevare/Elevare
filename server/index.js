@@ -40,6 +40,9 @@ app.post('/auth/register', async (req, res) => {
     );
     res.status(201).json({ message: 'User registered' });
   } catch (err) {
+    if (err.code === '23505') {
+      return res.status(409).json({ error: 'An account with this email already exists.' });
+    }
     res.status(500).json({ error: err.message });
   }
 });
@@ -85,7 +88,7 @@ app.post("/process-video", upload.single("video"), (req, res) => {
 });
 
 // --- POWERPOINT ROUTE (Upload + Call Python QG Pipeline) ---
-app.post("/upload-ppt", upload.single("powerpoint"), (req, res) => {
+app.post("/upload-ppt", protect, upload.single("powerpoint"), (req, res) => {
   if (!req.file) return res.status(400).send("No PPTX file.");
 
   console.log(`Received PowerPoint: ${req.file.originalname}`);

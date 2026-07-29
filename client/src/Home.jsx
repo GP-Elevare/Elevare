@@ -36,9 +36,19 @@ function Home() {
       ? 'http://localhost:5000/process-video-ai' 
       : 'http://localhost:5000/upload-ppt';
 
+    // Both pipelines are protected routes on the backend — need the JWT from sign-in.
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please sign in to continue.");
+      setLoading(false);
+      navigate('/signin');
+      return;
+    }
+
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
         body: formData,
       });
 
@@ -53,7 +63,14 @@ function Home() {
         }
         
       } else {
-        alert("Upload failed.");
+        const errData = await response.json().catch(() => ({}));
+        if (response.status === 401) {
+          alert("Your session has expired. Please sign in again.");
+          localStorage.removeItem("token");
+          navigate('/signin');
+        } else {
+          alert(errData.error || "Upload failed.");
+        }
       }
     } catch (err) {
       console.error(err);

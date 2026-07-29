@@ -1,8 +1,51 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Signup.css"; // Can share the layout styling with signup
 
 function Signin() {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Login failed");
+      }
+
+      // Save token + user info for use across the app
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      navigate("/"); // change this to your actual landing route
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="page-wrapper">
       <header className="top-bar">
@@ -18,7 +61,7 @@ function Signin() {
 
       <main className="signup-page-container">
         <div className="signup-card">
-          
+
           {/* Left Branding Panel */}
           <div className="signup-brand-panel">
             <div className="brand-icon-large">
@@ -35,18 +78,36 @@ function Signin() {
               <p>Log in to access your dashboard and past sessions.</p>
             </div>
 
-            <form className="signup-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="signup-form" onSubmit={handleSubmit}>
               <div className="input-group">
                 <label>Email address</label>
-                <input type="email" placeholder="you@example.com" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
               <div className="input-group">
                 <label>Password</label>
-                <input type="password" placeholder="Enter your password" />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
-              <button type="submit" className="submit-btn">Sign In</button>
+              {error && <p className="form-error">{error}</p>}
+
+              <button type="submit" className="submit-btn" disabled={loading}>
+                {loading ? "Signing in..." : "Sign In"}
+              </button>
             </form>
 
             <div className="divider">

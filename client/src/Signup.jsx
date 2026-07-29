@@ -1,8 +1,50 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Signup.css";
 
 function Signup() {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:5000/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Registration failed");
+      }
+
+      // Registered successfully -> send them to sign in
+      navigate("/Signin");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="page-wrapper">
       <header className="top-bar">
@@ -18,7 +60,7 @@ function Signup() {
 
       <main className="signup-page-container">
         <div className="signup-card">
-          
+
           {/* Left Branding Panel */}
           <div className="signup-brand-panel">
             <div className="brand-icon-large">
@@ -35,29 +77,61 @@ function Signup() {
               <p>Start practicing and become a more confident speaker.</p>
             </div>
 
-            <form className="signup-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="signup-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="input-group">
                   <label>First name</label>
-                  <input type="text" placeholder="Ahmed" />
+                  <input
+                    type="text"
+                    name="first_name"
+                    placeholder="Ahmed"
+                    value={formData.first_name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div className="input-group">
                   <label>Last name</label>
-                  <input type="text" placeholder="Hassan" />
+                  <input
+                    type="text"
+                    name="last_name"
+                    placeholder="Hassan"
+                    value={formData.last_name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
               </div>
 
               <div className="input-group">
                 <label>Email address</label>
-                <input type="email" placeholder="you@example.com" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
               <div className="input-group">
                 <label>Password</label>
-                <input type="password" placeholder="Create a password" />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Create a password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
-              <button type="submit" className="submit-btn">Sign Up</button>
+              {error && <p className="form-error">{error}</p>}
+
+              <button type="submit" className="submit-btn" disabled={loading}>
+                {loading ? "Signing up..." : "Sign Up"}
+              </button>
             </form>
 
             <div className="divider">
